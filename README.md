@@ -2,10 +2,10 @@
 This project contains all functions I use in general.
 
 ## Usage
-### Dependencies
-#### Compiler
+### Compiler
 You need to use a C++17 compiler.
 
+### Dependencies
 #### Poco
 The following packages need to be installed:
 ```sh
