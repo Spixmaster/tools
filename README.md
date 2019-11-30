@@ -3,13 +3,16 @@ This project contains all functions I use in general.
 
 ## Usage
 ### Dependencies
+#### Compiler
 You need to use a C++17 compiler.
 
+#### Poco
 The following packages need to be installed:
 ```sh
 sudo apt install libpoco-dev
 ```
 
+#### rapidjson
 Moreover, [rapdijson](https://github.com/Tencent/rapidjson) needs to be installed.
 
 For this, do the following steps:
