@@ -19,7 +19,6 @@ Moreover, [rapdijson](https://github.com/Tencent/rapidjson) needs to be installe
 
 For this, do the following steps:
 ```sh
-cd to/your/git/repo
 git clone https://github.com/Tencent/rapidjson
 cd rapidjson
 cmake .
