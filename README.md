@@ -13,11 +13,13 @@ sudo apt install libpoco-dev
 Moreover, [rapdijson](https://github.com/Tencent/rapidjson) needs to be installed.
 
 For this, do the following steps:
-1. git clone https://github.com/Tencent/rapidjson
-2. cd rapidjson
-3. cmake .
-4. make -j4
-5. sudo make install
+```sh
+git clone https://github.com/Tencent/rapidjson
+cd rapidjson
+cmake .
+make -j4
+sudo make install
+```
 
 #### Libraries that need to be linked (option -l)
 * PocoFoundation
