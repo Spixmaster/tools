@@ -2,6 +2,8 @@
 This project contains all functions I use in general.
 
 ## Usage
+You can only use this project in your own ones. Thus, no main is included.
+
 ### Compiler
 You need to use a C++17 compiler.
 
