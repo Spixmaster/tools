@@ -16,7 +16,7 @@ namespace tools
 		std::string m_path;
 
 		//constructors
-		//@param path: stats the path where the file is located
+		//@param path: states the path where the file is located
 		InputFile(const std::string &path);
 	};
 }
