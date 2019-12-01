@@ -21,7 +21,7 @@ namespace tools
 	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args) : m_url(url), m_http_args(http_args)
 	{}
 
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::map<std::string, std::string> &headers) :
+	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::vector<HttpHeader> &headers) :
 			m_url(url), m_http_args(http_args), m_headers(headers)
 	{}
 
@@ -47,8 +47,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_GET, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 	        	//options and headers
-	        for(std::map<std::string, std::string>::iterator it = m_headers.begin(); it != m_headers.end(); ++it)
-	            req.set(it->first, it->second);
+	        for(size_t j = 0; j < m_headers.size(); ++j)
+	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
 	        session.setTimeout(Poco::Timespan(150L, 0L));
 
 	        //send the request
@@ -115,8 +115,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-			for(std::map<std::string, std::string>::iterator it = m_headers.begin(); it != m_headers.end(); ++it)
-				req.set(it->first, it->second);
+	        for(size_t j = 0; j < m_headers.size(); ++j)
+	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 				//http body
@@ -201,8 +201,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-			for(std::map<std::string, std::string>::iterator it = m_headers.begin(); it != m_headers.end(); ++it)
-				req.set(it->first, it->second);
+	        for(size_t j = 0; j < m_headers.size(); ++j)
+	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 				//html form
