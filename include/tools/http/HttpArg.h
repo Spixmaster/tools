@@ -6,7 +6,7 @@
 #include <variant>
 #include "tools/http/InputFile.h"
 
-//@brief simply a container for a key value pair of http arguments
+//@brief simply a container for a key value pair of an http argument
 
 namespace tools
 {

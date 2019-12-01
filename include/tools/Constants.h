@@ -17,8 +17,8 @@ namespace tools
 		typedef std::shared_ptr<Constants> ptr;
 
 		//member variables
-		static std::string version;
-		static std::string release;
+		static const std::string version;
+		static const std::string release;
 
 		//member functions
 
