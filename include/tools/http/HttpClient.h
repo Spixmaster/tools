@@ -6,7 +6,7 @@
 #include "tools/http/HttpArg.h"
 #include "tools/http/HttpResponse.h"
 #include <vector>
-#include <map>
+#include "tools/http/HttpHeader.h"
 
 //@brief class does all http requests
 
@@ -22,7 +22,7 @@ namespace tools
 		//member variables
 		std::string m_url;
 		std::vector<HttpArg> m_http_args;
-		std::map<std::string, std::string> m_headers;
+		std::vector<HttpHeader> m_headers;
 
 	public:
 		//constructors
@@ -41,7 +41,7 @@ namespace tools
 		 * @param http_args: http args which are sent with the request
 		 * @param header: header which are sent with the request (key: value)
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::map<std::string, std::string> &headers);
+		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::vector<HttpHeader> &headers);
 
 		//member functions
 
