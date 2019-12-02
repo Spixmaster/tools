@@ -29,8 +29,15 @@ namespace tools
 
 		/*
 		 * @param url: to which server the request shall be sent
-		 * @param http_args: http args which are sent with the request
 		 * @param header: header which are sent with the request (key: value)
+		 * @param http_args: http args which are sent with the request
+		 */
+		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args = std::vector<HttpArg>());
+
+		/*
+		 * @param url: to which server the request shall be sent
+		 * @param header: header which are sent with the request (key: value)
+		 * @param http_args: http args which are sent with the request
 		 */
 		HttpClient(const std::string &url, const std::vector<HttpHeader> &headers = std::vector<HttpHeader>(), const std::vector<HttpArg> &http_args = std::vector<HttpArg>());
 
