@@ -21,8 +21,8 @@ namespace tools
 	private:
 		//member variables
 		std::string m_url;
+		std::vector<HttpHeader> m_http_headers;
 		std::vector<HttpArg> m_http_args;
-		std::vector<HttpHeader> m_headers;
 
 	public:
 		//constructors

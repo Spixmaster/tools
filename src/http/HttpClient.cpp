@@ -15,8 +15,8 @@
 
 namespace tools
 {
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::vector<HttpHeader> &headers) :
-			m_url(url), m_http_args(http_args), m_headers(headers)
+	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args) :
+			m_url(url), m_http_headers(http_headers), m_http_args(http_args)
 	{}
 
 	HttpResponse HttpClient::send_get_req(const bool &debug)
@@ -41,8 +41,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_GET, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 	        	//options and headers
-	        for(size_t j = 0; j < m_headers.size(); ++j)
-	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
+	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 	        session.setTimeout(Poco::Timespan(150L, 0L));
 
 	        //send the request
@@ -109,8 +109,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-	        for(size_t j = 0; j < m_headers.size(); ++j)
-	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
+	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 				//http body
@@ -195,8 +195,8 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-	        for(size_t j = 0; j < m_headers.size(); ++j)
-	            req.set(m_headers.at(j).m_key, m_headers.at(j).m_value);
+	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 				//html form
