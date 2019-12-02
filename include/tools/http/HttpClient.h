@@ -27,21 +27,12 @@ namespace tools
 	public:
 		//constructors
 
-		//@param url: to which server the request shall be sent
-		HttpClient(const std::string &url);
-
-		/*
-		 * @param url: to which server the request shall be sent
-		 * @param http_args: http args which are sent with the request
-		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args);
-
 		/*
 		 * @param url: to which server the request shall be sent
 		 * @param http_args: http args which are sent with the request
 		 * @param header: header which are sent with the request (key: value)
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const std::vector<HttpHeader> &headers);
+		HttpClient(const std::string &url, const std::vector<HttpHeader> &headers = std::vector<HttpHeader>(), const std::vector<HttpArg> &http_args = std::vector<HttpArg>());
 
 		//member functions
 
