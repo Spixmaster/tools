@@ -38,13 +38,13 @@ namespace tools
 
 		/*
 		 * @param url: to which server the request shall be sent
-		 * @param http_headers: headers which are sent with the request (key: value)
+		 * @param http_headers: http headers which are sent with the request (key: value)
 		 */
 		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers);
 
 		/*
 		 * @param url: to which server the request shall be sent
-		 * @param http_headers: headers which are sent with the request (key: value)
+		 * @param http_headers: http headers which are sent with the request (key: value)
 		 * @param http_args: http args which are sent with the request
 		 */
 		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args);
