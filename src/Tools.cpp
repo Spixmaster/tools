@@ -5,6 +5,8 @@
 #include <cmath>
 #include <unistd.h>
 #include <limits.h>
+#include <openssl/md5.h>
+#include <cstring>
 
 namespace tools
 {
@@ -518,5 +520,21 @@ namespace tools
 	  char result[ PATH_MAX ];
 	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
 	  return std::string( result, (count > 0) ? count : 0 );
+	}
+
+	std::string Tools::md5_hash(const std::string &seed)
+	{
+	    unsigned char digest[MD5_DIGEST_LENGTH];
+	    char string[seed.size() + 1];
+	    seed.copy(string, seed.size() + 1);
+
+	    MD5((unsigned char*)&string, std::strlen(string), (unsigned char*)&digest);
+
+	    char md5_string[33];
+
+	    for(int i = 0; i < 16; i++)
+	         sprintf(&md5_string[i*2], "%02x", (unsigned int)digest[i]);
+
+	    return md5_string;
 	}
 }

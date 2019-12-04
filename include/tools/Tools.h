@@ -206,6 +206,13 @@ namespace tools
 		 * @return path to exe
 		 */
 		static std::string get_exe_path();
+
+		/*
+		 * @brief returns an md5 hash for the proper seed
+		 * @param seed: seed which shall be encrypted
+		 * @return the md5 hash
+		 */
+		static std::string md5_hash(const std::string &seed);
 	};
 }
 
