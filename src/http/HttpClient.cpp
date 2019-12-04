@@ -12,6 +12,7 @@
 #include <Poco/URI.h>
 #include <Poco/Exception.h>
 #include <string>
+#include <Poco/Net/NameValueCollection.h>
 
 namespace tools
 {
@@ -64,7 +65,10 @@ namespace tools
 	        session.sendRequest(req);
 	        //print request to stdout
 	        if(debug == true)
+	        {
+	        	std::cout << "The request:" << std::endl;
 				req.write(std::cout);
+	        }
 
 			//response
 			Poco::Net::HTTPResponse response;
@@ -74,6 +78,25 @@ namespace tools
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
 			http_response_cookies = response.get("Cookies");
+
+			//print response
+			if(debug == true)
+			{
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				http_repsonse_headers.pop_back();
+				std::cout << "The server response headers:" << std::endl;
+				std::cout << http_repsonse_headers << std::endl;
+				std::cout << "The server response body:" << std::endl;
+				std::cout << http_response_txt << std::endl;
+			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
@@ -159,7 +182,10 @@ namespace tools
 	        os << http_body;
 	        //print request to stdout
 	        if(debug == true)
+	        {
+	        	std::cout << "The request:" << std::endl;
 				req.write(std::cout);
+	        }
 
 			//response
 			Poco::Net::HTTPResponse response;
@@ -168,6 +194,25 @@ namespace tools
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
+
+			//print response
+			if(debug == true)
+			{
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				http_repsonse_headers.pop_back();
+				std::cout << "The server response headers:" << std::endl;
+				std::cout << http_repsonse_headers << std::endl;
+				std::cout << "The server response body:" << std::endl;
+				std::cout << http_response_txt << std::endl;
+			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
@@ -249,7 +294,10 @@ namespace tools
 			form.write(session.sendRequest(req));
 	        //print request to stdout
 	        if(debug == true)
+	        {
+	        	std::cout << "The request:" << std::endl;
 				req.write(std::cout);
+	        }
 
 			//response
 			Poco::Net::HTTPResponse response;
@@ -258,6 +306,25 @@ namespace tools
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
+
+			//print response
+			if(debug == true)
+			{
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				http_repsonse_headers.pop_back();
+				std::cout << "The server response headers:" << std::endl;
+				std::cout << http_repsonse_headers << std::endl;
+				std::cout << "The server response body:" << std::endl;
+				std::cout << http_response_txt << std::endl;
+			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
