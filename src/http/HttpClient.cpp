@@ -104,31 +104,29 @@ namespace tools
 				std::cerr << "http response body: " << http_response_body << std::endl;
 
 				//http response
-				HttpResponse http_response;
-				http_response.m_code = http_response_code;
-				http_response.m_body = http_response_body;
+				std::vector<HttpHeader> temp_http_headers;
 				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 				while(j != response.end())
 				{
 					HttpHeader http_header(j->first, j->second);
-					http_response.m_headers.push_back(http_header);
+					temp_http_headers.push_back(http_header);
 					++j;
 				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 				return http_response;
 			}
 
 			//http response
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			std::vector<HttpHeader> temp_http_headers;
 			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 			while(j != response.end())
 			{
 				HttpHeader http_header(j->first, j->second);
-				http_response.m_headers.push_back(http_header);
+				temp_http_headers.push_back(http_header);
 				++j;
 			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 			return http_response;
 		}
@@ -137,9 +135,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
 
 			return http_response;
 		}
@@ -234,31 +230,29 @@ namespace tools
 				std::cerr << "http response body: " << http_response_body << std::endl;
 
 				//http response
-				HttpResponse http_response;
-				http_response.m_code = http_response_code;
-				http_response.m_body = http_response_body;
+				std::vector<HttpHeader> temp_http_headers;
 				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 				while(j != response.end())
 				{
 					HttpHeader http_header(j->first, j->second);
-					http_response.m_headers.push_back(http_header);
+					temp_http_headers.push_back(http_header);
 					++j;
 				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 				return http_response;
 			}
 
 			//http response
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			std::vector<HttpHeader> temp_http_headers;
 			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 			while(j != response.end())
 			{
 				HttpHeader http_header(j->first, j->second);
-				http_response.m_headers.push_back(http_header);
+				temp_http_headers.push_back(http_header);
 				++j;
 			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 			return http_response;
 		}
@@ -267,9 +261,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
 
 			return http_response;
 		}
@@ -360,31 +352,29 @@ namespace tools
 				std::cerr << "http response body: " << http_response_body << std::endl;
 
 				//http response
-				HttpResponse http_response;
-				http_response.m_code = http_response_code;
-				http_response.m_body = http_response_body;
+				std::vector<HttpHeader> temp_http_headers;
 				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 				while(j != response.end())
 				{
 					HttpHeader http_header(j->first, j->second);
-					http_response.m_headers.push_back(http_header);
+					temp_http_headers.push_back(http_header);
 					++j;
 				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 				return http_response;
 			}
 
 			//http response
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			std::vector<HttpHeader> temp_http_headers;
 			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
 			while(j != response.end())
 			{
 				HttpHeader http_header(j->first, j->second);
-				http_response.m_headers.push_back(http_header);
+				temp_http_headers.push_back(http_header);
 				++j;
 			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
 
 			return http_response;
 		}
@@ -393,9 +383,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response;
-			http_response.m_code = http_response_code;
-			http_response.m_body = http_response_body;
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
 
 			return http_response;
 		}
