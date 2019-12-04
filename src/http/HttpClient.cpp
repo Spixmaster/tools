@@ -63,7 +63,7 @@ namespace tools
 	        session.sendRequest(req);
 	        //print request to stdout
 	        if(debug == true)
-	        	req.write(std::cout);
+				req.write(std::cout);
 
 			//response
 			Poco::Net::HTTPResponse response;
@@ -149,7 +149,7 @@ namespace tools
 	        os << http_body;
 	        //print request to stdout
 	        if(debug == true)
-	        	req.write(std::cout);
+				req.write(std::cout);
 
 			//response
 			Poco::Net::HTTPResponse response;
@@ -231,8 +231,8 @@ namespace tools
 			form.prepareSubmit(req);
 			form.write(session.sendRequest(req));
 	        //print request to stdout
-			if(debug == true)
-	        	req.write(std::cout);
+	        if(debug == true)
+				req.write(std::cout);
 
 			//response
 			Poco::Net::HTTPResponse response;
