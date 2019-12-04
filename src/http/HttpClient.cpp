@@ -37,8 +37,7 @@ namespace tools
 	HttpResponse HttpClient::send_get_req(const bool &debug)
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;
-		std::string http_response_txt;
-		std::string http_response_cookies;
+		std::string http_response_body;
 
 		try
 		{
@@ -73,11 +72,10 @@ namespace tools
 			//response
 			Poco::Net::HTTPResponse response;
 			std::ostringstream oss;
-			std::istream  &in = session.receiveResponse(response);
+			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_txt = oss.str();
-			http_response_cookies = response.get("Cookies");
+			http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -92,42 +90,57 @@ namespace tools
 				}
 				//remove last new line
 				http_repsonse_headers.pop_back();
+
 				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl;
+				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_txt << std::endl;
+				std::cout << http_response_body << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response text: " << http_response_txt << std::endl;
+				std::cerr << "http response body: " << http_response_body << std::endl;
 
+				//http response
 				HttpResponse http_response;
-				http_response.code = http_response_code;
-				http_response.txt = http_response_txt;
-				//todo
-				http_response.cookies = http_response_cookies;
+				http_response.m_code = http_response_code;
+				http_response.m_body = http_response_body;
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				while(j != response.end())
+				{
+					HttpHeader http_header(j->first, j->second);
+					http_response.m_headers.push_back(http_header);
+					++j;
+				}
+
 				return http_response;
 			}
 
+			//http response
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+			while(j != response.end())
+			{
+				HttpHeader http_header(j->first, j->second);
+				http_response.m_headers.push_back(http_header);
+				++j;
+			}
+
 			return http_response;
 		}
 		catch(std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
 
+			//http response without http header as not accessible
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+
 			return http_response;
 		}
 	}
@@ -135,8 +148,7 @@ namespace tools
 	HttpResponse HttpClient::send_post_req_urlencoded(const bool &debug)
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
-		std::string http_response_txt;
-		std::string http_response_cookies;
+		std::string http_response_body;
 
 		try
 		{
@@ -190,10 +202,10 @@ namespace tools
 			//response
 			Poco::Net::HTTPResponse response;
 			std::ostringstream oss;
-			std::istream  &in = session.receiveResponse(response);
+			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_txt = oss.str();
+			http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -208,42 +220,57 @@ namespace tools
 				}
 				//remove last new line
 				http_repsonse_headers.pop_back();
+
 				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl;
+				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_txt << std::endl;
+				std::cout << http_response_body << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response text: " << http_response_txt << std::endl;
+				std::cerr << "http response body: " << http_response_body << std::endl;
 
+				//http response
 				HttpResponse http_response;
-				http_response.code = http_response_code;
-				http_response.txt = http_response_txt;
-				//todo
-				http_response.cookies = http_response_cookies;
+				http_response.m_code = http_response_code;
+				http_response.m_body = http_response_body;
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				while(j != response.end())
+				{
+					HttpHeader http_header(j->first, j->second);
+					http_response.m_headers.push_back(http_header);
+					++j;
+				}
+
 				return http_response;
 			}
 
+			//http response
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+			while(j != response.end())
+			{
+				HttpHeader http_header(j->first, j->second);
+				http_response.m_headers.push_back(http_header);
+				++j;
+			}
+
 			return http_response;
 		}
 		catch(std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
 
+			//http response without http header as not accessible
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+
 			return http_response;
 		}
 	}
@@ -251,8 +278,7 @@ namespace tools
 	HttpResponse HttpClient::send_post_req_multipart(const bool &debug)
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
-		std::string http_response_txt;
-		std::string http_response_cookies;
+		std::string http_response_body;
 
 		try
 		{
@@ -302,10 +328,10 @@ namespace tools
 			//response
 			Poco::Net::HTTPResponse response;
 			std::ostringstream oss;
-			std::istream  &in = session.receiveResponse(response);
+			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_txt = oss.str();
+			http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -320,42 +346,57 @@ namespace tools
 				}
 				//remove last new line
 				http_repsonse_headers.pop_back();
+
 				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl;
+				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_txt << std::endl;
+				std::cout << http_response_body << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response text: " << http_response_txt << std::endl;
+				std::cerr << "http response body: " << http_response_body << std::endl;
 
+				//http response
 				HttpResponse http_response;
-				http_response.code = http_response_code;
-				http_response.txt = http_response_txt;
-				//todo
-				http_response.cookies = http_response_cookies;
+				http_response.m_code = http_response_code;
+				http_response.m_body = http_response_body;
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				while(j != response.end())
+				{
+					HttpHeader http_header(j->first, j->second);
+					http_response.m_headers.push_back(http_header);
+					++j;
+				}
+
 				return http_response;
 			}
 
+			//http response
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+			Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+			while(j != response.end())
+			{
+				HttpHeader http_header(j->first, j->second);
+				http_response.m_headers.push_back(http_header);
+				++j;
+			}
+
 			return http_response;
 		}
 		catch(std::exception &e)
 		{
 			std::cerr << e.what() << std::endl;
 
+			//http response without http header as not accessible
 			HttpResponse http_response;
-			http_response.code = http_response_code;
-			http_response.txt = http_response_txt;
-			//todo
-			http_response.cookies = http_response_cookies;
+			http_response.m_code = http_response_code;
+			http_response.m_body = http_response_body;
+
 			return http_response;
 		}
 	}
