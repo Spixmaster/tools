@@ -82,12 +82,16 @@ namespace tools
 				HttpResponse http_response;
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
+				//todo
+				http_response.cookies = response.get("Cookies");
 				return http_response;
 			}
 
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -97,6 +101,8 @@ namespace tools
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 	}
@@ -141,7 +147,8 @@ namespace tools
 				if(j < (m_http_args.size() - 1))
 					http_body.append("&");
 			}
-			req.setContentLength(http_body.length());
+			if(!http_body.empty())
+				req.setContentLength(http_body.length());
 
 			//send the request
 	        std::ostream& os = session.sendRequest(req);
@@ -168,12 +175,16 @@ namespace tools
 				HttpResponse http_response;
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
+				//todo
+				http_response.cookies = response.get("Cookies");
 				return http_response;
 			}
 
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -183,6 +194,8 @@ namespace tools
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 	}
@@ -251,12 +264,16 @@ namespace tools
 				HttpResponse http_response;
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
+				//todo
+				http_response.cookies = response.get("Cookies");
 				return http_response;
 			}
 
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -266,6 +283,8 @@ namespace tools
 			HttpResponse http_response;
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
+			//todo
+			http_response.cookies = response.get("Cookies");
 			return http_response;
 		}
 	}
