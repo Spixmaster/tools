@@ -16,6 +16,7 @@ namespace tools
 		//member variables
 		int code;
 		std::string txt;
+		std::string cookies;
 	};
 }
 
