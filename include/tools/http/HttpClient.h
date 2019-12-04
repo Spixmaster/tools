@@ -7,6 +7,7 @@
 #include "tools/http/HttpResponse.h"
 #include <vector>
 #include "tools/http/HttpHeader.h"
+#include <variant>
 
 //@brief class does all http requests
 
@@ -32,15 +33,9 @@ namespace tools
 
 		/*
 		 * @param url: to which server the request shall be sent
-		 * @param http_args: http args which are sent with the request
+		 * @param http_comp: either contains the http headers or the http args
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args);
-
-		/*
-		 * @param url: to which server the request shall be sent
-		 * @param http_headers: http headers which are sent with the request (key: value)
-		 */
-		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers);
+		HttpClient(const std::string &url, const std::variant<std::vector<HttpHeader>, std::vector<HttpArg>> &http_comp);
 
 		/*
 		 * @param url: to which server the request shall be sent

@@ -15,18 +15,19 @@
 
 namespace tools
 {
-
 	HttpClient::HttpClient(const std::string &url) :
 			m_url(url)
 	{}
 
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args) :
-			m_url(url), m_http_args(http_args)
-	{}
-
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers) :
-			m_url(url), m_http_headers(http_headers)
-	{}
+	HttpClient::HttpClient(const std::string &url, const std::variant<std::vector<HttpHeader>, std::vector<HttpArg>> &http_comp) :
+			m_url(url)
+	{
+		if(std::holds_alternative<std::vector<HttpHeader>>(http_comp))
+			m_http_headers = std::get<std::vector<HttpHeader>>(http_comp);
+		//for sure std::vector<HttpArg>
+		else
+			m_http_args = std::get<std::vector<HttpArg>>(http_comp);
+	}
 
 	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args) :
 			m_url(url), m_http_headers(http_headers), m_http_args(http_args)
