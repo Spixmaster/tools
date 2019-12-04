@@ -37,6 +37,7 @@ namespace tools
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;
 		std::string http_response_txt;
+		std::string http_response_cookies;
 
 		try
 		{
@@ -72,6 +73,7 @@ namespace tools
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
 			http_response_txt = oss.str();
+			http_response_cookies = response.get("Cookies");
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
 			{
@@ -83,7 +85,7 @@ namespace tools
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
 				//todo
-				http_response.cookies = response.get("Cookies");
+				http_response.cookies = http_response_cookies;
 				return http_response;
 			}
 
@@ -91,7 +93,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -102,7 +104,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 	}
@@ -111,6 +113,7 @@ namespace tools
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_txt;
+		std::string http_response_cookies;
 
 		try
 		{
@@ -176,7 +179,7 @@ namespace tools
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
 				//todo
-				http_response.cookies = response.get("Cookies");
+				http_response.cookies = http_response_cookies;
 				return http_response;
 			}
 
@@ -184,7 +187,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -195,7 +198,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 	}
@@ -204,6 +207,7 @@ namespace tools
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_txt;
+		std::string http_response_cookies;
 
 		try
 		{
@@ -265,7 +269,7 @@ namespace tools
 				http_response.code = http_response_code;
 				http_response.txt = http_response_txt;
 				//todo
-				http_response.cookies = response.get("Cookies");
+				http_response.cookies = http_response_cookies;
 				return http_response;
 			}
 
@@ -273,7 +277,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 		catch(std::exception &e)
@@ -284,7 +288,7 @@ namespace tools
 			http_response.code = http_response_code;
 			http_response.txt = http_response_txt;
 			//todo
-			http_response.cookies = response.get("Cookies");
+			http_response.cookies = http_response_cookies;
 			return http_response;
 		}
 	}
