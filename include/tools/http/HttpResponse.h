@@ -19,6 +19,14 @@ namespace tools
 		int m_code;
 		std::vector<HttpHeader> m_headers;
 		std::string m_body;
+
+		//constructors
+		/*
+		 * @param code: request's status code
+		 * @param headers: vector where each element represents a header
+		 * @param body: the request's body
+		 */
+		HttpResponse(const int &code, const std::vector<HttpHeader> &headers, const std::string &body);
 	};
 }
 
