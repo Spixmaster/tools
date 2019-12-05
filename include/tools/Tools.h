@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <Poco/Crypto/DigestEngine.h>
 
 /*
  * @brief content: all functions for general C++ use or generally necessary for this project
@@ -12,6 +13,19 @@
 
 namespace tools
 {
+	class SHA256Engine : public Poco::Crypto::DigestEngine
+	{
+	public:
+		enum
+		{
+			BLOCK_SIZE = 64,
+			DIGEST_SIZE = 32
+		};
+
+		SHA256Engine() : DigestEngine("SHA256")
+		{}
+	};
+
 	class Tools
 	{
 	public:
@@ -208,11 +222,18 @@ namespace tools
 		static std::string get_exe_path();
 
 		/*
-		 * @brief returns an md5 hash for the proper seed
+		 * @brief returns a md5 hash for the proper seed
 		 * @param seed: seed which shall be encrypted
 		 * @return the md5 hash
 		 */
 		static std::string md5_hash(const std::string &seed);
+
+		/*
+		 * @brief returns a hmac hash for the proper seed
+		 * @param seed: seed which shall be encrypted
+		 * @return the hmac hash
+		 */
+		static std::string hmac_hash(const std::string &secret_key, const std::string &str);
 	};
 }
 
