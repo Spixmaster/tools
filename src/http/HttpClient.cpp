@@ -201,8 +201,8 @@ namespace tools
 	        {
 	        	std::cout << "The http request headers:" << std::endl;
 				req.write(std::cout);
-				std::cout << "\nThe http request body:" << std::endl;
-				std::cout << http_body << std::endl;
+				std::cout << "The http request body:" << std::endl;
+				std::cout << http_body << std::endl << std::endl;
 	        }
 
 			//response
@@ -316,8 +316,8 @@ namespace tools
 	        {
 	        	std::cout << "The http request headers:" << std::endl;
 				req.write(std::cout);
-				std::cout << "\nThe http request body:" << std::endl;
-				std::cout << http_body << std::endl;
+				std::cout << "The http request body:" << std::endl;
+				std::cout << http_body << std::endl << std::endl;
 	        }
 
 			//response
