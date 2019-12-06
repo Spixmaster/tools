@@ -48,18 +48,31 @@ namespace tools
 
 		/*
 		 * @brief makes a simple get request
+		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
 		HttpResponse send_get_req(const bool &debug = false);
 
 		/*
 		 * @brief makes a post request via application/x-www-form-urlencoded
+		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
 		HttpResponse send_post_req_urlencoded(const bool &debug = false);
 
 		/*
+		 * @brief the function which is overloaded is almost the same
+		 * @brief makes a post request via application/x-www-form-urlencoded
+		 * @brief necessary as Instagram for example demands very specific http bodies: hmac sha256 hashed and prefix
+		 * @param http_body: the special http body which is going to be sent
+		 * @param debug: prints to stdout headers and args of the request and the response
+		 * @return the server response
+		 */
+		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false);
+
+		/*
 		 * @brief makes a post request via multipart/form-data
+		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
 		HttpResponse send_post_req_multipart(const bool &debug = false);
