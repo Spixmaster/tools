@@ -199,8 +199,10 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The request:" << std::endl;
+	        	std::cout << "The http request headers:" << std::endl;
 				req.write(std::cout);
+				std::cout << "\nThe http request body:" << std::endl;
+				std::cout << http_body << std::endl;
 	        }
 
 			//response
@@ -312,8 +314,10 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The request:" << std::endl;
+	        	std::cout << "The http request headers:" << std::endl;
 				req.write(std::cout);
+				std::cout << "\nThe http request body:" << std::endl;
+				std::cout << http_body << std::endl;
 	        }
 
 			//response
