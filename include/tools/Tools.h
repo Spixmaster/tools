@@ -229,9 +229,10 @@ namespace tools
 		static std::string md5_hash(const std::string &seed);
 
 		/*
-		 * @brief returns a hmac hash for the proper seed
-		 * @param seed: seed which shall be encrypted
-		 * @return the hmac hash
+		 * @brief returns a hmac sha256 hash for the proper string
+		 * @param secret_key: key for the hmac encryption
+		 * @param str: actual string which shall be encoded
+		 * @return the hmac sha256 hash
 		 */
 		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str);
 	};
