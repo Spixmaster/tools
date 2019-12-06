@@ -172,14 +172,22 @@ namespace tools
 			for (std::size_t j = 0; j < m_http_args.size(); ++j)
 			{
 				if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+				{
 					http_body.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
-				else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
-					http_body.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
-				//value is type of InputFile::ptr and thus ignored
 
-				//add & for next key value pair
-				if(j < (m_http_args.size() - 1))
-					http_body.append("&");
+					//add & for next key value pair
+					if(j < (m_http_args.size() - 1))
+						http_body.append("&");
+				}
+				else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+				{
+					http_body.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
+
+					//add & for next key value pair
+					if(j < (m_http_args.size() - 1))
+						http_body.append("&");
+				}
+				//value is type of InputFile::ptr and thus ignored
 			}
 			if(!http_body.empty())
 				req.setContentLength(http_body.length());
