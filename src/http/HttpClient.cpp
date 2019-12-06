@@ -94,7 +94,7 @@ namespace tools
 				std::cout << "The server response headers:" << std::endl;
 				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl;
+				std::cout << http_response_body << std::endl << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
@@ -230,7 +230,7 @@ namespace tools
 				std::cout << "The server response headers:" << std::endl;
 				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl;
+				std::cout << http_response_body << std::endl << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
@@ -345,7 +345,7 @@ namespace tools
 				std::cout << "The server response headers:" << std::endl;
 				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl;
+				std::cout << http_response_body << std::endl << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
@@ -467,7 +467,7 @@ namespace tools
 				std::cout << "The server response headers:" << std::endl;
 				std::cout << http_repsonse_headers << std::endl << std::endl;
 				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl;
+				std::cout << http_response_body << std::endl << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
