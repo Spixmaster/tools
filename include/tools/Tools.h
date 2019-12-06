@@ -233,7 +233,7 @@ namespace tools
 		 * @param seed: seed which shall be encrypted
 		 * @return the hmac hash
 		 */
-		static std::string hmac_hash(const std::string &secret_key, const std::string &str);
+		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str);
 	};
 }
 

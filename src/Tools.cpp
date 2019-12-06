@@ -532,7 +532,7 @@ namespace tools
 	    return Poco::DigestEngine::digestToHex(md5.digest());
 	}
 
-	std::string Tools::hmac_hash(const std::string &secret_key, const std::string &str)
+	std::string Tools::hmac_sha256_hash(const std::string &secret_key, const std::string &str)
 	{
 		Poco::HMACEngine<SHA256Engine> hmac{secret_key};
 		hmac.update(str);
