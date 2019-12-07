@@ -235,13 +235,6 @@ namespace tools
 		 * @return the hmac sha256 hash
 		 */
 		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str);
-
-		/*
-		 * @brief substitutes non-ascii with %*
-		 * @param url: url which shall be parsed
-		 * @return the parsed url
-		 */
-		static std::string url_parse(const std::string &url);
 	};
 }
 
