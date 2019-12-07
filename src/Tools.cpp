@@ -8,6 +8,7 @@
 #include "Poco/MD5Engine.h"
 #include "Poco/DigestStream.h"
 #include "Poco/HMACEngine.h"
+#include <Poco/URI.h>
 
 namespace tools
 {
@@ -537,5 +538,12 @@ namespace tools
 		Poco::HMACEngine<SHA256Engine> hmac{secret_key};
 		hmac.update(str);
 		return Poco::DigestEngine::digestToHex(hmac.digest());
+	}
+
+	std::string Tools::parse_url(const std::string &url, const std::string &escaped_chars)
+	{
+		std::string temp;
+		Poco::URI::encode(url, escaped_chars, temp);
+		return temp;
 	}
 }

@@ -235,6 +235,13 @@ namespace tools
 		 * @return the hmac sha256 hash
 		 */
 		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str);
+
+		/*
+		 * @brief substitutes non-ascii characters with escaped chars %...
+		 * @param url: url which shall be encoded
+		 * @return the parsed url
+		 */
+		static std::string parse_url(const std::string &url, const std::string &escaped_chars);
 	};
 }
 
