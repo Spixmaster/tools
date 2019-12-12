@@ -9,6 +9,8 @@
 #include "Poco/DigestStream.h"
 #include "Poco/HMACEngine.h"
 #include <Poco/URI.h>
+#include "tools/SHA256Engine.h"
+#include <sstream>
 
 namespace tools
 {
@@ -545,5 +547,108 @@ namespace tools
 		std::string temp;
 		Poco::URI::encode(url, escaped_chars, temp);
 		return temp;
+	}
+
+	std::string Tools::encode_utf8(const std::wstring &wstr)
+	{
+		std::string utf8_encoded;
+
+		//iterate through the whole string
+		for(size_t j = 0; j < wstr.size(); ++j)
+		{
+			if(wstr.at(j) <= 0x7F)
+				utf8_encoded += wstr.at(j);
+			else if(wstr.at(j) <= 0x7FF)
+			{
+				//our template for unicode of 2 bytes
+				int utf8 = 0b11000000'10000000;
+
+				//get the first 6 bits and save them
+				utf8 += wstr.at(j) & 0b00111111;
+
+				/*
+				 * get the last 5 remaining bits
+				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b00000111'11000000) << 2;
+
+				//append to the result
+				std::string temp = Tools::to_hex(utf8);
+				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x"));
+			}
+			else if(wstr.at(j) <= 0xFFFF)
+			{
+				//our template for unicode of 3 bytes
+				int utf8 = 0b11100000'10000000'10000000;
+
+				//get the first 6 bits and save them
+				utf8 += wstr.at(j) & 0b00111111;
+
+				/*
+				 * get the next 6 bits
+				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b00001111'11000000) << 2;
+
+				/*
+				 * get the last 4 remaining bits
+				 * put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b11110000'00000000) << 4;
+
+				//append to the result
+				std::string temp = Tools::to_hex(utf8);
+				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x"));
+			}
+			else if(wstr.at(j) <= 0x10FFFF)
+			{
+				//our template for unicode of 4 bytes
+				int utf8 = 0b11110000'10000000'10000000'10000000;
+
+				//get the first 6 bits and save them
+				utf8 += wstr.at(j) & 0b00111111;
+
+				/*
+				 * get the next 6 bits
+				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b00001111'11000000) << 2;
+
+				/*
+				 * get the next 6 bits
+				 * put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b00000011'11110000'00000000) << 4;
+
+				/*
+				 * get the last 3 remaining bits
+				 * put them 6 to the left so that the 10xxxx from 10xxxxxx (third byte) is not overwritten
+				 */
+				utf8 += (wstr.at(j) & 0b00011100'00000000'00000000) << 4;
+
+				//append to the result
+				std::string temp = Tools::to_hex(utf8);
+				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x").insert(12, "\\x"));
+			}
+		}
+		return utf8_encoded;
+	}
+
+	std::string Tools::to_oct(const int &val)
+	{
+	    std::string result;
+	    std::stringstream ss;
+	    ss << std::oct << val;
+	    ss >> result;
+	    return result;
+	}
+
+	std::string Tools::to_hex(const int &val)
+	{
+	    std::string result;
+	    std::stringstream ss;
+	    ss << std::hex << val;
+	    ss >> result;
+	    return result;
 	}
 }

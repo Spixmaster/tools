@@ -13,19 +13,6 @@
 
 namespace tools
 {
-	class SHA256Engine : public Poco::Crypto::DigestEngine
-	{
-	public:
-		enum
-		{
-			BLOCK_SIZE = 64,
-			DIGEST_SIZE = 32
-		};
-
-		SHA256Engine() : DigestEngine("SHA256")
-		{}
-	};
-
 	class Tools
 	{
 	public:
@@ -242,6 +229,28 @@ namespace tools
 		 * @return the parsed url
 		 */
 		static std::string parse_url(const std::string &url, const std::string &escaped_chars);
+
+		/*
+		 * @brief with the help of https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5
+		 * @brief substitutes non-ascii characters with the hex value of the char
+		 * @param str: string which shall be encoded
+		 * @return the parsed string
+		 */
+		static std::string encode_utf8(const std::wstring &wstr);
+
+		/*
+		 * @brief expects an int and turns it into its octal equivalent
+		 * @param val: the int which shall be converted
+		 * @return the octal value as a string
+		 */
+		static std::string to_oct(const int &val);
+
+		/*
+		 * @brief expects an int and turns it into its hexadecimal equivalent
+		 * @param val: the int which shall be converted
+		 * @return the hexadecimal value as a string
+		 */
+		static std::string to_hex(const int &val);
 	};
 }
 
