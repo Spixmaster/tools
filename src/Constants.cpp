@@ -4,8 +4,8 @@
 
 namespace tools
 {
-	const std::string Constants::version = "1.0.3";
-	const std::string Constants::release = "13.Dec.2019";
+	const std::string Constants::version = "1.0.4";
+	const std::string Constants::release = "14.Dec.2019";
 
 	void Constants::file_non_existent(const std::string &file)
 	{
