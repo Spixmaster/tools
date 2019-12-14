@@ -55,10 +55,11 @@ namespace tools
 
 		/*
 		 * @brief makes a post request via application/x-www-form-urlencoded
+		 * @param body_json: converts the http args to json before they are sent
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const bool &debug = false);
+		HttpResponse send_post_req_urlencoded(const bool body_json = false, const bool &debug = false);
 
 		/*
 		 * @brief the function which is overloaded is almost the same
