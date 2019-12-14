@@ -707,9 +707,8 @@ namespace tools
 
 					return val;
 				}
-				return "Error. The key could not be found.";
 			}
 		}
-		return "Error. The value could not be got.";
+		return "";
 	}
 }
