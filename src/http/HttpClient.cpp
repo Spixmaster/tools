@@ -141,7 +141,7 @@ namespace tools
 		}
 	}
 
-	HttpResponse HttpClient::send_post_req_urlencoded(const bool &debug)
+	HttpResponse HttpClient::send_post_req_urlencoded(const bool body_json, const bool &debug)
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_body;
@@ -169,26 +169,55 @@ namespace tools
 
 				//http body
 			std::string http_body;
-			for (std::size_t j = 0; j < m_http_args.size(); ++j)
+			if(!body_json)
 			{
-				if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+				for (std::size_t j = 0; j < m_http_args.size(); ++j)
 				{
-					http_body.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
+					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+					{
+						http_body.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
 
-					//add & for next key value pair
-					if(j < (m_http_args.size() - 1))
-						http_body.append("&");
-				}
-				else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
-				{
-					http_body.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
+						//add & for next key value pair
+						if(j < (m_http_args.size() - 1))
+							http_body.append("&");
+					}
+					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+					{
+						http_body.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
 
-					//add & for next key value pair
-					if(j < (m_http_args.size() - 1))
-						http_body.append("&");
+						//add & for next key value pair
+						if(j < (m_http_args.size() - 1))
+							http_body.append("&");
+					}
+					//value is type of InputFile::ptr and thus ignored
 				}
-				//value is type of InputFile::ptr and thus ignored
 			}
+			else
+			{
+				http_body.append("{");
+				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				{
+					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+					{
+						http_body.append("\"" + m_http_args.at(j).m_key + "\": " + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
+
+						//add , for next json key value pair
+						if(j < (m_http_args.size() - 1))
+							http_body.append(", ");
+					}
+					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+					{
+						http_body.append("\"" + m_http_args.at(j).m_key + "\": \"" + std::get<std::string>(m_http_args.at(j).m_value) + "\"");
+
+						//add , for next json key value pair
+						if(j < (m_http_args.size() - 1))
+							http_body.append(", ");
+					}
+					//value is type of InputFile::ptr and thus ignored
+				}
+				http_body.append("}");
+			}
+
 			if(!http_body.empty())
 				req.setContentLength(http_body.length());
 
