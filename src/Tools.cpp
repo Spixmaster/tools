@@ -733,11 +733,39 @@ namespace tools
 		std::stringstream compressed(data);
 		std::stringstream decompressed;
 
-		boost::iostreams::filtering_streambuf<boost::iostreams::input> out;
-		out.push(boost::iostreams::gzip_decompressor());
-		out.push(compressed);
-		boost::iostreams::copy(out, decompressed);
+		try
+		{
+			boost::iostreams::filtering_streambuf<boost::iostreams::input> out;
+			out.push(boost::iostreams::gzip_decompressor());
+			out.push(compressed);
+			boost::iostreams::copy(out, decompressed);
 
-		return decompressed.str();
+			return decompressed.str();
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << "Error. That is not gzip compressed data." << std::endl;
+			return "Error. That is not gzip compressed data.";
+		}
+	}
+
+	bool is_gzipped(const std::string &data)
+	{
+		std::stringstream compressed(data);
+		std::stringstream decompressed;
+
+		try
+		{
+			boost::iostreams::filtering_streambuf<boost::iostreams::input> out;
+			out.push(boost::iostreams::gzip_decompressor());
+			out.push(compressed);
+			boost::iostreams::copy(out, decompressed);
+
+			return true;
+		}
+		catch(const std::exception &e)
+		{
+			return false;
+		}
 	}
 }
