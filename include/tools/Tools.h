@@ -263,7 +263,7 @@ namespace tools
 		static std::string get_val(const std::string &cont, const std::string &key);
 
 		/*
-		 * @breif copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
+		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
 		 * @brief gzip compresses data
 		 * @param data: the data to gzip compress
 		 * @return the compressed data
@@ -271,7 +271,7 @@ namespace tools
 		static std::string gzip_compress(const std::string &data);
 
 		/*
-		 * @breif copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
+		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
 		 * @brief decompresses gzip compressed data
 		 * @param data: the gzip compressed data
 		 * @return the decompressed data
