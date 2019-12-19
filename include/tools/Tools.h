@@ -277,6 +277,13 @@ namespace tools
 		 * @return the decompressed data
 		 */
 		static std::string gzip_decompress(const std::string &data);
+
+		/*
+		 * @brief checks whether data is gzipped
+		 * @param data: the possible gzip compressed data
+		 * @return whether gzip compressed
+		 */
+		static bool is_gzipped(const std::string &data);
 	};
 }
 
