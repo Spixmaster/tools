@@ -749,7 +749,7 @@ namespace tools
 		}
 	}
 
-	bool is_gzipped(const std::string &data)
+	bool Tools::is_gzipped(const std::string &data)
 	{
 		std::stringstream compressed(data);
 		std::stringstream decompressed;
