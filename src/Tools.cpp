@@ -11,6 +11,9 @@
 #include <Poco/URI.h>
 #include "tools/SHA256Engine.h"
 #include <sstream>
+#include <boost/iostreams/filtering_streambuf.hpp>
+#include <boost/iostreams/copy.hpp>
+#include <boost/iostreams/filter/gzip.hpp>
 
 namespace tools
 {
@@ -710,5 +713,31 @@ namespace tools
 			}
 		}
 		return "";
+	}
+
+	std::string Tools::gzip_compress(const std::string &data)
+	{
+		std::stringstream compressed;
+		std::stringstream origin(data);
+
+		boost::iostreams::filtering_streambuf<boost::iostreams::input> out;
+		out.push(boost::iostreams::gzip_compressor(boost::iostreams::gzip_params(boost::iostreams::gzip::best_compression)));
+		out.push(origin);
+		boost::iostreams::copy(out, compressed);
+
+		return compressed.str();
+	}
+
+	std::string Tools::gzip_decompress(const std::string &data)
+	{
+		std::stringstream compressed(data);
+		std::stringstream decompressed;
+
+		boost::iostreams::filtering_streambuf<boost::iostreams::input> out;
+		out.push(boost::iostreams::gzip_decompressor());
+		out.push(compressed);
+		boost::iostreams::copy(out, decompressed);
+
+		return decompressed.str();
 	}
 }
