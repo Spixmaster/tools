@@ -13,6 +13,7 @@
 #include <Poco/Exception.h>
 #include <string>
 #include <Poco/Net/NameValueCollection.h>
+#include "tools/Tools.h"
 
 namespace tools
 {
@@ -75,7 +76,11 @@ namespace tools
 			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_body = oss.str();
+				//check whether response http body is gzipped --> decompress in case
+			if(tools::Tools::is_gzipped(oss.str()))
+				http_response_body = tools::Tools::gzip_decompress(oss.str());
+			else
+				http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -240,7 +245,11 @@ namespace tools
 			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_body = oss.str();
+				//check whether response http body is gzipped --> decompress in case
+			if(tools::Tools::is_gzipped(oss.str()))
+				http_response_body = tools::Tools::gzip_decompress(oss.str());
+			else
+				http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -355,7 +364,11 @@ namespace tools
 			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_body = oss.str();
+				//check whether response http body is gzipped --> decompress in case
+			if(tools::Tools::is_gzipped(oss.str()))
+				http_response_body = tools::Tools::gzip_decompress(oss.str());
+			else
+				http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
@@ -477,7 +490,11 @@ namespace tools
 			std::istream &in = session.receiveResponse(response);
 			http_response_code = response.getStatus();
 			Poco::StreamCopier::copyStream(in, oss);
-			http_response_body = oss.str();
+				//check whether response http body is gzipped --> decompress in case
+			if(tools::Tools::is_gzipped(oss.str()))
+				http_response_body = tools::Tools::gzip_decompress(oss.str());
+			else
+				http_response_body = oss.str();
 
 			//print response
 			if(debug == true)
