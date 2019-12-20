@@ -9,6 +9,6 @@ namespace tools
 
 	void Constants::file_non_existent(const std::string &file)
 	{
-		std::cerr << "Error. The file \"" + file + "\" does not exist." << std::endl;
+		std::cerr << "Error: The file \"" + file + "\" does not exist." << std::endl;
 	}
 }
