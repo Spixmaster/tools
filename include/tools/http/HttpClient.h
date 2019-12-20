@@ -33,9 +33,15 @@ namespace tools
 
 		/*
 		 * @param url: to which server the request shall be sent
-		 * @param http_comp: either contains the http headers or the http args
+		 * @param http_headers: contains the http headers
 		 */
-		HttpClient(const std::string &url, const std::variant<std::vector<HttpHeader>, std::vector<HttpArg>> &http_comp);
+		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers);
+
+		/*
+		 * @param url: to which server the request shall be sent
+		 * @param http_args: contains the http args
+		 */
+		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args);
 
 		/*
 		 * @param url: to which server the request shall be sent
