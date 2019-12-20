@@ -3,22 +3,27 @@
 
 #include <Poco/Crypto/DigestEngine.h>
 
-class SHA256Engine : public Poco::Crypto::DigestEngine
+//@brief a simple help class that is only needed due to Poco
+
+namespace tools
 {
-public:
-	//pointer of itself
-	typedef std::shared_ptr<SHA256Engine> ptr;
-
-	//member variables
-	enum
+	class SHA256Engine : public Poco::Crypto::DigestEngine
 	{
-		BLOCK_SIZE = 64,
-		DIGEST_SIZE = 32
-	};
+	public:
+		//pointer of itself
+		typedef std::shared_ptr<SHA256Engine> ptr;
 
-	//constructors
-	SHA256Engine() : DigestEngine("SHA256")
-	{}
-};
+		//member variables
+		enum
+		{
+			BLOCK_SIZE = 64,
+			DIGEST_SIZE = 32
+		};
+
+		//constructors
+		SHA256Engine() : DigestEngine("SHA256")
+		{}
+	};
+}
 
 #endif
