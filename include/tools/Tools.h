@@ -20,7 +20,6 @@ namespace tools
 		typedef std::shared_ptr<Tools> ptr;
 
 		//member functions
-
 		/*
 		 * @brief lists down all words in a vector
 		 * @brief one vector location --> one word
