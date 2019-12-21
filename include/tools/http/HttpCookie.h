@@ -19,6 +19,9 @@ namespace tools
 
 	private:
 		//member variables
+			//
+		std::string m_origin;
+			//cookie traits
 		std::string m_name;
 		std::string m_value;
 		std::string m_domain;
@@ -47,6 +50,12 @@ namespace tools
 		static std::string get_val(const std::string &cont, const std::string &key);
 
 	public:
+		/*
+		 * @brief accesses a private member variable
+		 * @return m_origin
+		 */
+		std::string to_string() const;
+
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_name

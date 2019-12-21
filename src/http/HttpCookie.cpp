@@ -4,7 +4,7 @@
 
 namespace tools
 {
-	HttpCookie::HttpCookie(const std::string &set_cookie_val)
+	HttpCookie::HttpCookie(const std::string &set_cookie_val) : m_origin(set_cookie_val)
 	{
 		for(size_t j = 0; j < set_cookie_val.size(); ++j)
 		{
@@ -89,6 +89,11 @@ namespace tools
 			}
 		}
 		return "";
+	}
+
+	std::string HttpCookie::to_string() const
+	{
+		return m_origin;
 	}
 
 	std::string HttpCookie::get_name() const
