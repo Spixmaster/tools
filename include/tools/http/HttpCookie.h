@@ -46,6 +46,7 @@ namespace tools
 		 */
 		std::string get_val(const std::string &cont, const std::string &key);
 
+	public:
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_name
