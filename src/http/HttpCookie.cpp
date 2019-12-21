@@ -21,6 +21,8 @@ namespace tools
 		{
 			if(!get_val(set_cookie_val, "Max-Age").empty())
 				m_max_age = std::stoi(get_val(set_cookie_val, "Max-Age"));
+			else
+				m_max_age = -1;
 		}
 		catch(const std::exception &e)
 		{
