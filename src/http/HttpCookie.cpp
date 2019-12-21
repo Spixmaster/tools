@@ -1,6 +1,6 @@
 #include "tools/http/HttpCookie.h"
 #include "tools/Tools.h"
-#include <iostream> //todo
+#include <iostream>
 
 namespace tools
 {
@@ -91,42 +91,42 @@ namespace tools
 		return "";
 	}
 
-	std::string HttpCookie::get_name()
+	std::string HttpCookie::get_name() const
 	{
 		return m_name;
 	}
 
-	std::string HttpCookie::get_value()
+	std::string HttpCookie::get_value() const
 	{
 		return m_value;
 	}
 
-	std::string HttpCookie::get_domain()
+	std::string HttpCookie::get_domain() const
 	{
 		return m_domain;
 	}
 
-	std::string HttpCookie::get_path()
+	std::string HttpCookie::get_path() const
 	{
 		return m_path;
 	}
 
-	std::string HttpCookie::get_expires()
+	std::string HttpCookie::get_expires() const
 	{
 		return m_expires;
 	}
 
-	int HttpCookie::get_max_age()
+	int HttpCookie::get_max_age() const
 	{
 		return m_max_age;
 	}
 
-	bool HttpCookie::get_http_only()
+	bool HttpCookie::get_http_only() const
 	{
 		return m_http_only;
 	}
 
-	bool HttpCookie::get_secure()
+	bool HttpCookie::get_secure() const
 	{
 		return m_secure;
 	}

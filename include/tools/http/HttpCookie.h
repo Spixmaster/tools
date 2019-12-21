@@ -44,56 +44,56 @@ namespace tools
 		 * @param key: key of the value that we want
 		 * @return the found value
 		 */
-		std::string get_val(const std::string &cont, const std::string &key);
+		static std::string get_val(const std::string &cont, const std::string &key);
 
 	public:
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_name
 		 */
-		std::string get_name();
+		std::string get_name() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_value
 		 */
-		std::string get_value();
+		std::string get_value() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_domain
 		 */
-		std::string get_domain();
+		std::string get_domain() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_path
 		 */
-		std::string get_path();
+		std::string get_path() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_expires
 		 */
-		std::string get_expires();
+		std::string get_expires() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_max_age
 		 */
-		int get_max_age();
+		int get_max_age() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_http_only
 		 */
-		bool get_http_only();
+		bool get_http_only() const;
 
 		/*
 		 * @brief accesses a private member variable
 		 * @return m_secure
 		 */
-		bool get_secure();
+		bool get_secure() const;
 	};
 }
 
