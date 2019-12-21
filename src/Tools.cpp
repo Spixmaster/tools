@@ -655,66 +655,6 @@ namespace tools
 	    return result;
 	}
 
-	std::string Tools::get_val(const std::string &cont, const std::string &key)
-	{
-		bool key_found = false;
-
-		//iterate through the content
-		for(size_t j = 0; j < cont.size(); ++j)
-		{
-			//we iterate through the content as long as we have found the key's first char
-			if(cont.at(j) == key.at(0))
-			{
-				/*
-				 * save the value of j so that we do not manipulate it itself
-				 * now, we iterate through the key and check whether is corresponds to the following content chars
-				 */
-				size_t temp = j;
-				//iterate through the key
-				for(size_t k = 0; k < key.size(); ++k)
-				{
-					/*
-					 * check whether we are still in the range of cont to access cont.at(temp)
-					 * -1 as we check whether the next char is '='
-					 */
-					if(temp < (cont.size() - 1))
-					{
-						if(!(cont.at(temp) == key.at(k)))
-							break;
-
-						/*
-						 * the key is found when we were able to iterate through the whole key without breaking out of the loop
-						 * additional conditions: next char in cont would be '='
-						 */
-						if(k == key.size() - 1 && cont.at(temp + 1) == '=')
-							key_found = true;
-
-						++temp;
-					}
-					else
-						break;
-				}
-
-				//get the value
-				std::string val;
-				if(key_found == true)
-				{
-					//right now, temp is at the '=' in cont
-					for(size_t l = temp + 1; l < cont.size(); ++l)
-					{
-						if(cont.at(l) == ';')
-							break;
-
-						val += cont.at(l);
-					}
-
-					return val;
-				}
-			}
-		}
-		return "";
-	}
-
 	std::string Tools::gzip_compress(const std::string &data)
 	{
 		std::stringstream compressed;

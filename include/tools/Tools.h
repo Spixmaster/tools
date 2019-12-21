@@ -252,16 +252,6 @@ namespace tools
 		static std::string to_hex(const int &val);
 
 		/*
-		 * @brief gets the value of a key value pair only which is in the following format: key=value;
-		 * @brief key=value is accepted too but only if the value is the end of the given string
-		 * @example csrftoken=tm6NSZWRJk57zpkLfPHygPnrea10wJS5; Domain=.instagram.com; expires=Sat, 12-Dec-2020 07:13:39 GMT; Max-Age=31449600; Path=/; Secure
-		 * @param cont: location where to search
-		 * @param key: key of the value that we want
-		 * @return the found value
-		 */
-		static std::string get_val(const std::string &cont, const std::string &key);
-
-		/*
 		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
 		 * @brief gzip compresses data
 		 * @param data: the data to gzip compress

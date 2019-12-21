@@ -51,7 +51,6 @@ namespace tools
 		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args);
 
 		//member functions
-
 		/*
 		 * @brief makes a simple get request
 		 * @param debug: prints to stdout headers and args of the request and the response
