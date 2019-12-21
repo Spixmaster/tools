@@ -34,6 +34,7 @@ namespace tools
 		//@param set_cookie_val: value of the http header "Set-Cookie"
 		HttpCookie(const std::string &set_cookie_val);
 
+	private:
 		//member functions
 		/*
 		 * @brief gets the value of a key value pair only which is in the following format: key=value;
@@ -43,7 +44,7 @@ namespace tools
 		 * @param key: key of the value that we want
 		 * @return the found value
 		 */
-		static std::string get_val(const std::string &cont, const std::string &key);
+		std::string get_val(const std::string &cont, const std::string &key);
 
 		/*
 		 * @brief accesses a private member variable
