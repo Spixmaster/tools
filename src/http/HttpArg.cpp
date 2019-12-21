@@ -10,7 +10,7 @@ namespace tools
 			m_value = std::get<long long>(value);
 		else if(std::holds_alternative<std::string>(value))
 			m_value = std::get<std::string>(value);
-		else
+		else if(std::holds_alternative<InputFile::ptr>(value))
 			m_value = std::get<InputFile::ptr>(value);
 	}
 }
