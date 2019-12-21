@@ -464,8 +464,7 @@ namespace tools
 					form.set(m_http_args.at(j).m_key, std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
 				else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
 					form.set(m_http_args.at(j).m_key, std::get<std::string>(m_http_args.at(j).m_value));
-				//value is type of InputFile::ptr
-				else
+				else if(std::holds_alternative<InputFile::ptr>(m_http_args.at(j).m_value))
 					form.addPart(m_http_args.at(j).m_key, new Poco::Net::FilePartSource(std::get<InputFile::ptr>(m_http_args.at(j).m_value)->m_path));
 			}
 
