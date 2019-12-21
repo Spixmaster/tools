@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include "tools/http/HttpHeader.h"
+#include "tools/http/HttpCookie.h"
 
 //@brief struct that contains some information about the http request
 
@@ -19,6 +20,7 @@ namespace tools
 		int m_code;
 		std::vector<HttpHeader> m_headers;
 		std::string m_body;
+		std::vector<HttpCookie> m_cookies;
 
 		//constructors
 		/*
@@ -26,7 +28,7 @@ namespace tools
 		 * @param headers: vector where each element represents a header
 		 * @param body: the request's body
 		 */
-		HttpResponse(const int &code, const std::vector<HttpHeader> &headers, const std::string &body);
+		HttpResponse(const int &code, const std::vector<HttpHeader> &headers, const std::string &body, const std::vector<HttpCookie> &cookies);
 	};
 }
 

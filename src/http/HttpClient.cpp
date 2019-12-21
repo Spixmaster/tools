@@ -14,6 +14,7 @@
 #include <string>
 #include <Poco/Net/NameValueCollection.h>
 #include "tools/Tools.h"
+#include <boost/algorithm/string.hpp>
 
 namespace tools
 {
@@ -112,7 +113,13 @@ namespace tools
 					temp_http_headers.push_back(http_header);
 					++j;
 				}
-				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+				std::vector<HttpCookie> http_cookies;
+				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				{
+					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 				return http_response;
 			}
@@ -126,7 +133,13 @@ namespace tools
 				temp_http_headers.push_back(http_header);
 				++j;
 			}
-			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+			std::vector<HttpCookie> http_cookies;
+			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			{
+				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 			return http_response;
 		}
@@ -135,7 +148,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body, std::vector<HttpCookie>());
 
 			return http_response;
 		}
@@ -281,7 +294,13 @@ namespace tools
 					temp_http_headers.push_back(http_header);
 					++j;
 				}
-				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+				std::vector<HttpCookie> http_cookies;
+				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				{
+					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 				return http_response;
 			}
@@ -295,7 +314,13 @@ namespace tools
 				temp_http_headers.push_back(http_header);
 				++j;
 			}
-			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+			std::vector<HttpCookie> http_cookies;
+			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			{
+				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 			return http_response;
 		}
@@ -304,7 +329,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body, std::vector<HttpCookie>());
 
 			return http_response;
 		}
@@ -400,7 +425,13 @@ namespace tools
 					temp_http_headers.push_back(http_header);
 					++j;
 				}
-				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+				std::vector<HttpCookie> http_cookies;
+				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				{
+					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 				return http_response;
 			}
@@ -414,7 +445,13 @@ namespace tools
 				temp_http_headers.push_back(http_header);
 				++j;
 			}
-			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+			std::vector<HttpCookie> http_cookies;
+			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			{
+				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 			return http_response;
 		}
@@ -423,7 +460,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body, std::vector<HttpCookie>());
 
 			return http_response;
 		}
@@ -525,7 +562,13 @@ namespace tools
 					temp_http_headers.push_back(http_header);
 					++j;
 				}
-				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+				std::vector<HttpCookie> http_cookies;
+				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				{
+					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+				}
+				HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 				return http_response;
 			}
@@ -539,7 +582,13 @@ namespace tools
 				temp_http_headers.push_back(http_header);
 				++j;
 			}
-			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body);
+			std::vector<HttpCookie> http_cookies;
+			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			{
+				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
+					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
+			}
+			HttpResponse http_response(http_response_code, temp_http_headers, http_response_body, http_cookies);
 
 			return http_response;
 		}
@@ -548,7 +597,7 @@ namespace tools
 			std::cerr << e.what() << std::endl;
 
 			//http response without http header as not accessible
-			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body);
+			HttpResponse http_response(http_response_code, std::vector<HttpHeader>(), http_response_body, std::vector<HttpCookie>());
 
 			return http_response;
 		}
