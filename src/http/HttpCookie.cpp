@@ -1,5 +1,6 @@
 #include "tools/http/HttpCookie.h"
 #include "tools/Tools.h"
+#include <iostream> //todo
 
 namespace tools
 {
@@ -16,7 +17,15 @@ namespace tools
 		m_domain = get_val(set_cookie_val, "Domain");
 		m_path = get_val(set_cookie_val, "Path");
 		m_expires = get_val(set_cookie_val, "expires");
-		m_max_age = std::stoi(get_val(set_cookie_val, "Max-Age"));
+		try
+		{
+			if(!get_val(set_cookie_val, "Max-Age").empty())
+				m_max_age = std::stoi(get_val(set_cookie_val, "Max-Age"));
+		}
+		catch(const std::exception &e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
 		m_http_only = set_cookie_val.find("HttpOnly") != std::string::npos ? true : false;
 		m_secure = set_cookie_val.find("Secure") != std::string::npos ? true : false;
 	}
