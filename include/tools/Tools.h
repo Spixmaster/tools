@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include <Poco/Crypto/DigestEngine.h>
+#include <rapidjson/document.h>
 
 /*
  * @brief content: all functions for general C++ use or generally necessary for this project
@@ -273,6 +274,13 @@ namespace tools
 		 * @return whether gzip compressed
 		 */
 		static bool is_gzipped(const std::string &data);
+
+		/*
+		 * @brief expects a rapidjson::Value and turns it back into a string
+		 * @param the rapidjson::Value which shall be converted
+		 * @return the string of the json
+		 */
+		static std::string get_json_as_string(const rapidjson::Value &val);
 	};
 }
 
