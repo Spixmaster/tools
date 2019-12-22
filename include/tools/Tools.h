@@ -226,9 +226,10 @@ namespace tools
 		/*
 		 * @brief substitutes non-ascii characters with escaped chars %...
 		 * @param url: url which shall be encoded
+		 * @param escaped_chars: non-asci chars are escaped either way but with this string it can be stated additional chars
 		 * @return the parsed url
 		 */
-		static std::string parse_url(const std::string &url, const std::string &escaped_chars);
+		static std::string parse_url(const std::string &url, const std::string &escaped_chars = "");
 
 		/*
 		 * @brief with the help of https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5
