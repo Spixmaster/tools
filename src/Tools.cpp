@@ -14,6 +14,8 @@
 #include <boost/iostreams/filtering_streambuf.hpp>
 #include <boost/iostreams/copy.hpp>
 #include <boost/iostreams/filter/gzip.hpp>
+#include <rapidjson/stringbuffer.h>
+#include <rapidjson/writer.h>
 
 namespace tools
 {
@@ -707,5 +709,14 @@ namespace tools
 		{
 			return false;
 		}
+	}
+
+	std::string Tools::get_json_as_string(const rapidjson::Value &val)
+	{
+		rapidjson::StringBuffer sb;
+		rapidjson::Writer<rapidjson::StringBuffer> writer(sb);
+		val.Accept(writer);
+
+		return sb.GetString();
 	}
 }
