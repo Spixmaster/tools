@@ -719,4 +719,13 @@ namespace tools
 
 		return sb.GetString();
 	}
+
+	void Tools::rm_file(const std::string &file)
+	{
+		std::ofstream outf(file);
+		outf.close();
+
+		if(remove(file.c_str()) != 0)
+			std::cerr << strerror(errno) << std::endl;
+	}
 }
