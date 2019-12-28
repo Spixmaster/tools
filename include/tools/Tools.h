@@ -278,10 +278,16 @@ namespace tools
 
 		/*
 		 * @brief expects a rapidjson::Value and turns it back into a string
-		 * @param the rapidjson::Value which shall be converted
+		 * @param val: rapidjson::Value which shall be converted
 		 * @return the string of the json
 		 */
 		static std::string get_json_as_string(const rapidjson::Value &val);
+
+		/*
+		 * @brief first set file content to nothing and then deletes it --> assure that file does not contain anything after that
+		 * @param file: the name of the file
+		 */
+		static void rm_file(const std::string &file);
 	};
 }
 
