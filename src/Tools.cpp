@@ -687,7 +687,7 @@ namespace tools
 		catch(const std::exception &e)
 		{
 			std::cerr << "Error: That is not gzip compressed data." << std::endl;
-			return "Error: That is not gzip compressed data.";
+			return "";
 		}
 	}
 
