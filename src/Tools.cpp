@@ -107,12 +107,12 @@ namespace tools
 				if(cont.size() > 0)
 					cont.pop_back();
 			}
-
 			return cont;
 		}
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return "";
 		}
 	}
@@ -153,6 +153,7 @@ namespace tools
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return "";
 		}
 	}
@@ -186,6 +187,7 @@ namespace tools
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return 0;
 		}
 	}
@@ -195,6 +197,7 @@ namespace tools
 		for (size_t j = 0; j < str.length(); ++j)
 			if(!isdigit(str[j]))
 				return false;
+
 		return true;
 	}
 
@@ -202,6 +205,7 @@ namespace tools
 	{
 		if(!isdigit(ch))
 			return false;
+
 		return true;
 	}
 
@@ -231,6 +235,7 @@ namespace tools
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return "";
 		}
 	}
@@ -238,10 +243,10 @@ namespace tools
 	char Tools::get_first_char(const std::string &str)
 	{
 		if(str.size() >= 1)
-		{
 			return str.at(0);
-		}
+
 		const char *c = "";
+
 		return *c;
 	}
 
@@ -253,6 +258,7 @@ namespace tools
 			for (size_t j = 0; j < beg.length(); ++j)
 				if(!(beg.at(j) == str.at(j)))
 					return false;
+
 			return true;
 		}
 		return false;
@@ -266,6 +272,7 @@ namespace tools
 			for (size_t j = 0; j < end.length(); ++j)
 				if(!(end.at(end.length() - 1 - j) == str.at(str.length() - 1 - j)))
 					return false;
+
 			return true;
 		}
 		return false;
@@ -294,6 +301,7 @@ namespace tools
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return false;
 		}
 	}
@@ -303,19 +311,19 @@ namespace tools
 		std::string res;
 		//j = 1 --> omit .at(0)
 		for (size_t j = 1; j < str.length(); ++j)
-		{
 			res.push_back(str.at(j));
-		}
 
 		//as with .length() = 1 for loop is not executed
 		if(str.length() == 1)
 			res = "";
+
 		return res;
 	}
 
 	bool Tools::file_exists(const std::string &file)
 	{
 		std::ifstream inf(file);
+
 		return inf.good();
 	}
 
@@ -347,12 +355,14 @@ namespace tools
 			else
 			{
 				std::cerr << "You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+
 				return "";
 			}
 		}
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return "";
 		}
 	}
@@ -393,12 +403,14 @@ namespace tools
 			else
 			{
 				std::cerr << "You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+
 				return "";
 			}
 		}
 		else
 		{
 			Constants::file_non_existent(file);
+
 			return "";
 		}
 	}
@@ -458,6 +470,7 @@ namespace tools
 		else
 		{
 			std::cerr << "The given string is empty." << std::endl;
+
 			return 0;
 		}
 	}
@@ -489,6 +502,7 @@ namespace tools
 			else
 			{
 				std::cerr << "You need to enter a positive value and greater than 0 to read in" << " \"" + file << "\"." << std::endl;
+
 				return "";
 			}
 		}
@@ -521,6 +535,7 @@ namespace tools
 		}
 		else
 			Constants::file_non_existent(file);
+
 		return 0;
 	}
 
@@ -528,6 +543,7 @@ namespace tools
 	{
 	  char result[ PATH_MAX ];
 	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
+
 	  return std::string(result, (count > 0) ? count : 0);
 	}
 
@@ -537,6 +553,7 @@ namespace tools
 	    Poco::DigestOutputStream ds(md5);
 	    ds << seed;
 	    ds.close();
+
 	    return Poco::DigestEngine::digestToHex(md5.digest());
 	}
 
@@ -544,6 +561,7 @@ namespace tools
 	{
 		Poco::HMACEngine<SHA256Engine> hmac{secret_key};
 		hmac.update(str);
+
 		return Poco::DigestEngine::digestToHex(hmac.digest());
 	}
 
@@ -551,6 +569,7 @@ namespace tools
 	{
 		std::string temp;
 		Poco::URI::encode(url, escaped_chars, temp);
+
 		return temp;
 	}
 
@@ -645,6 +664,7 @@ namespace tools
 	    std::stringstream ss;
 	    ss << std::oct << val;
 	    ss >> result;
+
 	    return result;
 	}
 
@@ -654,6 +674,7 @@ namespace tools
 	    std::stringstream ss;
 	    ss << std::hex << val;
 	    ss >> result;
+
 	    return result;
 	}
 
