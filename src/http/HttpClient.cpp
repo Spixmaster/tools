@@ -18,17 +18,19 @@
 
 namespace tools
 {
-	HttpClient::HttpClient(const std::string &url) : m_url(Tools::parse_url(url))
+	HttpClient::HttpClient(const std::string &url, const bool &print_error) : m_url(Tools::parse_url(url)), m_print_error(print_error)
 	{}
 
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers) : m_url(Tools::parse_url(url)), m_http_headers(http_headers)
+	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const bool &print_error) : m_url(Tools::parse_url(url)),
+			m_http_headers(http_headers), m_print_error(print_error)
 	{}
 
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args) : m_url(Tools::parse_url(url)), m_http_args(http_args)
+	HttpClient::HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const bool &print_error) : m_url(Tools::parse_url(url)), m_http_args(http_args),
+			m_print_error(print_error)
 	{}
 
-	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args) :
-			m_url(Tools::parse_url(url)), m_http_headers(http_headers), m_http_args(http_args)
+	HttpClient::HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args, const bool &print_error) :
+			m_url(Tools::parse_url(url)), m_http_headers(http_headers), m_http_args(http_args), m_print_error(print_error)
 	{}
 
 	HttpResponse HttpClient::send_get_req(const bool &debug)
@@ -98,7 +100,7 @@ namespace tools
 				std::cout << http_response_body << std::endl << std::endl;
 			}
 
-			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
+			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
@@ -279,7 +281,7 @@ namespace tools
 				std::cout << http_response_body << std::endl << std::endl;
 			}
 
-			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
+			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
@@ -410,7 +412,7 @@ namespace tools
 				std::cout << http_response_body << std::endl << std::endl;
 			}
 
-			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
+			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
@@ -547,7 +549,7 @@ namespace tools
 				std::cout << http_response_body << std::endl << std::endl;
 			}
 
-			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK)
+			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Request's http code is not 200!" << std::endl;
 				std::cerr << "http status code: " << http_response_code << std::endl;
