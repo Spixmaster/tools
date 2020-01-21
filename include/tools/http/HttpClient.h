@@ -24,31 +24,38 @@ namespace tools
 		std::string m_url;
 		std::vector<HttpHeader> m_http_headers;
 		std::vector<HttpArg> m_http_args;
+		bool m_print_error = true;
 
 	public:
 		//constructors
 
-		//@param url: to which server the request shall be sent
-		HttpClient(const std::string &url);
+		/*
+		 * @param url: to which server the request shall be sent
+		 * @param print_error: whether the error message shall be output to stderr if the server responds with an error
+		 */
+		HttpClient(const std::string &url, const bool &print_error = true);
 
 		/*
 		 * @param url: to which server the request shall be sent
 		 * @param http_headers: contains the http headers
+		 * @param print_error: whether the error message shall be output to stderr if the server responds with an error
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers);
+		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const bool &print_error = true);
 
 		/*
 		 * @param url: to which server the request shall be sent
 		 * @param http_args: contains the http args
+		 * @param print_error: whether the error message shall be output to stderr if the server responds with an error
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args);
+		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const bool &print_error = true);
 
 		/*
 		 * @param url: to which server the request shall be sent
 		 * @param http_headers: http headers which are sent with the request (key: value)
 		 * @param http_args: http args which are sent with the request
+		 * @param print_error: whether the error message shall be output to stderr if the server responds with an error
 		 */
-		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args);
+		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args, const bool &print_error = true);
 
 		//member functions
 		/*
