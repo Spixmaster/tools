@@ -354,7 +354,7 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << "Error: You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
 
 				return "";
 			}
@@ -402,7 +402,7 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << "Error: You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
 
 				return "";
 			}
@@ -469,7 +469,7 @@ namespace tools
 		}
 		else
 		{
-			std::cerr << "The given string is empty." << std::endl;
+			std::cerr << "Error: The given string is empty." << std::endl;
 
 			return 0;
 		}
@@ -501,7 +501,7 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "You need to enter a positive value and greater than 0 to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << "Error: You need to enter a positive value and greater than 0 to read in" << " \"" + file << "\"." << std::endl;
 
 				return "";
 			}
