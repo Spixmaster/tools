@@ -415,7 +415,7 @@ namespace tools
 		}
 	}
 
-	long long Tools::get_int_ln_end (const std::string &entry)
+	long long Tools::get_num_ln_end(const std::string &entry)
 	{
 		if(!entry.empty())
 		{
