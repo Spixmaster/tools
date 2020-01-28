@@ -181,7 +181,7 @@ namespace tools
 		 * @return the positive/negative integer at the end of a file
 		 * @return when no numerals at end or empty entry --> returns 0
 		 */
-		static long long get_int_ln_end (const std::string &entry);
+		static long long get_num_ln_end (const std::string &entry);
 
 		/*
 		 * @brief first line is line 1 (not 0)
