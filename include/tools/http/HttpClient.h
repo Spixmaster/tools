@@ -63,7 +63,7 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_get_req(const bool &debug = false);
+		HttpResponse send_get_req(const bool &debug = false) const;
 
 		/*
 		 * @brief makes a post request via application/x-www-form-urlencoded
@@ -71,7 +71,7 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const bool body_json = false, const bool &debug = false);
+		HttpResponse send_post_req_urlencoded(const bool body_json = false, const bool &debug = false) const;
 
 		/*
 		 * @brief the function which is overloaded is almost the same
@@ -81,14 +81,38 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false);
+		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false) const;
 
 		/*
 		 * @brief makes a post request via multipart/form-data
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_multipart(const bool &debug = false);
+		HttpResponse send_post_req_multipart(const bool &debug = false) const;
+
+		/*
+		 * @brief getter
+		 * @return m_url
+		 */
+		std::string get_url() const;
+
+		/*
+		 * @brief getter
+		 * @return m_http_header
+		 */
+		std::vector<HttpHeader> get_http_headers() const;
+
+		/*
+		 * @brief getter
+		 * @return m_http_args
+		 */
+		std::vector<HttpArg> get_http_args() const;
+
+		/*
+		 * @brief getter
+		 * @return m_print_error
+		 */
+		bool get_print_error() const;
 	};
 }
 
