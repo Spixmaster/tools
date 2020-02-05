@@ -19,7 +19,7 @@
 
 namespace tools
 {
-	std::vector<std::string> Tools::get_args(const std::string &str)
+	std::vector<std::string> Tools::get_args(const std::string &str) noexcept
 	{
 		std::vector<std::string> args;
 		std::string word;
@@ -52,7 +52,7 @@ namespace tools
 		return args;
 	}
 
-	std::vector<std::string> Tools::get_args_w_lns(const std::string &str)
+	std::vector<std::string> Tools::get_args_w_lns(const std::string &str) noexcept
 	{
 		std::vector<std::string> args;
 		std::string word;
@@ -83,7 +83,7 @@ namespace tools
 		return args;
 	}
 
-	std::string Tools::get_file_cont(const std::string &file)
+	std::string Tools::get_file_cont(const std::string &file) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -117,7 +117,7 @@ namespace tools
 		}
 	}
 
-	std::string Tools::get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch)
+	std::string Tools::get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -158,7 +158,7 @@ namespace tools
 		}
 	}
 
-	size_t Tools::get_beg_pos_ln(const std::string &file, const std::string &srch)
+	size_t Tools::get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -192,7 +192,7 @@ namespace tools
 		}
 	}
 
-	bool Tools::is_pos_int(const std::string &str)
+	bool Tools::is_pos_int(const std::string &str) noexcept
 	{
 		for (size_t j = 0; j < str.length(); ++j)
 			if(!isdigit(str[j]))
@@ -201,7 +201,7 @@ namespace tools
 		return true;
 	}
 
-	bool Tools::is_pos_int(const char &ch)
+	bool Tools::is_pos_int(const char &ch) noexcept
 	{
 		if(!isdigit(ch))
 			return false;
@@ -209,7 +209,7 @@ namespace tools
 		return true;
 	}
 
-	std::string Tools::get_file_ln_w_srch(const std::string &file, const std::string &srch)
+	std::string Tools::get_file_ln_w_srch(const std::string &file, const std::string &srch) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -240,7 +240,7 @@ namespace tools
 		}
 	}
 
-	char Tools::get_first_char(const std::string &str)
+	char Tools::get_first_char(const std::string &str) noexcept
 	{
 		if(str.size() >= 1)
 			return str.at(0);
@@ -250,7 +250,7 @@ namespace tools
 		return *c;
 	}
 
-	bool Tools::starts_w(const std::string &str, const std::string &beg)
+	bool Tools::starts_w(const std::string &str, const std::string &beg) noexcept
 	{
 		//otherwise beginning could not even be beginning
 		if(str.length() > beg.length())
@@ -264,7 +264,7 @@ namespace tools
 		return false;
 	}
 
-	bool Tools::ends_w(const std::string &str, const std::string &end)
+	bool Tools::ends_w(const std::string &str, const std::string &end) noexcept
 	{
 		//otherwise end could not even be end
 		if(str.length() > end.length())
@@ -278,7 +278,7 @@ namespace tools
 		return false;
 	}
 
-	bool Tools::file_cont_str(const std::string &file, const std::string &str)
+	bool Tools::file_cont_str(const std::string &file, const std::string &str) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -306,7 +306,7 @@ namespace tools
 		}
 	}
 
-	std::string Tools::cut_off_first_char(const std::string &str)
+	std::string Tools::cut_off_first_char(const std::string &str) noexcept
 	{
 		std::string res;
 		//j = 1 --> omit .at(0)
@@ -320,14 +320,14 @@ namespace tools
 		return res;
 	}
 
-	bool Tools::file_exists(const std::string &file)
+	bool Tools::file_exists(const std::string &file) noexcept
 	{
 		std::ifstream inf(file);
 
 		return inf.good();
 	}
 
-	std::string Tools::get_first_lns_file(const std::string &file, const int &ln_nums)
+	std::string Tools::get_first_lns_file(const std::string &file, const int &ln_nums) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -367,7 +367,7 @@ namespace tools
 		}
 	}
 
-	std::string Tools::get_last_lns_file(const std::string &file, const int &ln_nums)
+	std::string Tools::get_last_lns_file(const std::string &file, const int &ln_nums) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -415,7 +415,7 @@ namespace tools
 		}
 	}
 
-	long long Tools::get_num_ln_end(const std::string &entry)
+	long long Tools::get_num_ln_end(const std::string &entry) noexcept
 	{
 		if(!entry.empty())
 		{
@@ -475,7 +475,7 @@ namespace tools
 		}
 	}
 
-	std::string Tools::get_file_ln(const std::string &file, const int &ln_num)
+	std::string Tools::get_file_ln(const std::string &file, const int &ln_num) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -513,7 +513,7 @@ namespace tools
 		}
 	}
 
-	int Tools::get_amnt_file_lns(const std::string &file)
+	int Tools::get_amnt_file_lns(const std::string &file) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
@@ -539,7 +539,7 @@ namespace tools
 		return 0;
 	}
 
-	std::string Tools::get_exe_path()
+	std::string Tools::get_exe_path() noexcept
 	{
 	  char result[ PATH_MAX ];
 	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
@@ -547,7 +547,7 @@ namespace tools
 	  return std::string(result, (count > 0) ? count : 0);
 	}
 
-	std::string Tools::md5_hash(const std::string &seed)
+	std::string Tools::md5_hash(const std::string &seed) noexcept
 	{
 	    Poco::MD5Engine md5;
 	    Poco::DigestOutputStream ds(md5);
@@ -557,7 +557,7 @@ namespace tools
 	    return Poco::DigestEngine::digestToHex(md5.digest());
 	}
 
-	std::string Tools::hmac_sha256_hash(const std::string &secret_key, const std::string &str)
+	std::string Tools::hmac_sha256_hash(const std::string &secret_key, const std::string &str) noexcept
 	{
 		Poco::HMACEngine<SHA256Engine> hmac{secret_key};
 		hmac.update(str);
@@ -565,7 +565,7 @@ namespace tools
 		return Poco::DigestEngine::digestToHex(hmac.digest());
 	}
 
-	std::string Tools::parse_url(const std::string &url, const std::string &escaped_chars)
+	std::string Tools::parse_url(const std::string &url, const std::string &escaped_chars) noexcept
 	{
 		std::string temp;
 		Poco::URI::encode(url, escaped_chars, temp);
@@ -573,7 +573,7 @@ namespace tools
 		return temp;
 	}
 
-	std::string Tools::encode_utf8(const std::wstring &wstr)
+	std::string Tools::encode_utf8(const std::wstring &wstr) noexcept
 	{
 		std::string utf8_encoded;
 
@@ -658,7 +658,7 @@ namespace tools
 		return utf8_encoded;
 	}
 
-	std::string Tools::to_oct(const int &val)
+	std::string Tools::to_oct(const int &val) noexcept
 	{
 	    std::string result;
 	    std::stringstream ss;
@@ -668,7 +668,7 @@ namespace tools
 	    return result;
 	}
 
-	std::string Tools::to_hex(const int &val)
+	std::string Tools::to_hex(const int &val) noexcept
 	{
 	    std::string result;
 	    std::stringstream ss;
@@ -678,7 +678,7 @@ namespace tools
 	    return result;
 	}
 
-	std::string Tools::gzip_compress(const std::string &data)
+	std::string Tools::gzip_compress(const std::string &data) noexcept
 	{
 		std::stringstream compressed;
 		std::stringstream origin(data);
@@ -691,7 +691,7 @@ namespace tools
 		return compressed.str();
 	}
 
-	std::string Tools::gzip_decompress(const std::string &data)
+	std::string Tools::gzip_decompress(const std::string &data) noexcept
 	{
 		std::stringstream compressed(data);
 		std::stringstream decompressed;
@@ -712,7 +712,7 @@ namespace tools
 		}
 	}
 
-	bool Tools::is_gzipped(const std::string &data)
+	bool Tools::is_gzipped(const std::string &data) noexcept
 	{
 		std::stringstream compressed(data);
 		std::stringstream decompressed;
@@ -732,7 +732,7 @@ namespace tools
 		}
 	}
 
-	std::string Tools::get_json_as_string(const rapidjson::Value &val)
+	std::string Tools::get_json_as_string(const rapidjson::Value &val) noexcept
 	{
 		rapidjson::StringBuffer sb;
 		rapidjson::Writer<rapidjson::StringBuffer> writer(sb);

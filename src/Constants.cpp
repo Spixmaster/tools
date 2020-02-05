@@ -4,10 +4,10 @@
 
 namespace tools
 {
-	const std::string Constants::version = "1.1.2";
-	const std::string Constants::release = "02.Feb.2020";
+	const std::string Constants::version = "1.1.3";
+	const std::string Constants::release = "05.Feb.2020";
 
-	void Constants::file_non_existent(const std::string &file)
+	void Constants::file_non_existent(const std::string &file) noexcept
 	{
 		std::cerr << "Error: The file \"" + file + "\" does not exist." << std::endl;
 	}

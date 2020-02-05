@@ -32,7 +32,7 @@ namespace tools
 		m_secure = set_cookie_val.find("Secure") != std::string::npos ? true : false;
 	}
 
-	std::string HttpCookie::get_val(const std::string &cont, const std::string &key)
+	std::string HttpCookie::get_val(const std::string &cont, const std::string &key) noexcept
 	{
 		bool key_found = false;
 
@@ -91,47 +91,47 @@ namespace tools
 		return "";
 	}
 
-	std::string HttpCookie::to_string() const
+	std::string HttpCookie::to_string() const noexcept
 	{
 		return m_origin;
 	}
 
-	std::string HttpCookie::get_name() const
+	std::string HttpCookie::get_name() const noexcept
 	{
 		return m_name;
 	}
 
-	std::string HttpCookie::get_value() const
+	std::string HttpCookie::get_value() const noexcept
 	{
 		return m_value;
 	}
 
-	std::string HttpCookie::get_domain() const
+	std::string HttpCookie::get_domain() const noexcept
 	{
 		return m_domain;
 	}
 
-	std::string HttpCookie::get_path() const
+	std::string HttpCookie::get_path() const noexcept
 	{
 		return m_path;
 	}
 
-	std::string HttpCookie::get_expires() const
+	std::string HttpCookie::get_expires() const noexcept
 	{
 		return m_expires;
 	}
 
-	int HttpCookie::get_max_age() const
+	int HttpCookie::get_max_age() const noexcept
 	{
 		return m_max_age;
 	}
 
-	bool HttpCookie::get_http_only() const
+	bool HttpCookie::get_http_only() const noexcept
 	{
 		return m_http_only;
 	}
 
-	bool HttpCookie::get_secure() const
+	bool HttpCookie::get_secure() const noexcept
 	{
 		return m_secure;
 	}

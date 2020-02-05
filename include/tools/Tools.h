@@ -31,7 +31,7 @@ namespace tools
 		 * @param str: string from which we want to get the args
 		 * @return vector where each element represent one argument
 		 */
-		static std::vector<std::string> get_args(const std::string &str);
+		static std::vector<std::string> get_args(const std::string &str) noexcept;
 
 		/*
 		 * @brief lists down all words in a vector
@@ -47,7 +47,7 @@ namespace tools
 		 * @param str: string from which we want to get the args
 		 * @return vector where each element represent one argument
 		 */
-		static std::vector<std::string> get_args_w_lns(const std::string &str);
+		static std::vector<std::string> get_args_w_lns(const std::string &str) noexcept;
 
 		/*
 		 * @brief considers empty lines
@@ -55,7 +55,7 @@ namespace tools
 		 * @return everything from file in string
 		 * @return new line included at end which is important as when appending stuff I assume that it goes into a new line
 		 */
-		static std::string get_file_cont(const std::string &file);
+		static std::string get_file_cont(const std::string &file) noexcept;
 
 		/*
 		 * @brief considers empty lines
@@ -64,7 +64,7 @@ namespace tools
 		 * @return everything but the line which contains the search string
 		 * @return new line at end included
 		 */
-		static std::string get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch);
+		static std::string get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch) noexcept;
 
 		/*
 		 * @brief gets beginning line of first fitting string it mets
@@ -74,7 +74,7 @@ namespace tools
 		 * @return position of beginning of line which contains "srch" for file pointer
 		 * @return by default, returns 0
 		 */
-		static size_t get_beg_pos_ln(const std::string &file, const std::string &srch);
+		static size_t get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept;
 
 		/*
 		 * @brief ',' and '.' in string return false too
@@ -82,7 +82,7 @@ namespace tools
 		 * @return true when string only consists of number --> therefore, postive integer
 		 * @return in case of negative number returns false
 		 */
-		static bool is_pos_int(const std::string &str);
+		static bool is_pos_int(const std::string &str) noexcept;
 
 		/*
 		 * @brief ',' and '.' return false too
@@ -90,7 +90,7 @@ namespace tools
 		 * @return true when char is number --> 0 - 9
 		 * @return in case of negative number returns false
 		 */
-		static bool is_pos_int(const char &ch);
+		static bool is_pos_int(const char &ch) noexcept;
 
 		/*
 		 * @brief gets line of first fitting string it mets
@@ -100,7 +100,7 @@ namespace tools
 		 * @return line which contains the string srch
 		 * @return by default, returns nothing
 		 */
-		static std::string get_file_ln_w_srch(const std::string &file, const std::string &srch);
+		static std::string get_file_ln_w_srch(const std::string &file, const std::string &srch) noexcept;
 
 		/*
 		 * @brief searches for position 0 in a string
@@ -108,7 +108,7 @@ namespace tools
 		 * @return first char of string
 		 * @return by default, return nothing
 		 */
-		static char get_first_char(const std::string &str);
+		static char get_first_char(const std::string &str) noexcept;
 
 		/*
 		 * @brief checks beginning of a string
@@ -117,7 +117,7 @@ namespace tools
 		 * @return states whether str begins with beg
 		 * @return by default, returns nothing
 		 */
-		static bool starts_w(const std::string &str, const std::string &beg);
+		static bool starts_w(const std::string &str, const std::string &beg) noexcept;
 
 		/*
 		 * @brief checks end of a string
@@ -126,7 +126,7 @@ namespace tools
 		 * @return states whether str ends with beg
 		 * @return by default, returns nothing
 		 */
-		static bool ends_w(const std::string &str, const std::string &end);
+		static bool ends_w(const std::string &str, const std::string &end) noexcept;
 
 		/*
 		 * @brief states whether string is in file
@@ -135,21 +135,21 @@ namespace tools
 		 * @param srch: string whose whose existence we want to know in the file
 		 * @return true when str appears in file
 		 */
-		static bool file_cont_str(const std::string &file, const std::string &str);
+		static bool file_cont_str(const std::string &file, const std::string &str) noexcept;
 
 		/*
 		 * @brief gets rid of first char
 		 * @param str: string to shorten
 		 * @return str without .at(0)
 		 */
-		static std::string cut_off_first_char(const std::string &str);
+		static std::string cut_off_first_char(const std::string &str) noexcept;
 
 		/*
 		 * @brief checks whether the file exists
 		 * @param file: path to file we want to know whether it exists
 		 * @return true when file exists
 		 */
-		static bool file_exists(const std::string &file);
+		static bool file_exists(const std::string &file) noexcept;
 
 		/*
 		 * @brief gets first "ln_nums" lines of the file "file"
@@ -161,7 +161,7 @@ namespace tools
 		 * @param ln_nums: number of lines we want from the beginning
 		 * @return first lines of content as a string
 		 */
-		static std::string get_first_lns_file(const std::string &file, const int &ln_nums);
+		static std::string get_first_lns_file(const std::string &file, const int &ln_nums) noexcept;
 
 		/*
 		 * @brief skips first "ln_nums" lines of the file "file"
@@ -173,7 +173,7 @@ namespace tools
 		 * @param ln_nums: number of lines we want from the end
 		 * @return last lines of content as a string
 		 */
-		static std::string get_last_lns_file(const std::string &file, const int &ln_nums);
+		static std::string get_last_lns_file(const std::string &file, const int &ln_nums) noexcept;
 
 		/*
 		 * @brief does not work properly when number contains: '.', ','
@@ -181,7 +181,7 @@ namespace tools
 		 * @return the positive/negative integer at the end of a file
 		 * @return when no numerals at end or empty entry --> returns 0
 		 */
-		static long long get_num_ln_end (const std::string &entry);
+		static long long get_num_ln_end (const std::string &entry) noexcept;
 
 		/*
 		 * @brief first line is line 1 (not 0)
@@ -192,7 +192,7 @@ namespace tools
 		 * @return it does not matter whether "file" does not have "ln_num" line --> then, nothing is got
 		 * @return NO new line ("\n") included at end
 		 */
-		static std::string get_file_ln(const std::string &file, const int &ln_num);
+		static std::string get_file_ln(const std::string &file, const int &ln_num) noexcept;
 
 		/*
 		 * @brief empty lines do not count
@@ -200,20 +200,20 @@ namespace tools
 		 * @return the amount of written lines in a file
 		 * @return by default, returns 0
 		 */
-		static int get_amnt_file_lns(const std::string &file);
+		static int get_amnt_file_lns(const std::string &file) noexcept;
 
 		/*
 		 * @brief Linux only: returns the path in which the program is in with appended executable name
 		 * @return path to exe
 		 */
-		static std::string get_exe_path();
+		static std::string get_exe_path() noexcept;
 
 		/*
 		 * @brief returns a md5 hash for the proper seed
 		 * @param seed: seed which shall be encrypted
 		 * @return the md5 hash
 		 */
-		static std::string md5_hash(const std::string &seed);
+		static std::string md5_hash(const std::string &seed) noexcept;
 
 		/*
 		 * @brief returns a hmac sha256 hash for the proper string
@@ -221,7 +221,7 @@ namespace tools
 		 * @param str: actual string which shall be encoded
 		 * @return the hmac sha256 hash
 		 */
-		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str);
+		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str) noexcept;
 
 		/*
 		 * @brief substitutes non-ascii characters with escaped chars %...
@@ -229,7 +229,7 @@ namespace tools
 		 * @param escaped_chars: non-asci chars are escaped either way but with this string it can be stated additional chars
 		 * @return the parsed url
 		 */
-		static std::string parse_url(const std::string &url, const std::string &escaped_chars = "");
+		static std::string parse_url(const std::string &url, const std::string &escaped_chars = "") noexcept;
 
 		/*
 		 * @brief with the help of https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5
@@ -237,21 +237,21 @@ namespace tools
 		 * @param str: string which shall be encoded
 		 * @return the parsed string
 		 */
-		static std::string encode_utf8(const std::wstring &wstr);
+		static std::string encode_utf8(const std::wstring &wstr) noexcept;
 
 		/*
 		 * @brief expects an int and turns it into its octal equivalent
 		 * @param val: the int which shall be converted
 		 * @return the octal value as a string
 		 */
-		static std::string to_oct(const int &val);
+		static std::string to_oct(const int &val) noexcept;
 
 		/*
 		 * @brief expects an int and turns it into its hexadecimal equivalent
 		 * @param val: the int which shall be converted
 		 * @return the hexadecimal value as a string
 		 */
-		static std::string to_hex(const int &val);
+		static std::string to_hex(const int &val) noexcept;
 
 		/*
 		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
@@ -259,7 +259,7 @@ namespace tools
 		 * @param data: the data to gzip compress
 		 * @return the compressed data
 		 */
-		static std::string gzip_compress(const std::string &data);
+		static std::string gzip_compress(const std::string &data) noexcept;
 
 		/*
 		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
@@ -267,21 +267,21 @@ namespace tools
 		 * @param data: the gzip compressed data
 		 * @return the decompressed data
 		 */
-		static std::string gzip_decompress(const std::string &data);
+		static std::string gzip_decompress(const std::string &data) noexcept;
 
 		/*
 		 * @brief checks whether data is gzipped
 		 * @param data: the possible gzip compressed data
 		 * @return whether gzip compressed
 		 */
-		static bool is_gzipped(const std::string &data);
+		static bool is_gzipped(const std::string &data) noexcept;
 
 		/*
 		 * @brief expects a rapidjson::Value and turns it back into a string
 		 * @param val: rapidjson::Value which shall be converted
 		 * @return the string of the json
 		 */
-		static std::string get_json_as_string(const rapidjson::Value &val);
+		static std::string get_json_as_string(const rapidjson::Value &val) noexcept;
 	};
 }
 
