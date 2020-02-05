@@ -33,7 +33,7 @@ namespace tools
 			m_url(Tools::parse_url(url)), m_http_headers(http_headers), m_http_args(http_args), m_print_error(print_error)
 	{}
 
-	HttpResponse HttpClient::send_get_req(const bool &debug) const
+	HttpResponse HttpClient::send_get_req(const bool &debug) const noexcept
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;
 		std::string http_response_body;
@@ -156,7 +156,7 @@ namespace tools
 		}
 	}
 
-	HttpResponse HttpClient::send_post_req_urlencoded(const bool body_json, const bool &debug) const
+	HttpResponse HttpClient::send_post_req_urlencoded(const bool body_json, const bool &debug) const noexcept
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_body;
@@ -337,7 +337,7 @@ namespace tools
 		}
 	}
 
-	HttpResponse HttpClient::send_post_req_urlencoded(const std::string &http_body, const bool &debug) const
+	HttpResponse HttpClient::send_post_req_urlencoded(const std::string &http_body, const bool &debug) const noexcept
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_body;
@@ -468,7 +468,7 @@ namespace tools
 		}
 	}
 
-	HttpResponse HttpClient::send_post_req_multipart(const bool &debug) const
+	HttpResponse HttpClient::send_post_req_multipart(const bool &debug) const noexcept
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_body;
@@ -605,22 +605,22 @@ namespace tools
 		}
 	}
 
-	std::string HttpClient::get_url() const
+	std::string HttpClient::get_url() const noexcept
 	{
 		return m_url;
 	}
 
-	std::vector<HttpHeader> HttpClient::get_http_headers() const
+	std::vector<HttpHeader> HttpClient::get_http_headers() const noexcept
 	{
 		return m_http_headers;
 	}
 
-	std::vector<HttpArg> HttpClient::get_http_args() const
+	std::vector<HttpArg> HttpClient::get_http_args() const noexcept
 	{
 		return m_http_args;
 	}
 
-	bool HttpClient::get_print_error() const
+	bool HttpClient::get_print_error() const noexcept
 	{
 		return m_print_error;
 	}

@@ -63,7 +63,7 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_get_req(const bool &debug = false) const;
+		HttpResponse send_get_req(const bool &debug = false) const noexcept;
 
 		/*
 		 * @brief makes a post request via application/x-www-form-urlencoded
@@ -71,7 +71,7 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const bool body_json = false, const bool &debug = false) const;
+		HttpResponse send_post_req_urlencoded(const bool body_json = false, const bool &debug = false) const noexcept;
 
 		/*
 		 * @brief the function which is overloaded is almost the same
@@ -81,38 +81,38 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false) const;
+		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false) const noexcept;
 
 		/*
 		 * @brief makes a post request via multipart/form-data
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_multipart(const bool &debug = false) const;
+		HttpResponse send_post_req_multipart(const bool &debug = false) const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_url
 		 */
-		std::string get_url() const;
+		std::string get_url() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_http_header
 		 */
-		std::vector<HttpHeader> get_http_headers() const;
+		std::vector<HttpHeader> get_http_headers() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_http_args
 		 */
-		std::vector<HttpArg> get_http_args() const;
+		std::vector<HttpArg> get_http_args() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_print_error
 		 */
-		bool get_print_error() const;
+		bool get_print_error() const noexcept;
 	};
 }
 

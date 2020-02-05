@@ -47,62 +47,62 @@ namespace tools
 		 * @param key: key of the value that we want
 		 * @return the found value
 		 */
-		static std::string get_val(const std::string &cont, const std::string &key);
+		static std::string get_val(const std::string &cont, const std::string &key) noexcept;
 
 	public:
 		/*
 		 * @brief getter
 		 * @return m_origin
 		 */
-		std::string to_string() const;
+		std::string to_string() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_name
 		 */
-		std::string get_name() const;
+		std::string get_name() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_value
 		 */
-		std::string get_value() const;
+		std::string get_value() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_domain
 		 */
-		std::string get_domain() const;
+		std::string get_domain() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_path
 		 */
-		std::string get_path() const;
+		std::string get_path() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_expires
 		 */
-		std::string get_expires() const;
+		std::string get_expires() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_max_age
 		 */
-		int get_max_age() const;
+		int get_max_age() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_http_only
 		 */
-		bool get_http_only() const;
+		bool get_http_only() const noexcept;
 
 		/*
 		 * @brief getter
 		 * @return m_secure
 		 */
-		bool get_secure() const;
+		bool get_secure() const noexcept;
 	};
 }
 
