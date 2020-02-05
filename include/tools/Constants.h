@@ -21,7 +21,6 @@ namespace tools
 		static const std::string release;
 
 		//member functions
-
 		/*
 		 * @brief puts an error message out to stderr
 		 * @param file: the filename which is included in the error message
