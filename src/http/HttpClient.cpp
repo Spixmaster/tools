@@ -642,6 +642,9 @@ namespace tools
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
 					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
+
+					if(j != (m_http_args.size() - 1))
+						temp_http_args.append("\n");
 				}
 	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
 	        	std::cerr << Constants::ansi_cyan;
