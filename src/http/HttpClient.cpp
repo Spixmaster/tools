@@ -102,9 +102,12 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Request's http code is not 200!" << std::endl;
-				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response body: " << http_response_body << std::endl;
+				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+	        	std::cerr << "The request:" << std::endl;
+				req.write(std::cerr);
+				std::cerr << "The response:" << std::endl;
+				std::cerr << "Http status code: " << http_response_code << std::endl;
+				std::cerr << "Http response body: " << http_response_body << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
@@ -283,9 +286,12 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Request's http code is not 200!" << std::endl;
-				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response body: " << http_response_body << std::endl;
+				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+	        	std::cerr << "The request:" << std::endl;
+				req.write(std::cerr);
+				std::cerr << "The response:" << std::endl;
+				std::cerr << "Http status code: " << http_response_code << std::endl;
+				std::cerr << "Http response body: " << http_response_body << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
@@ -414,9 +420,12 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Request's http code is not 200!" << std::endl;
-				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response body: " << http_response_body << std::endl;
+				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+	        	std::cerr << "The request:" << std::endl;
+				req.write(std::cerr);
+				std::cerr << "The response:" << std::endl;
+				std::cerr << "Http status code: " << http_response_code << std::endl;
+				std::cerr << "Http response body: " << http_response_body << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
@@ -551,9 +560,12 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Request's http code is not 200!" << std::endl;
-				std::cerr << "http status code: " << http_response_code << std::endl;
-				std::cerr << "http response body: " << http_response_body << std::endl;
+				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+	        	std::cerr << "The request:" << std::endl;
+				req.write(std::cerr);
+				std::cerr << "The response:" << std::endl;
+				std::cerr << "Http status code: " << http_response_code << std::endl;
+				std::cerr << "Http response body: " << http_response_body << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
