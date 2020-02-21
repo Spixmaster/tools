@@ -15,6 +15,7 @@
 #include <Poco/Net/NameValueCollection.h>
 #include "tools/Tools.h"
 #include <boost/algorithm/string.hpp>
+#include "tools/Constants.h"
 
 namespace tools
 {
@@ -64,8 +65,10 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The request:" << std::endl;
-				req.write(std::cout);
+	        	std::cout << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_cyan;
+	        	req.write(std::cout);
+				std::cout << Constants::ansi_reset;
 	        }
 
 			//response
@@ -92,31 +95,49 @@ namespace tools
 					++j;
 				}
 				//remove last new line
-				http_repsonse_headers.pop_back();
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
 
-				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl << std::endl;
-				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Response's http code is not 200!" << std::endl;
-	        	std::cerr << "The request:" << std::endl;
-				req.write(std::cerr);
-				std::cerr << "The response:" << std::endl;
-				std::cerr << "Http status code: " << http_response_code << std::endl;
-				std::cerr << "Http response body: " << http_response_body << std::endl;
+
+				//print request
+	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_cyan;
+	        	req.write(std::cerr);
+				std::cerr << Constants::ansi_reset;
+
+				//print response
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
+
+	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
-				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
-				while(j != response.end())
+				Poco::Net::NameValueCollection::ConstIterator k = response.begin();
+				while(k != response.end())
 				{
-					HttpHeader http_header(j->first, j->second);
+					HttpHeader http_header(k->first, k->second);
 					temp_http_headers.push_back(http_header);
-					++j;
+					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
 				for(size_t j = 0; j < temp_http_headers.size(); ++j)
@@ -246,10 +267,10 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The http request headers:" << std::endl;
-				req.write(std::cout);
-				std::cout << "The http request body:" << std::endl;
-				std::cout << http_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_cyan;
+	        	req.write(std::cout);
+				std::cout << http_body << Constants::ansi_reset << std::endl;
 	        }
 
 			//response
@@ -276,31 +297,49 @@ namespace tools
 					++j;
 				}
 				//remove last new line
-				http_repsonse_headers.pop_back();
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
 
-				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl << std::endl;
-				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Response's http code is not 200!" << std::endl;
-	        	std::cerr << "The request:" << std::endl;
-				req.write(std::cerr);
-				std::cerr << "The response:" << std::endl;
-				std::cerr << "Http status code: " << http_response_code << std::endl;
-				std::cerr << "Http response body: " << http_response_body << std::endl;
+
+				//print request
+	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_cyan;
+	        	req.write(std::cerr);
+				std::cerr << http_body << Constants::ansi_reset << std::endl;
+
+				//print response
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
+
+	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
-				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
-				while(j != response.end())
+				Poco::Net::NameValueCollection::ConstIterator k = response.begin();
+				while(k != response.end())
 				{
-					HttpHeader http_header(j->first, j->second);
+					HttpHeader http_header(k->first, k->second);
 					temp_http_headers.push_back(http_header);
-					++j;
+					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
 				for(size_t j = 0; j < temp_http_headers.size(); ++j)
@@ -380,10 +419,10 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The http request headers:" << std::endl;
-				req.write(std::cout);
-				std::cout << "The http request body:" << std::endl;
-				std::cout << http_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_cyan;
+	        	req.write(std::cout);
+				std::cout << http_body << Constants::ansi_reset << std::endl;
 	        }
 
 			//response
@@ -410,31 +449,49 @@ namespace tools
 					++j;
 				}
 				//remove last new line
-				http_repsonse_headers.pop_back();
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
 
-				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl << std::endl;
-				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Response's http code is not 200!" << std::endl;
-	        	std::cerr << "The request:" << std::endl;
-				req.write(std::cerr);
-				std::cerr << "The response:" << std::endl;
-				std::cerr << "Http status code: " << http_response_code << std::endl;
-				std::cerr << "Http response body: " << http_response_body << std::endl;
+
+				//print request
+	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_cyan;
+	        	req.write(std::cerr);
+				std::cerr << http_body << Constants::ansi_reset << std::endl;
+
+				//print response
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
+
+	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
-				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
-				while(j != response.end())
+				Poco::Net::NameValueCollection::ConstIterator k = response.begin();
+				while(k != response.end())
 				{
-					HttpHeader http_header(j->first, j->second);
+					HttpHeader http_header(k->first, k->second);
 					temp_http_headers.push_back(http_header);
-					++j;
+					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
 				for(size_t j = 0; j < temp_http_headers.size(); ++j)
@@ -522,8 +579,19 @@ namespace tools
 	        //print request to stdout
 	        if(debug == true)
 	        {
-	        	std::cout << "The request:" << std::endl;
-				req.write(std::cout);
+				std::string temp_http_args;
+				//InputFile is neglected
+				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				{
+					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
+					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
+				}
+	        	std::cout << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_cyan;
+	        	req.write(std::cout);
+				std::cout << temp_http_args << Constants::ansi_reset << std::endl;
 	        }
 
 			//response
@@ -550,31 +618,58 @@ namespace tools
 					++j;
 				}
 				//remove last new line
-				http_repsonse_headers.pop_back();
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
 
-				std::cout << "The server response headers:" << std::endl;
-				std::cout << http_repsonse_headers << std::endl << std::endl;
-				std::cout << "The server response body:" << std::endl;
-				std::cout << http_response_body << std::endl << std::endl;
+	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
 				std::cerr << "Error: Response's http code is not 200!" << std::endl;
-	        	std::cerr << "The request:" << std::endl;
-				req.write(std::cerr);
-				std::cerr << "The response:" << std::endl;
-				std::cerr << "Http status code: " << http_response_code << std::endl;
-				std::cerr << "Http response body: " << http_response_body << std::endl;
+
+				//print request
+				std::string temp_http_args;
+				//InputFile is neglected
+				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				{
+					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
+						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
+					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
+						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
+				}
+	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_cyan;
+	        	req.write(std::cerr);
+				std::cerr << temp_http_args << Constants::ansi_reset << std::endl;
+
+				//print response
+				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
+				std::string http_repsonse_headers;
+
+				while(j != response.end())
+				{
+					http_repsonse_headers.append(j->first + ": " + j->second + "\n");
+					++j;
+				}
+				//remove last new line
+				if(!http_repsonse_headers.empty())
+					http_repsonse_headers.pop_back();
+
+	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
+				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
 				//http response
 				std::vector<HttpHeader> temp_http_headers;
-				Poco::Net::NameValueCollection::ConstIterator j = response.begin();
-				while(j != response.end())
+				Poco::Net::NameValueCollection::ConstIterator k = response.begin();
+				while(k != response.end())
 				{
-					HttpHeader http_header(j->first, j->second);
+					HttpHeader http_header(k->first, k->second);
 					temp_http_headers.push_back(http_header);
-					++j;
+					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
 				for(size_t j = 0; j < temp_http_headers.size(); ++j)
