@@ -11,9 +11,8 @@
 
 namespace tools
 {
-	class Constants
+	struct Constants
 	{
-	public:
 		//pointer of itself
 		typedef std::shared_ptr<Constants> ptr;
 
