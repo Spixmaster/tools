@@ -28,7 +28,6 @@ namespace tools
 
 	public:
 		//constructors
-
 		/*
 		 * @param url: to which server the request shall be sent
 		 * @param print_error: whether the error message shall be output to stderr if the server responds with an error

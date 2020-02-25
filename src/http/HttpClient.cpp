@@ -15,7 +15,8 @@
 #include <Poco/Net/NameValueCollection.h>
 #include "tools/Tools.h"
 #include <boost/algorithm/string.hpp>
-#include "tools/Constants.h"
+#include "tools/constants/Constants.h"
+#include "tools/constants/Messages.h"
 
 namespace tools
 {
@@ -105,7 +106,7 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+				std::cerr << Messages::http_response_code_not_200 << std::endl;
 
 				//print request
 	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
@@ -307,7 +308,7 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+				std::cerr << Messages::http_response_code_not_200 << std::endl;
 
 				//print request
 	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
@@ -459,7 +460,7 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+				std::cerr << Messages::http_response_code_not_200 << std::endl;
 
 				//print request
 	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
@@ -631,7 +632,7 @@ namespace tools
 
 			if(http_response_code != Poco::Net::HTTPResponse::HTTPStatus::HTTP_OK && m_print_error)
 			{
-				std::cerr << "Error: Response's http code is not 200!" << std::endl;
+				std::cerr << Messages::http_response_code_not_200 << std::endl;
 
 				//print request
 				std::string temp_http_args;

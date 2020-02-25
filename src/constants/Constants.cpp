@@ -1,11 +1,11 @@
-#include "tools/Constants.h"
+#include "tools/constants/Constants.h"
 #include <string>
 #include <iostream>
 
 namespace tools
 {
-	const std::string Constants::version = "1.1.35";
-	const std::string Constants::release = "21.Feb.2020";
+	const std::string Constants::version = "1.1.4";
+	const std::string Constants::release = "25.Feb.2020";
 	const std::string Constants::ansi_reset = "\x1B[0m";
 	const std::string Constants::ansi_black = "\x1B[30m";
 	const std::string Constants::ansi_red = "\x1B[31m";
@@ -39,9 +39,4 @@ namespace tools
 	const std::string Constants::ansi_bold_bright_magenta = "\x1B[1;95m";
 	const std::string Constants::ansi_bold_bright_cyan = "\x1B[1;96m";
 	const std::string Constants::ansi_bold_bright_white = "\x1B[1;97m";
-
-	void Constants::file_non_existent(const std::string &file) noexcept
-	{
-		std::cerr << "Error: The file \"" + file + "\" does not exist." << std::endl;
-	}
 }
