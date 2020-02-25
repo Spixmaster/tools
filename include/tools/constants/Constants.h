@@ -1,5 +1,5 @@
-#ifndef TOOLS_CONSTANTS_H
-#define TOOLS_CONSTANTS_H
+#ifndef TOOLS_CONSTANTS_CONSTANTS_H
+#define TOOLS_CONSTANTS_CONSTANTS_H
 
 #include <string>
 #include <memory>
@@ -11,8 +11,9 @@
 
 namespace tools
 {
-	struct Constants
+	class Constants
 	{
+	public:
 		//pointer of itself
 		typedef std::shared_ptr<Constants> ptr;
 
@@ -53,13 +54,6 @@ namespace tools
 		static const std::string ansi_bold_bright_magenta;
 		static const std::string ansi_bold_bright_cyan;
 		static const std::string ansi_bold_bright_white;
-
-		//member functions
-		/*
-		 * @brief puts an error message out to stderr
-		 * @param file: the filename which is included in the error message
-		 */
-		static void file_non_existent(const std::string &file) noexcept;
 	};
 }
 

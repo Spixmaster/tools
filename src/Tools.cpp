@@ -1,5 +1,4 @@
 #include "tools/Tools.h"
-#include "tools/Constants.h"
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -16,6 +15,8 @@
 #include <boost/iostreams/filter/gzip.hpp>
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
+#include "tools/constants/Constants.h"
+#include "tools/constants/Messages.h"
 
 namespace tools
 {
@@ -111,7 +112,7 @@ namespace tools
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return "";
 		}
@@ -152,7 +153,7 @@ namespace tools
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return "";
 		}
@@ -186,7 +187,7 @@ namespace tools
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return 0;
 		}
@@ -234,7 +235,7 @@ namespace tools
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return "";
 		}
@@ -300,7 +301,7 @@ namespace tools
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return false;
 		}
@@ -354,14 +355,14 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "Error: You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
 
 				return "";
 			}
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return "";
 		}
@@ -402,14 +403,14 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "Error: You need to enter a positive value to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
 
 				return "";
 			}
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 			return "";
 		}
@@ -448,7 +449,7 @@ namespace tools
 			//if digits = 0 --> 0 is returned
 			if(digits == 0)
 			{
-				std::cout << "There are no numerals at the end of the string: \"" << entry << "\"" << std::endl;
+				std::cerr << Messages::no_num_str_end(entry) << std::endl;
 				return 0;
 			}
 
@@ -469,7 +470,7 @@ namespace tools
 		}
 		else
 		{
-			std::cerr << "Error: The given string is empty." << std::endl;
+			std::cerr << Messages::given_str_empty << std::endl;
 
 			return 0;
 		}
@@ -501,14 +502,14 @@ namespace tools
 			}
 			else
 			{
-				std::cerr << "Error: You need to enter a positive value and greater than 0 to read in" << " \"" + file << "\"." << std::endl;
+				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
 
 				return "";
 			}
 		}
 		else
 		{
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 			return "";
 		}
 	}
@@ -534,7 +535,7 @@ namespace tools
 			}
 		}
 		else
-			Constants::file_non_existent(file);
+			Messages::file_non_existent(file);
 
 		return 0;
 	}
@@ -707,7 +708,7 @@ namespace tools
 		}
 		catch(const std::exception &e)
 		{
-			std::cerr << "Error: That is not gzip compressed data." << std::endl;
+			std::cerr << Messages::not_gzip_compressed << std::endl;
 			return "";
 		}
 	}

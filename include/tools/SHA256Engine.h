@@ -2,6 +2,7 @@
 #define TOOLS_SHA256ENGINE_H
 
 #include <Poco/Crypto/DigestEngine.h>
+#include <memory>
 
 //@brief a simple help class that is only needed due to Poco
 
