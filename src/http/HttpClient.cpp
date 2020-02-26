@@ -99,7 +99,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cout << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
@@ -127,7 +127,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
@@ -301,7 +301,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cout << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
@@ -329,7 +329,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cerr << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
@@ -453,7 +453,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cout << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
@@ -481,7 +481,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cerr << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
@@ -625,7 +625,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cout << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cout << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cout << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cout << http_response_body << Constants::ansi_reset << std::endl;
 			}
@@ -665,7 +665,7 @@ namespace tools
 				if(!http_repsonse_headers.empty())
 					http_repsonse_headers.pop_back();
 
-	        	std::cerr << Constants::ansi_bold_bright_cyan << "The response:" << Constants::ansi_reset << std::endl;
+				std::cerr << Constants::ansi_bold_bright_cyan << "The response (status code " << http_response_code << "):" << Constants::ansi_reset << std::endl;
 	        	std::cerr << Constants::ansi_bright_cyan << http_repsonse_headers << std::endl;
 				std::cerr << http_response_body << Constants::ansi_reset << std::endl;
 
