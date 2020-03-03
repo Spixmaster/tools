@@ -17,6 +17,7 @@
 #include <rapidjson/writer.h>
 #include "tools/constants/Constants.h"
 #include "tools/constants/Messages.h"
+#include <chrono>
 
 namespace tools
 {
@@ -740,5 +741,40 @@ namespace tools
 		val.Accept(writer);
 
 		return sb.GetString();
+	}
+
+	long long Tools::get_time_in_millisec() noexcept
+	{
+		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+	}
+
+	long long Tools::get_time() noexcept
+	{
+		//get time
+		time_t raw_time;
+		time(&raw_time);
+
+		return raw_time;
+	}
+
+	double Tools::get_time_w_millisec() noexcept
+	{
+		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() / 1000;
+	}
+
+	std::string Tools::get_date() noexcept
+	{
+		//get time
+		time_t raw_time;
+		time(&raw_time);
+		struct tm *time_info;
+		time_info = localtime(&raw_time);
+
+		std::string temp = asctime(time_info);
+
+		if(!temp.empty())
+			temp.pop_back();
+
+		return temp;
 	}
 }

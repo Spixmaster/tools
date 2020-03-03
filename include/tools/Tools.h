@@ -282,6 +282,30 @@ namespace tools
 		 * @return the string of the json
 		 */
 		static std::string get_json_as_string(const rapidjson::Value &val) noexcept;
+
+		/*
+		 * @brief calls the current time in milliseconds --> e.g. 1583068819924
+		 * @return unix time in milliseconds
+		 */
+		static long long get_time_in_millisec() noexcept;
+
+		/*
+		 * @brief calls the current time --> e.g. 1583068819
+		 * @return unix time in seconds
+		 */
+		static long long get_time() noexcept;
+
+		/*
+		 * @brief calls the current time in seconds with milliseconds --> e.g. 1583068819.924
+		 * @return unix time in seconds with milliseconds
+		 */
+		static double get_time_w_millisec() noexcept;
+
+		/*
+		 * @brief calls the current time and makes the date
+		 * @return asctime date with no new line appended
+		 */
+		static std::string get_date() noexcept;
 	};
 }
 
