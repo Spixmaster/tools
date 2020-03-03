@@ -750,11 +750,7 @@ namespace tools
 
 	long long Tools::get_time() noexcept
 	{
-		//get time
-		time_t raw_time;
-		time(&raw_time);
-
-		return raw_time;
+		return std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	}
 
 	double Tools::get_time_w_millisec() noexcept
