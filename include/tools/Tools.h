@@ -306,6 +306,13 @@ namespace tools
 		 * @return asctime date with no new line appended
 		 */
 		static std::string get_date() noexcept;
+
+		/*
+		 * @brief ISO 8601 offset from UTC in timezone (1 minute=1, 1 hour=100)
+		 * @brief If timezone cannot be determined, no characters
+		 * @return timezone like -18000
+		 */
+		static std::string get_timezone_offset() noexcept;
 	};
 }
 
