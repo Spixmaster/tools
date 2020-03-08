@@ -787,4 +787,22 @@ namespace tools
 
 		return buf;
 	}
+
+	int Tools::get_seed() noexcept
+	{
+		//get the last 9 chars of the number as this can never cause an integer overflow
+		std::string temp = std::to_string(get_time_in_millisec());
+		std::reverse(temp.begin(), temp.end());
+		std::string result;
+
+		for(size_t j = 0; j < temp.size(); ++j)
+		{
+			if(j < 9)
+				result += temp.at(j);
+			else
+				break;
+		}
+
+		return std::stoi(result);
+	}
 }

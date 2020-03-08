@@ -313,6 +313,13 @@ namespace tools
 		 * @return timezone like -18000
 		 */
 		static std::string get_timezone_offset() noexcept;
+
+		/*
+		 * @brief calls the current time in milliseconds and shortens it so that is can be used as a a seed
+		 * @brief can be used very fast behind each other as every millisecond the seed changes
+		 * @return random number
+		 */
+		static int get_seed() noexcept;
 	};
 }
 
