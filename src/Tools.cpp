@@ -757,20 +757,31 @@ namespace tools
 		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() / 1000;
 	}
 
-	std::string Tools::get_date() noexcept
+	std::string Tools::get_date(const std::time_t &time) noexcept
 	{
-		//get time
-		std::time_t raw_time;
-		std::time(&raw_time);
-		struct std::tm *time_info;
-		time_info = std::localtime(&raw_time);
+		if(time >= 0)
+		{
+			//get time
+			std::time_t raw_time;
+			if(time == 0)
+				std::time(&raw_time);
+			else
+				raw_time = time;
+			struct std::tm *time_info;
+			time_info = std::localtime(&raw_time);
 
-		std::string temp = std::asctime(time_info);
+			std::string temp = std::asctime(time_info);
 
-		if(!temp.empty())
-			temp.pop_back();
+			if(!temp.empty())
+				temp.pop_back();
 
-		return temp;
+			return temp;
+		}
+		else
+		{
+			std::cerr << Messages::not_pos_int << std::endl;
+			return "";
+		}
 	}
 
 	std::string Tools::get_timezone_offset() noexcept
@@ -807,15 +818,23 @@ namespace tools
 
 	std::tm* Tools::get_tm(const std::time_t &time) noexcept
 	{
-		//get time
-		std::time_t raw_time;
-		if(time == 0)
-			std::time(&raw_time);
-		else
-			raw_time = time;
-		struct std::tm *time_info;
-		time_info = std::localtime(&raw_time);
+		if(time >= 0)
+		{
+			//get time
+			std::time_t raw_time;
+			if(time == 0)
+				std::time(&raw_time);
+			else
+				raw_time = time;
+			struct std::tm *time_info;
+			time_info = std::localtime(&raw_time);
 
-		return time_info;
+			return time_info;
+		}
+		else
+		{
+			std::cerr << Messages::not_pos_int << std::endl;
+			return "";
+		}
 	}
 }

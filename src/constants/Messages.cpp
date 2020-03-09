@@ -6,6 +6,7 @@ namespace tools
 	const std::string Messages::given_str_empty = "Error: The given string is empty.";
 	const std::string Messages::not_gzip_compressed = "Error: That is not gzip compressed data.";
 	const std::string Messages::http_response_code_not_200 = "Error: Response's http code is not 200!";
+	const std::string Messages::not_pos_int = "Error: It was not given a positive integer.";
 
 	void Messages::file_non_existent(const std::string &file) noexcept
 	{
