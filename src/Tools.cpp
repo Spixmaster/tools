@@ -766,7 +766,7 @@ namespace tools
 		struct std::tm *time_info;
 		time_info = std::localtime(&raw_time);
 
-		std::string temp = asctime(time_info);
+		std::string temp = std::asctime(time_info);
 
 		if(!temp.empty())
 			temp.pop_back();
