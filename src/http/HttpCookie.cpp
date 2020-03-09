@@ -6,7 +6,7 @@ namespace tools
 {
 	HttpCookie::HttpCookie(const std::string &set_cookie_val) : m_origin(set_cookie_val)
 	{
-		for(size_t j = 0; j < set_cookie_val.size(); ++j)
+		for(std::size_t j = 0; j < set_cookie_val.size(); ++j)
 		{
 			if(set_cookie_val.at(j) != '=')
 				m_name += set_cookie_val.at(j);
@@ -37,7 +37,7 @@ namespace tools
 		bool key_found = false;
 
 		//iterate through the content
-		for(size_t j = 0; j < cont.size(); ++j)
+		for(std::size_t j = 0; j < cont.size(); ++j)
 		{
 			//we iterate through the content as long as we have found the key's first char
 			if(cont.at(j) == key.at(0))
@@ -46,9 +46,9 @@ namespace tools
 				 * save the value of j so that we do not manipulate it itself
 				 * now, we iterate through the key and check whether is corresponds to the following content chars
 				 */
-				size_t temp = j;
+				std::size_t temp = j;
 				//iterate through the key
-				for(size_t k = 0; k < key.size(); ++k)
+				for(std::size_t k = 0; k < key.size(); ++k)
 				{
 					/*
 					 * check whether we are still in the range of cont to access cont.at(temp)
@@ -77,7 +77,7 @@ namespace tools
 				if(key_found == true)
 				{
 					//right now, temp is at the '=' in cont
-					for(size_t l = temp + 1; l < cont.size(); ++l)
+					for(std::size_t l = temp + 1; l < cont.size(); ++l)
 					{
 						if(cont.at(l) == ';')
 							break;

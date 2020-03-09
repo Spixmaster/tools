@@ -57,7 +57,7 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_GET, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 	        	//options and headers
-	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	        for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 	        session.setTimeout(Poco::Timespan(150L, 0L));
 
@@ -141,7 +141,7 @@ namespace tools
 					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
-				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 				{
 					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -161,7 +161,7 @@ namespace tools
 				++j;
 			}
 			std::vector<HttpCookie> http_cookies;
-			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 			{
 				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -203,7 +203,7 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	        for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
@@ -235,7 +235,7 @@ namespace tools
 			else
 			{
 				http_body.append("{");
-				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				for(std::size_t j = 0; j < m_http_args.size(); ++j)
 				{
 					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
 					{
@@ -259,7 +259,7 @@ namespace tools
 			}
 
 					//check whether necessary to url parse
-			for(size_t j = 0; j < m_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 			{
 				if(m_http_headers.at(j).m_key == "Content-Type" &&  m_http_headers.at(j).m_value.find("application/x-www-form-urlencoded") != std::string::npos)
 				{
@@ -353,7 +353,7 @@ namespace tools
 					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
-				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 				{
 					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -373,7 +373,7 @@ namespace tools
 				++j;
 			}
 			std::vector<HttpCookie> http_cookies;
-			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 			{
 				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -415,12 +415,12 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	        for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 					//check whether necessary to url parse
-			for(size_t j = 0; j < m_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 			{
 				if(m_http_headers.at(j).m_key == "Content-Type" &&  m_http_headers.at(j).m_value.find("application/x-www-form-urlencoded") != std::string::npos)
 				{
@@ -515,7 +515,7 @@ namespace tools
 					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
-				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 				{
 					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -535,7 +535,7 @@ namespace tools
 				++j;
 			}
 			std::vector<HttpCookie> http_cookies;
-			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 			{
 				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -577,14 +577,14 @@ namespace tools
 			Poco::Net::HTTPRequest req(Poco::Net::HTTPRequest::HTTP_POST, path_query, Poco::Net::HTTPMessage::HTTP_1_1);
 
 				//options and headers
-	        for(size_t j = 0; j < m_http_headers.size(); ++j)
+	        for(std::size_t j = 0; j < m_http_headers.size(); ++j)
 	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
 
 				//html form
 			Poco::Net::HTMLForm form(Poco::Net::HTMLForm::ENCODING_MULTIPART);
 					//add each field
-			for (std::size_t j = 0; j < m_http_args.size(); ++j)
+			for(std::size_t j = 0; j < m_http_args.size(); ++j)
 			{
 				if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
 					form.set(m_http_args.at(j).m_key, std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
@@ -602,7 +602,7 @@ namespace tools
 	        {
 				std::string temp_http_args;
 				//InputFile is neglected
-				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				for(std::size_t j = 0; j < m_http_args.size(); ++j)
 				{
 					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
@@ -657,7 +657,7 @@ namespace tools
 				//print request
 				std::string temp_http_args;
 				//InputFile is neglected
-				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				for(std::size_t j = 0; j < m_http_args.size(); ++j)
 				{
 					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
@@ -699,7 +699,7 @@ namespace tools
 					++k;
 				}
 				std::vector<HttpCookie> http_cookies;
-				for(size_t j = 0; j < temp_http_headers.size(); ++j)
+				for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 				{
 					if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 						http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));
@@ -719,7 +719,7 @@ namespace tools
 				++j;
 			}
 			std::vector<HttpCookie> http_cookies;
-			for(size_t j = 0; j < temp_http_headers.size(); ++j)
+			for(std::size_t j = 0; j < temp_http_headers.size(); ++j)
 			{
 				if(boost::iequals(temp_http_headers.at(j).m_key, "Set-Cookie"))
 					http_cookies.push_back(HttpCookie(temp_http_headers.at(j).m_value));

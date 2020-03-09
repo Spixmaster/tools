@@ -75,7 +75,7 @@ namespace tools
 		 * @return position of beginning of line which contains "srch" for file pointer
 		 * @return by default, returns 0
 		 */
-		static size_t get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept;
+		static std::size_t get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept;
 
 		/*
 		 * @brief ',' and '.' in string return false too
