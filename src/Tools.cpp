@@ -761,10 +761,10 @@ namespace tools
 	std::string Tools::get_date() noexcept
 	{
 		//get time
-		time_t raw_time;
-		time(&raw_time);
-		struct tm *time_info;
-		time_info = localtime(&raw_time);
+		std::time_t raw_time;
+		std::time(&raw_time);
+		struct std::tm *time_info;
+		time_info = std::localtime(&raw_time);
 
 		std::string temp = asctime(time_info);
 
@@ -777,13 +777,13 @@ namespace tools
 	std::string Tools::get_timezone_offset() noexcept
 	{
 		//get time
-		time_t raw_time;
-		time(&raw_time);
-		struct tm *time_info;
-		time_info = localtime(&raw_time);
+		std::time_t raw_time;
+		std::time(&raw_time);
+		struct std::tm *time_info;
+		time_info = std::localtime(&raw_time);
 
 		char buf[6];
-		strftime(buf, sizeof(buf), "%z", time_info);
+		std::strftime(buf, sizeof(buf), "%z", time_info);
 
 		return buf;
 	}
@@ -804,5 +804,16 @@ namespace tools
 		}
 
 		return std::stoi(result);
+	}
+
+	std::tm* Tools::get_tm() noexcept
+	{
+		//get time
+		std::time_t raw_time;
+		std::time(&raw_time);
+		struct std::tm *time_info;
+		time_info = std::localtime(&raw_time);
+
+		return time_info;
 	}
 }

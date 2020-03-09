@@ -6,6 +6,7 @@
 #include <memory>
 #include <Poco/Crypto/DigestEngine.h>
 #include <rapidjson/document.h>
+#include <ctime>
 
 /*
  * @brief content: all functions for general C++ use or generally necessary for this project
@@ -320,6 +321,12 @@ namespace tools
 		 * @return random number
 		 */
 		static int get_seed() noexcept;
+
+		/*
+		 * @brief gets the tm struct for us
+		 * @return struct std::tm
+		 */
+		static std::tm* get_tm() noexcept;
 	};
 }
 
