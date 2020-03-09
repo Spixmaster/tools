@@ -211,7 +211,7 @@ namespace tools
 			std::string http_body;
 			if(!body_json)
 			{
-				for (std::size_t j = 0; j < m_http_args.size(); ++j)
+				for(std::size_t j = 0; j < m_http_args.size(); ++j)
 				{
 					if(std::holds_alternative<long long>(m_http_args.at(j).m_value))
 					{

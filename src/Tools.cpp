@@ -341,7 +341,7 @@ namespace tools
 
 				if(inf.is_open())
 				{
-					while (!inf.eof())
+					while(!inf.eof())
 					{
 						if(count == ln_nums)
 							break;
@@ -381,7 +381,7 @@ namespace tools
 
 				if(inf.is_open())
 				{
-					while (!inf.eof())
+					while(!inf.eof())
 					{
 						if(count < ln_nums)
 						{
@@ -429,7 +429,7 @@ namespace tools
 			int digits = 0;
 
 			//no numerals at end --> digits = 0
-			while (true)
+			while(true)
 			{
 				if(Tools::is_pos_int(entry.at(entry.length() - pos)) || entry.at(entry.length() - pos) == '-')
 				{
@@ -455,7 +455,7 @@ namespace tools
 			}
 
 			//get number according to digits
-			for (int j = 0; j < digits; ++j)
+			for(int j = 0; j < digits; ++j)
 			{
 				//+ 1 --> else first iteration would end sequence
 				char numeral = entry.at(entry.length() - (j + 1));
@@ -489,7 +489,7 @@ namespace tools
 
 				if(inf.is_open())
 				{
-					while (!inf.eof())
+					while(!inf.eof())
 					{
 						std::string cache;
 						std::getline(inf, cache);
@@ -524,7 +524,7 @@ namespace tools
 			if(inf.is_open())
 			{
 				int x = 0;
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::string cache;
 					std::getline(inf, cache);
