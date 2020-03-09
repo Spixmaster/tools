@@ -834,7 +834,10 @@ namespace tools
 		else
 		{
 			std::cerr << Messages::not_pos_int << std::endl;
-			return "";
+			struct std::tm *time_info;
+			time_info = std::localtime(0);
+
+			return time_info;
 		}
 	}
 }
