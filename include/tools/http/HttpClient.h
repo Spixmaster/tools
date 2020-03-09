@@ -9,7 +9,11 @@
 #include "tools/http/HttpHeader.h"
 #include <variant>
 
-//@brief class does all http requests
+/*
+ * @brief class does all http requests
+ * @brief for post methods the contente length is set automatically
+ * @brief if necessary the post mehods url parse the http body by themselves
+ */
 
 namespace tools
 {
@@ -80,7 +84,7 @@ namespace tools
 		 * @param debug: prints to stdout headers and args of the request and the response
 		 * @return the server response
 		 */
-		HttpResponse send_post_req_urlencoded(const std::string &http_body, const bool &debug = false) const noexcept;
+		HttpResponse send_post_req_urlencoded(std::string http_body, const bool &debug = false) const noexcept;
 
 		/*
 		 * @brief makes a post request via multipart/form-data

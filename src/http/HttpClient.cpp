@@ -258,6 +258,16 @@ namespace tools
 				http_body.append("}");
 			}
 
+					//check whether necessary to url parse
+			for(size_t j = 0; j < m_http_headers.size(); ++j)
+			{
+				if(m_http_headers.at(j).m_key == "Content-Type" &&  m_http_headers.at(j).m_value.find("application/x-www-form-urlencoded") != std::string::npos)
+				{
+					http_body = tools::Tools::parse_url(http_body);
+					break;
+				}
+			}
+
 			if(!http_body.empty())
 				req.setContentLength(http_body.length());
 
@@ -383,7 +393,7 @@ namespace tools
 		}
 	}
 
-	HttpResponse HttpClient::send_post_req_urlencoded(const std::string &http_body, const bool &debug) const noexcept
+	HttpResponse HttpClient::send_post_req_urlencoded(std::string http_body, const bool &debug) const noexcept
 	{
 		Poco::Net::HTTPResponse::HTTPStatus http_response_code = Poco::Net::HTTPResponse::HTTPStatus::HTTP_BAD_REQUEST;;
 		std::string http_response_body;
@@ -408,6 +418,16 @@ namespace tools
 	        for(size_t j = 0; j < m_http_headers.size(); ++j)
 	            req.set(m_http_headers.at(j).m_key, m_http_headers.at(j).m_value);
 			session.setTimeout(Poco::Timespan(150L, 0L));
+
+					//check whether necessary to url parse
+			for(size_t j = 0; j < m_http_headers.size(); ++j)
+			{
+				if(m_http_headers.at(j).m_key == "Content-Type" &&  m_http_headers.at(j).m_value.find("application/x-www-form-urlencoded") != std::string::npos)
+				{
+					http_body = tools::Tools::parse_url(http_body);
+					break;
+				}
+			}
 
 				//http body
 			if(!http_body.empty())
