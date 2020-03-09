@@ -11,8 +11,8 @@
 
 /*
  * @brief class does all http requests
- * @brief for post methods the contente length is set automatically
- * @brief if necessary the post mehods url parse the http body by themselves
+ * @brief for post methods the content length is set automatically
+ * @brief if necessary the post methods url parse the http body by themselves
  */
 
 namespace tools
