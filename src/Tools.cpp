@@ -805,11 +805,14 @@ namespace tools
 		return std::stoi(result);
 	}
 
-	std::tm* Tools::get_tm() noexcept
+	std::tm* Tools::get_tm(const std::time_t &time) noexcept
 	{
 		//get time
 		std::time_t raw_time;
-		std::time(&raw_time);
+		if(time == 0)
+			std::time(&raw_time);
+		else
+			raw_time = time;
 		struct std::tm *time_info;
 		time_info = std::localtime(&raw_time);
 

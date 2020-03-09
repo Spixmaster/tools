@@ -324,9 +324,11 @@ namespace tools
 
 		/*
 		 * @brief gets the tm struct for us
+		 * @brief by default, the struct std::tm gets the current time but optionally, it can be given an input for it
+		 * @param time: input for the struct std::tm
 		 * @return struct std::tm
 		 */
-		static std::tm* get_tm() noexcept;
+		static std::tm* get_tm(const std::time_t &time = 0) noexcept;
 	};
 }
 
