@@ -306,7 +306,7 @@ namespace tools
 		 * @brief calls the current time and makes the date
 		 * @return asctime date with no new line appended
 		 */
-		static std::string get_date() noexcept;
+		static std::string get_date(const std::time_t &time = 0) noexcept;
 
 		/*
 		 * @brief ISO 8601 offset from UTC in timezone (1 minute=1, 1 hour=100)

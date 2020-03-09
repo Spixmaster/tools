@@ -21,6 +21,7 @@ namespace tools
 		static const std::string given_str_empty;
 		static const std::string not_gzip_compressed;
 		static const std::string http_response_code_not_200;
+		static const std::string not_pos_int;
 
 		//member functions
 		/*
