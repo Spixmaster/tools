@@ -26,7 +26,7 @@ namespace tools
 		std::vector<std::string> args;
 		std::string word;
 
-		for (size_t j = 0; j < str.length(); ++j)
+		for(std::size_t j = 0; j < str.length(); ++j)
 		{
 			//deal with last char/word
 			//add last char to word
@@ -59,7 +59,7 @@ namespace tools
 		std::vector<std::string> args;
 		std::string word;
 
-		for (size_t j = 0; j < str.length(); ++j)
+		for(std::size_t j = 0; j < str.length(); ++j)
 		{
 			//deal with last char/word
 			//add last char to word
@@ -94,7 +94,7 @@ namespace tools
 
 			if(inf.is_open())
 			{
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::string cur_ln;
 					std::getline(inf, cur_ln);
@@ -125,11 +125,11 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cont;
-			size_t found;
+			std::size_t found;
 
 			if(inf.is_open())
 			{
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::string cur_ln;
 					std::getline(inf, cur_ln);
@@ -160,18 +160,18 @@ namespace tools
 		}
 	}
 
-	size_t Tools::get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept
+	std::size_t Tools::get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept
 	{
 		if(Tools::file_exists(file))
 		{
 			std::ifstream inf(file);
 			std::string cur_ln;
-			size_t found;
-			size_t chars_to_srch = 0;
+			std::size_t found;
+			std::size_t chars_to_srch = 0;
 
 			if(inf.is_open())
 			{
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::getline(inf, cur_ln);
 
@@ -196,7 +196,7 @@ namespace tools
 
 	bool Tools::is_pos_int(const std::string &str) noexcept
 	{
-		for (size_t j = 0; j < str.length(); ++j)
+		for(std::size_t j = 0; j < str.length(); ++j)
 			if(!isdigit(str[j]))
 				return false;
 
@@ -217,11 +217,11 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cur_ln;
-			size_t found;
+			std::size_t found;
 
 			if(inf.is_open())
 			{
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::getline(inf, cur_ln);
 
@@ -257,7 +257,7 @@ namespace tools
 		//otherwise beginning could not even be beginning
 		if(str.length() > beg.length())
 		{
-			for (size_t j = 0; j < beg.length(); ++j)
+			for(std::size_t j = 0; j < beg.length(); ++j)
 				if(!(beg.at(j) == str.at(j)))
 					return false;
 
@@ -271,7 +271,7 @@ namespace tools
 		//otherwise end could not even be end
 		if(str.length() > end.length())
 		{
-			for (size_t j = 0; j < end.length(); ++j)
+			for(std::size_t j = 0; j < end.length(); ++j)
 				if(!(end.at(end.length() - 1 - j) == str.at(str.length() - 1 - j)))
 					return false;
 
@@ -286,11 +286,11 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cur_ln;
-			size_t found;
+			std::size_t found;
 
 			if(inf.is_open())
 			{
-				while (!inf.eof())
+				while(!inf.eof())
 				{
 					std::getline(inf, cur_ln);
 
@@ -312,7 +312,7 @@ namespace tools
 	{
 		std::string res;
 		//j = 1 --> omit .at(0)
-		for (size_t j = 1; j < str.length(); ++j)
+		for(std::size_t j = 1; j < str.length(); ++j)
 			res.push_back(str.at(j));
 
 		//as with .length() = 1 for loop is not executed
@@ -543,10 +543,9 @@ namespace tools
 
 	std::string Tools::get_exe_path() noexcept
 	{
-	  char result[ PATH_MAX ];
-	  ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
-
-	  return std::string(result, (count > 0) ? count : 0);
+		char result[ PATH_MAX ];
+		ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
+		return std::string(result, (count > 0) ? count : 0);
 	}
 
 	std::string Tools::md5_hash(const std::string &seed) noexcept
@@ -580,7 +579,7 @@ namespace tools
 		std::string utf8_encoded;
 
 		//iterate through the whole string
-		for(size_t j = 0; j < wstr.size(); ++j)
+		for(std::size_t j = 0; j < wstr.size(); ++j)
 		{
 			if(wstr.at(j) <= 0x7F)
 				utf8_encoded += wstr.at(j);
@@ -795,7 +794,7 @@ namespace tools
 		std::reverse(temp.begin(), temp.end());
 		std::string result;
 
-		for(size_t j = 0; j < temp.size(); ++j)
+		for(std::size_t j = 0; j < temp.size(); ++j)
 		{
 			if(j < 9)
 				result += temp.at(j);
