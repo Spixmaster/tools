@@ -218,7 +218,7 @@ namespace tools
 						http_body.append(m_http_args.at(j).m_key + "=" + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
 
 						//add & for next key value pair
-						if(j < (m_http_args.size() - 1))
+						if(j != m_http_args.size() - 1)
 							http_body.append("&");
 					}
 					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
@@ -226,7 +226,7 @@ namespace tools
 						http_body.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
 
 						//add & for next key value pair
-						if(j < (m_http_args.size() - 1))
+						if(j != m_http_args.size() - 1)
 							http_body.append("&");
 					}
 					//value is type of InputFile::ptr and thus ignored
@@ -242,7 +242,7 @@ namespace tools
 						http_body.append("\"" + m_http_args.at(j).m_key + "\": " + std::to_string(std::get<long long>(m_http_args.at(j).m_value)));
 
 						//add , for next json key value pair
-						if(j < (m_http_args.size() - 1))
+						if(j != m_http_args.size() - 1)
 							http_body.append(", ");
 					}
 					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
@@ -250,7 +250,7 @@ namespace tools
 						http_body.append("\"" + m_http_args.at(j).m_key + "\": \"" + std::get<std::string>(m_http_args.at(j).m_value) + "\"");
 
 						//add , for next json key value pair
-						if(j < (m_http_args.size() - 1))
+						if(j != m_http_args.size() - 1)
 							http_body.append(", ");
 					}
 					//value is type of InputFile::ptr and thus ignored
@@ -609,7 +609,7 @@ namespace tools
 					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
 
-					if(j != (m_http_args.size() - 1))
+					if(j != m_http_args.size() - 1)
 						temp_http_args.append("\n");
 				}
 	        	std::cout << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
@@ -664,7 +664,7 @@ namespace tools
 					else if(std::holds_alternative<std::string>(m_http_args.at(j).m_value))
 						temp_http_args.append(m_http_args.at(j).m_key + "=" + std::get<std::string>(m_http_args.at(j).m_value));
 
-					if(j != (m_http_args.size() - 1))
+					if(j != m_http_args.size() - 1)
 						temp_http_args.append("\n");
 				}
 	        	std::cerr << Constants::ansi_bold_cyan << "The request:" << Constants::ansi_reset << std::endl;
