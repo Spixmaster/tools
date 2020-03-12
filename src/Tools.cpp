@@ -840,4 +840,37 @@ namespace tools
 			return time_info;
 		}
 	}
+
+	std::string Tools::get_file_ln_val(const std::string &ln) noexcept
+	{
+		if(!ln.empty())
+		{
+			std::string result;
+			std::vector<std::string> args = get_args(ln);
+			bool add = false;
+
+			for(std::size_t j = 0; j < args.size(); ++j)
+			{
+				if(add == true)
+				{
+					result.append(args.at(j));
+
+					if(j != args.size() - 1)
+						result.append(" ");
+				}
+
+				//this condition at end so that the key is not added
+				if(ends_w(args.at(j), ":"))
+					add = true;
+			}
+
+			return result;
+		}
+		else
+		{
+			std::cerr << Messages::given_str_empty << std::endl;
+
+			return "";
+		}
+	}
 }
