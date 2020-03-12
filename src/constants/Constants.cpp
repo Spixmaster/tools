@@ -4,8 +4,8 @@
 
 namespace tools
 {
-	const std::string Constants::version = "1.1.18";
-	const std::string Constants::release = "09.Mar.2020";
+	const std::string Constants::version = "1.1.19";
+	const std::string Constants::release = "12.Mar.2020";
 	const std::string Constants::ansi_reset = "\x1B[0m";
 	const std::string Constants::ansi_black = "\x1B[30m";
 	const std::string Constants::ansi_red = "\x1B[31m";

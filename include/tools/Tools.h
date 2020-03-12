@@ -329,6 +329,14 @@ namespace tools
 		 * @return struct std::tm
 		 */
 		static std::tm* get_tm(const std::time_t &time = 0) noexcept;
+
+		/*
+		 * @brief values in lines are save like: "key0 (key1 key2): value0 (value1 value2)"
+		 * @brief this function returns the value
+		 * @param ln: file line whose value we want
+		 * @return value
+		 */
+		static std::string get_file_ln_val(const std::string &ln) noexcept;
 	};
 }
 
