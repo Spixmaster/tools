@@ -7,9 +7,10 @@
 
 namespace tools
 {
-	const std::string Constants::version = "1.1.23";
+	const std::string Constants::version = "1.1.24";
 	const std::string Constants::release = "27.Apr.2020";
 	const std::size_t Constants::max_tmp_err_logs = 10;
+
 	const std::string Constants::ansii_reset = "\x1B[0m";
 	const std::string Constants::ansii_black = "\x1B[30m";
 	const std::string Constants::ansii_red = "\x1B[31m";
@@ -43,7 +44,8 @@ namespace tools
 	const std::string Constants::ansii_bold_bright_magenta = "\x1B[1;95m";
 	const std::string Constants::ansii_bold_bright_cyan = "\x1B[1;96m";
 	const std::string Constants::ansii_bold_bright_white = "\x1B[1;97m";
-	const std::string Constants::folder = "files/";
+
+	const std::string Constants::folder = "./files/";
 	const std::string Constants::folder_error_logs = Constants::folder + "error-logs/";
 	const std::string Constants::folder_error_logs_tmp = Constants::folder + "error-logs-tmp/";
 
