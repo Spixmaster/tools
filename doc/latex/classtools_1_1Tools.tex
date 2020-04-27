@@ -95,7 +95,9 @@ static void \mbox{\hyperlink{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cb
 static void \mbox{\hyperlink{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}{write\+\_\+err\+\_\+log\+\_\+tmp}} (const std\+::string \&err\+\_\+msg) noexcept
 \begin{DoxyCompactList}\small\item\em This function is thought to be used to log error messages temporarily. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce5266110c}{del\+\_\+file}} (const std\+::string \&file) noexcept
-\begin{DoxyCompactList}\small\item\em Deletes the passed file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deletes the passed file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtools_1_1Tools_ad71cdaf446984ff95a2b65b7e1a82f70}{mkdir}} (const std\+::string \&path) noexcept
+\begin{DoxyCompactList}\small\item\em Makes a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -739,6 +741,21 @@ Creates a md5 hash for the proper seed.
 \begin{DoxyReturn}{Returns}
 The md5 hash. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ad71cdaf446984ff95a2b65b7e1a82f70}\label{classtools_1_1Tools_ad71cdaf446984ff95a2b65b7e1a82f70}} 
+\index{tools::Tools@{tools::Tools}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{mkdir()}{mkdir()}}
+{\footnotesize\ttfamily void tools\+::\+Tools\+::mkdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Makes a directory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & The path to the directory which shall be made. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}\label{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}} 
 \index{tools::Tools@{tools::Tools}!parse\_url@{parse\_url}}
 \index{parse\_url@{parse\_url}!tools::Tools@{tools::Tools}}
