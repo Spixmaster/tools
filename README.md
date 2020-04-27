@@ -1,4 +1,4 @@
-# tools
+# tools-cpp
 A C++ library which contains all functions I use in general.
 
 ## Installation
