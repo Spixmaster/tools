@@ -75,7 +75,7 @@ If necessary, the post methods U\+RL parse the H\+T\+TP body by themselves.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
 \hline
-\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request \\
+\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request. \\
 \hline
 \mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
 \hline
@@ -90,7 +90,7 @@ If necessary, the post methods U\+RL parse the H\+T\+TP body by themselves.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
 \hline
-\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request \\
+\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request. \\
 \hline
 \mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
 \hline
@@ -105,9 +105,9 @@ If necessary, the post methods U\+RL parse the H\+T\+TP body by themselves.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
 \hline
-\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request \\
+\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request. \\
 \hline
-\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request \\
+\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request. \\
 \hline
 \mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
 \hline
@@ -183,7 +183,7 @@ Makes a simple get request.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The server response 
+The server response. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1HttpClient_aa95b4d71d3c50e33a8f46eaa675f0e94}\label{classtools_1_1HttpClient_aa95b4d71d3c50e33a8f46eaa675f0e94}} 
 \index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_multipart@{send\_post\_req\_multipart}}
@@ -201,7 +201,7 @@ Makes a post request via \char`\"{}multipart/form-\/data\char`\"{}.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The server response 
+The server response. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1HttpClient_a16ef4aa954f037242aa15a03c0a879ed}\label{classtools_1_1HttpClient_a16ef4aa954f037242aa15a03c0a879ed}} 
 \index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}}
@@ -215,13 +215,13 @@ Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em body\+\_\+json} & If value is true, it converts the H\+T\+TP args to json before they are sent. \\
+\mbox{\texttt{ in}}  & {\em body\+\_\+json} & the If value is true, it converts the H\+T\+TP args to json before they are sent. \\
 \hline
 \mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The server response 
+The server response. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1HttpClient_a7a128f70ab299dfc8567def57d6d92f3}\label{classtools_1_1HttpClient_a7a128f70ab299dfc8567def57d6d92f3}} 
 \index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}}
@@ -235,13 +235,13 @@ Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`
 
 This overload is necessary as Instagram for example demands very specific http bodies (hmac sha256 hashed and prefix). 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em http\+\_\+body} & The special H\+T\+TP body which is going to be sent \\
+\mbox{\texttt{ in}}  & {\em http\+\_\+body} & The special H\+T\+TP body which is going to be sent. \\
 \hline
 \mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The server response 
+The server response. 
 \end{DoxyReturn}
 
 

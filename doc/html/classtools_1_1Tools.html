@@ -185,7 +185,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a046d7b0ec0fc6308ddb98bc10a7253e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time and makes the date.  <a href="classtools_1_1Tools.html#a046d7b0ec0fc6308ddb98bc10a7253e8">More...</a><br /></td></tr>
 <tr class="separator:a046d7b0ec0fc6308ddb98bc10a7253e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b7737be328c764c6752f148fe15157d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtools_1_1Tools.html#a9b7737be328c764c6752f148fe15157d">get_timezone_offset</a> () noexcept</td></tr>
-<tr class="memdesc:a9b7737be328c764c6752f148fe15157d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ISO 8601 offset from UTC in time zone (1 minute=1, 1 hour=100)  <a href="classtools_1_1Tools.html#a9b7737be328c764c6752f148fe15157d">More...</a><br /></td></tr>
+<tr class="memdesc:a9b7737be328c764c6752f148fe15157d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ISO 8601 offset from UTC in time zone (1 minute=1, 1 hour=100).  <a href="classtools_1_1Tools.html#a9b7737be328c764c6752f148fe15157d">More...</a><br /></td></tr>
 <tr class="separator:a9b7737be328c764c6752f148fe15157d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a106306921da41953200991a264b24d9b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtools_1_1Tools.html#a106306921da41953200991a264b24d9b">get_seed</a> () noexcept</td></tr>
 <tr class="memdesc:a106306921da41953200991a264b24d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme.  <a href="classtools_1_1Tools.html#a106306921da41953200991a264b24d9b">More...</a><br /></td></tr>
@@ -237,11 +237,11 @@ Static Public Member Functions</h2></td></tr>
 <p>Cuts off the first char of the passed string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to shorten </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to shorten. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The shortened string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The shortened string. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">""</td><td>The passed string is empty. </td></tr>
@@ -278,7 +278,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Deletes the passed file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to delete </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to delete. </td></tr>
   </table>
   </dd>
 </dl>
@@ -312,11 +312,11 @@ Static Public Member Functions</h2></td></tr>
 <p>It substitutes non-ASCII characters with the hex value of the char. </p>
 <p>With the help of <a href="https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5">https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wstr</td><td>The string which shall be encoded </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wstr</td><td>The string which shall be encoded. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The parsed string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The parsed string. </dd></dl>
 
 </div>
 </div>
@@ -357,8 +357,8 @@ Static Public Member Functions</h2></td></tr>
 <p>It is compared whether one string ends with a sequence of chars. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose end shall be checked </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>The string of which we want to know whether it occurs at the end of the other string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose end shall be checked. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>The string of which we want to know whether it occurs at the end of the other string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -403,12 +403,12 @@ Static Public Member Functions</h2></td></tr>
 <p>It is checked whether the whole string appears in the file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to the file its content we want to inspect </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose whose existence we want to know in the file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to the file its content we want to inspect. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose whose existence we want to know in the file. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>It is returned true if the string appears in the file </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>It is returned true if the string appears in the file. </dd></dl>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Checks whether the file exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file we want to know whether it exists </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file we want to know whether it exists. </td></tr>
   </table>
   </dd>
 </dl>
@@ -474,11 +474,11 @@ Static Public Member Functions</h2></td></tr>
 <p>It is counted the number of lines a file has. </p>
 <p>Empty lines do not count. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The amount of written lines in a file </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The amount of written lines in a file. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">-1</td><td>The file does not exist. </td></tr>
@@ -515,11 +515,11 @@ Static Public Member Functions</h2></td></tr>
 <p>All words in the passed string are listed down in a vector while one element represent a word. </p>
 <p>It can handle new lines and several spaces as it neglects them and only gets the pure words. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string from which we want to get the arguments </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string from which we want to get the arguments. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The vector where each element represents one argument </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector where each element represents one argument. </dd></dl>
 
 </div>
 </div>
@@ -551,11 +551,11 @@ Static Public Member Functions</h2></td></tr>
 <p>It can handle new lines and several spaces but this time it only neglects several spaces.</p>
 <p>Example: at(0): Hello,\nhow at(1): are at(2): you? </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string from which we want to get the arguments </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string from which we want to get the arguments. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The vector where each element represents one argument </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The vector where each element represents one argument. </dd></dl>
 
 </div>
 </div>
@@ -615,7 +615,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The functions gets the content of the stated file. </p>
 <p>Empty lines are considered. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want. </td></tr>
   </table>
   </dd>
 </dl>
@@ -666,8 +666,8 @@ Static Public Member Functions</h2></td></tr>
 <p>The functions gets the content of the stated file except one line which is skipped. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">srch</td><td>String whose line shall not be included </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srch</td><td>String whose line shall not be included. </td></tr>
   </table>
   </dd>
 </dl>
@@ -719,7 +719,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The first line is line 1.</p>
 <p>Example: The function may get line 5 of a file. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file path to the file whose content we want </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file path to the file whose content we want. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ln_num</td><td>The number needs to be greater than 0. It states the line we want. </td></tr>
   </table>
   </dd>
@@ -759,13 +759,13 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This function gets values out of settings files. </p>
-<p>Values in lines are saved like: "key0 (key1 key2): value0 (value1 value2)" </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Values in lines are saved like: "key0 (key1 key2): value0 (value1 value2)". </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ln</td><td>The file line whose value we want </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ln</td><td>The file line whose value we want. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value for the setting </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value for the setting. </dd></dl>
 
 </div>
 </div>
@@ -806,7 +806,7 @@ Static Public Member Functions</h2></td></tr>
 <p>It gets the first line which contains the passed string. </p>
 <p>The whole string needs to be contained in the file line and not just a fraction. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to file whose content we want. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">srch</td><td>The string which shall be included in the file line that we search. </td></tr>
   </table>
   </dd>
@@ -852,7 +852,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The first char of a string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The first char of a string. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">''</td><td>An empty string was passed to the function. </td></tr>
@@ -900,8 +900,8 @@ Static Public Member Functions</h2></td></tr>
 <p>It does not matter whether the file does have sufficient lines. In that case, all are got.</p>
 <p>Empty lines are neglected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file whose content we want </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ln_nums</td><td>The number of lines we want from the beginning </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file whose content we want. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ln_nums</td><td>The number of lines we want from the beginning. </td></tr>
   </table>
   </dd>
 </dl>
@@ -942,11 +942,11 @@ Static Public Member Functions</h2></td></tr>
 <p>A JSON object or array is turned into a string. </p>
 <p>The library rapidjson is used. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The JSON object or array to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The JSON object or array to convert. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The string of the JSON </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The string of the JSON. </dd></dl>
 
 </div>
 </div>
@@ -988,8 +988,8 @@ Static Public Member Functions</h2></td></tr>
 <p>It does not matter whether the file does have sufficient lines. In that case, all are got.</p>
 <p>Empty lines are neglected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file whose content we want </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ln_nums</td><td>The number of lines we want from the end </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path to file whose content we want. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ln_nums</td><td>The number of lines we want from the end. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1030,7 +1030,7 @@ Static Public Member Functions</h2></td></tr>
 <p>This function gets the integer at the end of a string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">entry</td><td>The string whose ending number we want </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">entry</td><td>The string whose ending number we want. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1068,7 +1068,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. </p>
-<p>The function calls the current time in milliseconds and shortens it to fit into an in so that is can be used as a a seed. </p><dl class="section return"><dt>Returns</dt><dd>random number </dd></dl>
+<p>The function calls the current time in milliseconds and shortens it to fit into an in so that is can be used as a a seed. </p><dl class="section return"><dt>Returns</dt><dd>A random number. </dd></dl>
 
 </div>
 </div>
@@ -1096,7 +1096,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current time in seconds. </p>
-<p>Example: 1583068819 </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in seconds </dd></dl>
+<p>Example: 1583068819. </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in seconds. </dd></dl>
 
 </div>
 </div>
@@ -1124,7 +1124,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current time in milliseconds. </p>
-<p>Example: 1583068819924 </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in milliseconds </dd></dl>
+<p>Example: 1583068819924. </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in milliseconds. </dd></dl>
 
 </div>
 </div>
@@ -1152,7 +1152,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the current time in seconds with milliseconds. </p>
-<p>Example: 1583068819.924 </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in seconds with milliseconds </dd></dl>
+<p>Example: 1583068819.924. </p><dl class="section return"><dt>Returns</dt><dd>The Unix time in seconds with milliseconds. </dd></dl>
 
 </div>
 </div>
@@ -1179,8 +1179,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the ISO 8601 offset from UTC in time zone (1 minute=1, 1 hour=100) </p>
-<p>Example: -18000 </p><dl class="section return"><dt>Returns</dt><dd>The time zone offset </dd></dl>
+<p>Returns the ISO 8601 offset from UTC in time zone (1 minute=1, 1 hour=100). </p>
+<p>Example: -18000. </p><dl class="section return"><dt>Returns</dt><dd>The time zone offset. </dd></dl>
 
 </div>
 </div>
@@ -1211,11 +1211,11 @@ Static Public Member Functions</h2></td></tr>
 <p>Gets the tm struct for us. </p>
 <p>By default, the struct std::tm gets the current time but optionally, the wanted time can be stated. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>Input for the struct std::tm </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>Input for the struct std::tm. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The struct std::tm </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The struct std::tm. </dd></dl>
 
 </div>
 </div>
@@ -1246,11 +1246,11 @@ Static Public Member Functions</h2></td></tr>
 <p>The function GZIP compresses the passed data. </p>
 <p>Copied from here: <a href="https://gist.github.com/yfnick/6ba33efa7ba12e93b148">https://gist.github.com/yfnick/6ba33efa7ba12e93b148</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to GZIP compress </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to GZIP compress. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The GZIP compressed data </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The GZIP compressed data. </dd></dl>
 
 </div>
 </div>
@@ -1281,11 +1281,11 @@ Static Public Member Functions</h2></td></tr>
 <p>The function GZIP decompresses the passed data. </p>
 <p>Copied from here: <a href="https://gist.github.com/yfnick/6ba33efa7ba12e93b148">https://gist.github.com/yfnick/6ba33efa7ba12e93b148</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to GZIP decompress </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to GZIP decompress. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The GZIP decompressed data </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The GZIP decompressed data. </dd></dl>
 
 </div>
 </div>
@@ -1326,12 +1326,12 @@ Static Public Member Functions</h2></td></tr>
 <p>Computes an hmac sha256 hash for the proper seed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">secret_key</td><td>The key for the hmac encryption </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">seed</td><td>The actual string which shall be encoded </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secret_key</td><td>The key for the hmac encryption. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seed</td><td>The actual string which shall be encoded. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The hmac sha256 hash </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The hmac sha256 hash. </dd></dl>
 
 </div>
 </div>
@@ -1362,7 +1362,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Checks whether the passed data is GZIP compressed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to check. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1397,7 +1397,7 @@ Static Public Member Functions</h2></td></tr>
 <p>States whether the passed char is a positive integer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>The char of which we want to know whether it is a positive interger. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>The char of which we want to know whether it is a positive integer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1432,7 +1432,7 @@ Static Public Member Functions</h2></td></tr>
 <p>States whether the passed string is a positive integer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string of which we want to know whether it is a positive interger. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string of which we want to know whether it is a positive integer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1467,11 +1467,11 @@ Static Public Member Functions</h2></td></tr>
 <p>Creates a md5 hash for the proper seed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">seed</td><td>The seed which shall be encrypted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seed</td><td>The seed which shall be encrypted. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The md5 hash </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The md5 hash. </dd></dl>
 
 </div>
 </div>
@@ -1512,12 +1512,12 @@ Static Public Member Functions</h2></td></tr>
 <p>It URL parses the given string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>URL or string which shall be encoded </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>URL or string which shall be encoded. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">escaped_chars</td><td>Non-ASCII chars are escaped either way but with this string there can be stated additional chars to escape. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The URL parsed </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The URL parsed string. </dd></dl>
 
 </div>
 </div>
@@ -1558,8 +1558,8 @@ Static Public Member Functions</h2></td></tr>
 <p>It is compared whether one string starts with a sequence of chars. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose beginning shall be checked </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">beg</td><td>The string of which we want to know whether it occurs at the beginning of the other string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string whose beginning shall be checked. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">beg</td><td>The string of which we want to know whether it occurs at the beginning of the other string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1598,7 +1598,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The hexadecimal value as a string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The hexadecimal value as a string. </dd></dl>
 
 </div>
 </div>
@@ -1633,7 +1633,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The octal value as a string </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The octal value as a string. </dd></dl>
 
 </div>
 </div>
@@ -1664,7 +1664,7 @@ Static Public Member Functions</h2></td></tr>
 <p>This function is thought to be used to log error messages which need treatment. </p>
 <p>It should be used instead of the stderr output. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">err_msg</td><td>The error message which shall be logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">err_msg</td><td>The error message which shall be logged. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1698,7 +1698,7 @@ Static Public Member Functions</h2></td></tr>
 <p>This function is thought to be used to log error messages temporarily. </p>
 <p>It should be used instead of the stderr output. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">err_msg</td><td>The error message which shall be logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">err_msg</td><td>The error message which shall be logged. </td></tr>
   </table>
   </dd>
 </dl>
