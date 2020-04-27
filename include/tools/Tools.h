@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.23 (27.04.2020)
+ * - Added the function "tools::Tools::mkdir()".
+ * @version
  * 1.1.22 (27.04.2020)
  * - Revision of all comments.
  * @version
@@ -352,6 +355,12 @@ namespace tools
 		 * @param[in] file The file to delete.
 		 */
 		static void del_file(const std::string &file) noexcept;
+
+		/**
+		 * @brief Makes a directory.
+		 * @param[in] path The path to the directory which shall be made.
+		 */
+		static void mkdir(const std::string &path) noexcept;
 	};
 }
 

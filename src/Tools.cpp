@@ -162,7 +162,7 @@ namespace tools
 	bool Tools::is_pos_int(const std::string &str) noexcept
 	{
 		for(std::size_t j = 0; j < str.length(); ++j)
-			if(!isdigit(str[j]))
+			if(!std::isdigit(str[j]))
 				return false;
 
 		return true;
@@ -170,7 +170,7 @@ namespace tools
 
 	bool Tools::is_pos_int(const char &ch) noexcept
 	{
-		if(!isdigit(ch))
+		if(!std::isdigit(ch))
 			return false;
 
 		return true;
@@ -316,6 +316,7 @@ namespace tools
 
 						std::string cache;
 						std::getline(inf, cache);
+
 						if(!cache.empty())
 							str.append(cache + "\n");
 
@@ -362,6 +363,7 @@ namespace tools
 						{
 							std::string cache;
 							std::getline(inf, cache);
+
 							if(!cache.empty())
 								str.append(cache + "\n");
 
@@ -806,7 +808,7 @@ namespace tools
 		if(!ln.empty())
 		{
 			std::string result;
-			std::vector<std::string> args = get_args(ln);
+			std::vector<std::string> args = Tools::get_args(ln);
 			bool add = false; //The variable indicates when chars need to be added to the output string.
 
 			for(std::size_t j = 0; j < args.size(); ++j)
@@ -820,7 +822,7 @@ namespace tools
 				}
 
 				//This condition defines when the chars are added to the result string.
-				if(ends_w(args.at(j), ":"))
+				if(Tools::ends_w(args.at(j), ":"))
 					add = true;
 			}
 
@@ -837,16 +839,7 @@ namespace tools
 	{
 		//Create the necessary folder.
 		if(!tools::Tools::file_exists(Constants::folder_error_logs))
-		{
-			try
-			{
-				boost::filesystem::create_directories(Constants::folder_error_logs);
-			}
-			catch(const std::exception &e)
-			{
-				Tools::write_err_log(e.what());
-			}
-		}
+			Tools::mkdir(Constants::folder_error_logs);
 
 		std::ofstream outf(Constants::file_err_log());
 		outf << err_msg << std::endl;
@@ -856,16 +849,7 @@ namespace tools
 	{
 		//Create the necessary folder.
 		if(!tools::Tools::file_exists(Constants::folder_error_logs_tmp))
-		{
-			try
-			{
-				boost::filesystem::create_directories(Constants::folder_error_logs_tmp);
-			}
-			catch(const std::exception &e)
-			{
-				Tools::write_err_log(e.what());
-			}
-		}
+			Tools::mkdir(Constants::Constants::folder_error_logs_tmp);
 
 		//Delete old temporary error logs.
 		std::vector<std::string> files;
@@ -891,5 +875,17 @@ namespace tools
 	{
 		if(std::remove(file.c_str()) != 0)
 			Tools::write_err_log(Messages::file_del_err(file));
+	}
+
+	void Tools::mkdir(const std::string &path) noexcept
+	{
+		try
+		{
+			boost::filesystem::create_directories(path);
+		}
+		catch(const std::exception &e)
+		{
+			Tools::write_err_log(e.what());
+		}
 	}
 }
