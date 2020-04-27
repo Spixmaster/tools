@@ -1,4 +1,4 @@
-#eclipse files
+#Eclipse files
 .cproject
 .project
 .settings/
@@ -6,6 +6,6 @@
 #Linux
 .directory
 
-#builts
+#Builts
 Debug/
 Release/

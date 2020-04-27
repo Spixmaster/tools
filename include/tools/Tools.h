@@ -8,335 +8,347 @@
 #include <rapidjson/document.h>
 #include <ctime>
 
-/*
- * @brief content: all functions for general C++ use or generally necessary for this project
- * @brief it is a monostate
+/**
+ * @mainpage tools-cpp
+ * @author Matheus Gabriel Werny de Lima
+ * @copyright GNU General Public License v2.0
+ * @version
+ * 1.1.21 (27.04.2020)
+ * - All the source code was improved.
+ * - All suitable comments are revised to fit the Doxygen syntax.
+ * - Two functions were included for logging error messages instead of the stderr.
+ * - String formatting was applied to the Messages object to ease translations.
  */
 
 namespace tools
 {
+	/**
+	 * @class Tools
+	 * @brief A class for all functions I use regularly
+	 * @details It is a monostate.
+	 */
 	class Tools
 	{
 	public:
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself
+		 */
 		typedef std::shared_ptr<Tools> ptr;
 
-		//member functions
-		/*
-		 * @brief lists down all words in a vector
-		 * @brief one vector location --> one word
-		 * @brief args.at(0) is /'command'
-		 * @brief can handle new lines and several spaces
-		 * @brief gets only words
-		 * @brief be aware when writing the arguments down --> you need to put spaces in between
-		 * @param str: string from which we want to get the args
-		 * @return vector where each element represent one argument
+		//Member functions
+		/**
+		 * @brief All words in the passed string are listed down in a vector while one element represent a word.
+		 * @details It can handle new lines and several spaces as it neglects them and only gets the pure words.
+		 * @param[in] str The string from which we want to get the arguments
+		 * @return The vector where each element represents one argument
 		 */
 		static std::vector<std::string> get_args(const std::string &str) noexcept;
 
-		/*
-		 * @brief lists down all words in a vector
-		 * @brief one vector location --> one word
-		 * @brief args.at(0) is /'command'
-		 * @brief can handle new lines and several spaces
-		 * @brief additionally gets new lines
-		 * @brief example:
-		 * 			at(0) --> hello\nhow
-		 * 			are
-		 * 			you?
-		 * @brief be aware when writing the arguments down --> you need to put spaces in between
-		 * @param str: string from which we want to get the args
-		 * @return vector where each element represent one argument
+		/**
+		 * @brief All words in the passed string are listed down in a vector while one element represent a word.
+		 * @details It can handle new lines and several spaces but this time it only neglects several spaces.
+		 * @details Example:
+		 * at(0): Hello,\\nhow
+		 * at(1): are
+		 * at(2): you?
+		 * @param[in] str The string from which we want to get the arguments
+		 * @return The vector where each element represents one argument
 		 */
 		static std::vector<std::string> get_args_w_lns(const std::string &str) noexcept;
 
-		/*
-		 * @brief considers empty lines
-		 * @param file: path to file whose content we want
-		 * @return everything from file in string
-		 * @return new line included at end which is important as when appending stuff I assume that it goes into a new line
+		/**
+		 * @brief The functions gets the content of the stated file.
+		 * @details Empty lines are considered.
+		 * @param[in] file Path to file whose content we want
+		 * @return Everything from the file is returned as a string. Additionally, a new line is included at the end which is important as when appending text I assume that it goes into a new line.
+		 * @retval "" An empty line is returned if the file does not exist.
 		 */
 		static std::string get_file_cont(const std::string &file) noexcept;
 
-		/*
-		 * @brief considers empty lines
-		 * @param file: path to file whose content we want
-		 * @param srch: string whose line shall not be included
-		 * @return everything but the line which contains the search string
-		 * @return new line at end included
+		/**
+		 * @brief The functions gets the content of the stated file except one line which is skipped.
+		 * @param[in] file Path to file whose content we want
+		 * @param[in] srch String whose line shall not be included
+		 * @return Everything from the file except that one line is returned as a string. Additionally, a new line is included at the end which is important as when appending text I assume that it goes into a new line.
+		 * @retval "" An empty line is returned if the file does not exist.
 		 */
 		static std::string get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch) noexcept;
 
-		/*
-		 * @brief gets beginning line of first fitting string it mets
-		 * @brief with that postion one can overwrite the beginning of the line
-		 * @param file: path to file whose content we want
-		 * @param srch: string whose line shall not be included
-		 * @return position of beginning of line which contains "srch" for file pointer
-		 * @return by default, returns 0
-		 */
-		static std::size_t get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept;
-
-		/*
-		 * @brief ',' and '.' in string return false too
-		 * @param str: string which shall represent a positive integer
-		 * @return true when string only consists of number --> therefore, postive integer
-		 * @return in case of negative number returns false
+		/**
+		 * @brief States whether the passed string is a positive integer
+		 * @param[in] str The string of which we want to know whether it is a positive interger.
+		 * @return It is returned true when the string only consists of number.
 		 */
 		static bool is_pos_int(const std::string &str) noexcept;
 
-		/*
-		 * @brief ',' and '.' return false too
-		 * @param ch: char which shall represent a positive integer
-		 * @return true when char is number --> 0 - 9
-		 * @return in case of negative number returns false
+		/**
+		 * @brief States whether the passed char is a positive integer
+		 * @param[in] ch The char of which we want to know whether it is a positive interger.
+		 * @return If the char is a number, true is returned.
 		 */
 		static bool is_pos_int(const char &ch) noexcept;
 
-		/*
-		 * @brief gets line of first fitting string it mets
-		 * @brief when only part of string appears it does not count
-		 * @param file: path to file whose content we want
-		 * @param srch: string whose line shall not be included
-		 * @return line which contains the string srch
-		 * @return by default, returns nothing
+		/**
+		 * @brief It gets the first line which contains the passed string.
+		 * @details The whole string needs to be contained in the file line and not just a fraction.
+		 * @param[in] file Path to file whose content we want
+		 * @param[in] srch The string which shall be included in the file line that we search.
+		 * @return The file line which contains the whole string.
+		 * @retval "" The string does not appear in the file.
 		 */
 		static std::string get_file_ln_w_srch(const std::string &file, const std::string &srch) noexcept;
 
-		/*
-		 * @brief searches for position 0 in a string
-		 * @param str: relevant string
-		 * @return first char of string
-		 * @return by default, return nothing
+		/**
+		 * @brief Retrieves the first char of a string
+		 * @param[in] str The string whose first char we want.
+		 * @return The first char of a string
+		 * @retval '' An empty string was passed to the function.
 		 */
 		static char get_first_char(const std::string &str) noexcept;
 
-		/*
-		 * @brief checks beginning of a string
-		 * @param str: string whose beginning shall be checked
-		 * @param beg: string of which we want to know whether it is the beginning of str
-		 * @return states whether str begins with beg
-		 * @return by default, returns nothing
+		/**
+		 * @brief It is compared whether one string starts with a sequence of chars.
+		 * @param[in] str The string whose beginning shall be checked
+		 * @param[in] beg The string of which we want to know whether it occurs at the beginning of the other string
+		 * @return It is returned true if the one string starts with the other.
 		 */
 		static bool starts_w(const std::string &str, const std::string &beg) noexcept;
 
-		/*
-		 * @brief checks end of a string
-		 * @param str: string whose end shall be checked
-		 * @param beg: string of which we want to know whether it is the end of str
-		 * @return states whether str ends with beg
-		 * @return by default, returns nothing
+		/**
+		 * @brief It is compared whether one string ends with a sequence of chars.
+		 * @param[in] str The string whose end shall be checked
+		 * @param[in] end The string of which we want to know whether it occurs at the end of the other string
+		 * @return It is returned true if the one string ends with the other.
 		 */
 		static bool ends_w(const std::string &str, const std::string &end) noexcept;
 
-		/*
-		 * @brief states whether string is in file
-		 * @brief if only part of string appears it does not count
-		 * @param file: path to file its content we want to inspect
-		 * @param srch: string whose whose existence we want to know in the file
-		 * @return true when str appears in file
+		/**
+		 * @brief It is checked whether the whole string appears in the file.
+		 * @param[in] file The path to the file its content we want to inspect
+		 * @param[in] str The string whose whose existence we want to know in the file
+		 * @return It is returned true if the string appears in the file
 		 */
 		static bool file_cont_str(const std::string &file, const std::string &str) noexcept;
 
-		/*
-		 * @brief gets rid of first char
-		 * @param str: string to shorten
-		 * @return str without .at(0)
+		/**
+		 * @brief Cuts off the first char of the passed string
+		 * @param[in] str The string to shorten
+		 * @return The shortened string
+		 * @retval "" The passed string is empty.
 		 */
 		static std::string cut_off_first_char(const std::string &str) noexcept;
 
-		/*
-		 * @brief checks whether the file exists
-		 * @param file: path to file we want to know whether it exists
-		 * @return true when file exists
+		/**
+		 * @brief Checks whether the file exists
+		 * @param[in] file The path to file we want to know whether it exists
+		 * @return It is returned true if the file exists.
 		 */
 		static bool file_exists(const std::string &file) noexcept;
 
-		/*
-		 * @brief gets first "ln_nums" lines of the file "file"
-		 * @brief it does not matter whether "file" does not have "ln_nums" lines --> then, all are got
-		 * @brief e.g. get first 5 lines of file
-		 * @brief neglects empty lines
-		 * @brief new line included at end
-		 * @param file: path to file whose content we want
-		 * @param ln_nums: number of lines we want from the beginning
-		 * @return first lines of content as a string
+		/**
+		 * @brief This function gets the first lines of a file.
+		 * @details It does not matter whether the file does have sufficient lines. In that case, all are got.
+		 * @details Empty lines are neglected.
+		 * @param[in] file The path to file whose content we want
+		 * @param[in] ln_nums The number of lines we want from the beginning
+		 * @return The first lines of the file content are returned. A new line char is appended at the end.
+		 * @retval "" The file does not exist, there is no file content or the file number does not exist.
 		 */
 		static std::string get_first_lns_file(const std::string &file, const int &ln_nums) noexcept;
 
-		/*
-		 * @brief skips first "ln_nums" lines of the file "file"
-		 * @brief it does not matter whether "file" does not have "ln_nums" lines --> then, all are got
-		 * @brief e.g. first 2 lines are skipped
-		 * @brief neglects empty lines
-		 * @brief new line included at end
-		 * @param file: path to file whose content we want
-		 * @param ln_nums: number of lines we want from the end
-		 * @return last lines of content as a string
+		/**
+		 * @brief The function skips the first file lines of the file and then gathers the remaining lines.
+		 * @details It does not matter whether the file does have sufficient lines. In that case, all are got.
+		 * @details Empty lines are neglected.
+		 * @param[in] file The path to file whose content we want
+		 * @param[in] ln_nums The number of lines we want from the end
+		 * @return The last lines of content as a string are returned. A new line char is appended at the end.
+		 * @retval "" The file does not exist, there is no file content or the file number does not exist.
 		 */
 		static std::string get_last_lns_file(const std::string &file, const int &ln_nums) noexcept;
 
-		/*
-		 * @brief does not work properly when number contains: '.', ','
-		 * @param entry: string whose ending number we want
-		 * @return the positive/negative integer at the end of a file
-		 * @return when no numerals at end or empty entry --> returns 0
+		/**
+		 * @brief This function gets the integer at the end of a string.
+		 * @param[in] entry The string whose ending number we want
+		 * @return The positive or negative integer at the end of a file line.
+		 * @retval -1 There no numerals at the end of the file line or it is empty.
 		 */
-		static long long get_num_ln_end (const std::string &entry) noexcept;
+		static long long get_num_ln_end(const std::string &entry) noexcept;
 
-		/*
-		 * @brief first line is line 1 (not 0)
-		 * @brief gets line "ln_num" of the file "file"
-		 * @brief e.g. gets line 5 of file
-		 * @param file: path to file whose content we want
-		 * @param ln_num: needs to be greater than 0; states the line we want
-		 * @return it does not matter whether "file" does not have "ln_num" line --> then, nothing is got
-		 * @return NO new line ("\n") included at end
+		/**
+		 * @brief The function gets the line of a given file.
+		 * @details The first line is line 1.
+		 * @details Example: The function may get line 5 of a file.
+		 * @param[in] file The file path to the file whose content we want
+		 * @param[in] ln_num The number needs to be greater than 0. It states the line we want.
+		 * @return The file line with new line char included at the end is returned.
+		 * @retval "" The file or the file line does not exist.
 		 */
 		static std::string get_file_ln(const std::string &file, const int &ln_num) noexcept;
 
-		/*
-		 * @brief empty lines do not count
-		 * @param file: path to file
-		 * @return the amount of written lines in a file
-		 * @return by default, returns 0
+		/**
+		 * @brief It is counted the number of lines a file has.
+		 * @details Empty lines do not count.
+		 * @param[in] file The path to file
+		 * @return The amount of written lines in a file
+		 * @retval -1 The file does not exist.
 		 */
 		static int get_amnt_file_lns(const std::string &file) noexcept;
 
-		/*
-		 * @brief Linux only: returns the path in which the program is in with appended executable name
-		 * @return path to exe
-		 */
-		static std::string get_exe_path() noexcept;
-
-		/*
-		 * @brief returns a md5 hash for the proper seed
-		 * @param seed: seed which shall be encrypted
-		 * @return the md5 hash
+		/**
+		 * @brief Creates a md5 hash for the proper seed
+		 * @param[in] seed The seed which shall be encrypted
+		 * @return The md5 hash
 		 */
 		static std::string md5_hash(const std::string &seed) noexcept;
 
-		/*
-		 * @brief returns a hmac sha256 hash for the proper string
-		 * @param secret_key: key for the hmac encryption
-		 * @param str: actual string which shall be encoded
-		 * @return the hmac sha256 hash
+		/**
+		 * @brief Computes an hmac sha256 hash for the proper seed
+		 * @param[in] secret_key The key for the hmac encryption
+		 * @param[in] seed The actual string which shall be encoded
+		 * @return The hmac sha256 hash
 		 */
-		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &str) noexcept;
+		static std::string hmac_sha256_hash(const std::string &secret_key, const std::string &seed) noexcept;
 
-		/*
-		 * @brief substitutes non-ascii characters with escaped chars %...
-		 * @param url: url which shall be encoded
-		 * @param escaped_chars: non-asci chars are escaped either way but with this string it can be stated additional chars
-		 * @return the parsed url
+		/**
+		 * @brief It URL parses the given string.
+		 * @param[in] url URL or string which shall be encoded
+		 * @param[in] escaped_chars Non-ASCII chars are escaped either way but with this string there can be stated additional chars to escape.
+		 * @return The URL parsed
 		 */
 		static std::string parse_url(const std::string &url, const std::string &escaped_chars = "") noexcept;
 
-		/*
-		 * @brief with the help of https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5
-		 * @brief substitutes non-ascii characters with the hex value of the char
-		 * @param str: string which shall be encoded
-		 * @return the parsed string
+		/**
+		 * @brief It substitutes non-ASCII characters with the hex value of the char.
+		 * @details With the help of https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5.
+		 * @param[in] wstr The string which shall be encoded
+		 * @return The parsed string
 		 */
 		static std::string encode_utf8(const std::wstring &wstr) noexcept;
 
-		/*
-		 * @brief expects an int and turns it into its octal equivalent
-		 * @param val: the int which shall be converted
-		 * @return the octal value as a string
+		/**
+		 * @brief Expects an integer and turns it into its octal equivalent
+		 * @param[in] val The integer which shall be converted.
+		 * @return The octal value as a string
 		 */
 		static std::string to_oct(const int &val) noexcept;
 
-		/*
-		 * @brief expects an int and turns it into its hexadecimal equivalent
-		 * @param val: the int which shall be converted
-		 * @return the hexadecimal value as a string
+		/**
+		 * @brief Expects an integer and turns it into its hexadecimal equivalent
+		 * @param[in] val The integer which shall be converted.
+		 * @return The hexadecimal value as a string
 		 */
 		static std::string to_hex(const int &val) noexcept;
 
-		/*
-		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
-		 * @brief gzip compresses data
-		 * @param data: the data to gzip compress
-		 * @return the compressed data
+		/**
+		 * @brief The function GZIP compresses the passed data.
+		 * @details Copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148.
+		 * @param[in] data The data to GZIP compress
+		 * @return The GZIP compressed data
 		 */
 		static std::string gzip_compress(const std::string &data) noexcept;
 
-		/*
-		 * @brief copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148
-		 * @brief decompresses gzip compressed data
-		 * @param data: the gzip compressed data
-		 * @return the decompressed data
+		/**
+		 * @brief The function GZIP decompresses the passed data.
+		 * @details Copied from here: https://gist.github.com/yfnick/6ba33efa7ba12e93b148.
+		 * @param[in] data The data to GZIP decompress
+		 * @return The GZIP decompressed data
 		 */
 		static std::string gzip_decompress(const std::string &data) noexcept;
 
-		/*
-		 * @brief checks whether data is gzipped
-		 * @param data: the possible gzip compressed data
-		 * @return whether gzip compressed
+		/**
+		 * @brief Checks whether the passed data is GZIP compressed
+		 * @param[in] data The data to check
+		 * @return Whether the passes data is GZIP compressed.
 		 */
 		static bool is_gzipped(const std::string &data) noexcept;
 
-		/*
-		 * @brief expects a rapidjson::Value and turns it back into a string
-		 * @param val: rapidjson::Value which shall be converted
-		 * @return the string of the json
+		/**
+		 * @brief A JSON object or array is turned into a string.
+		 * @details The library rapidjson is used.
+		 * @param[in] val The JSON object or array to convert
+		 * @return The string of the JSON
 		 */
 		static std::string get_json_as_string(const rapidjson::Value &val) noexcept;
 
-		/*
-		 * @brief calls the current time in milliseconds --> e.g. 1583068819924
-		 * @return unix time in milliseconds
+		/**
+		 * @brief Returns the current time in milliseconds
+		 * @details Example: 1583068819924
+		 * @return The Unix time in milliseconds
 		 */
 		static long long get_time_in_millisec() noexcept;
 
-		/*
-		 * @brief calls the current time --> e.g. 1583068819
-		 * @return unix time in seconds
+		/**
+		 * @brief Returns the current time in seconds
+		 * @details Example: 1583068819
+		 * @return The Unix time in seconds
 		 */
 		static long long get_time() noexcept;
 
-		/*
-		 * @brief calls the current time in seconds with milliseconds --> e.g. 1583068819.924
-		 * @return unix time in seconds with milliseconds
+		/**
+		 * @brief Returns the current time in seconds with milliseconds
+		 * @details Example: 1583068819.924
+		 * @return The Unix time in seconds with milliseconds
 		 */
 		static double get_time_w_millisec() noexcept;
 
-		/*
-		 * @brief calls the current time and makes the date
-		 * @return asctime date with no new line appended
+		/**
+		 * @brief Returns the current time and makes the date.
+		 * @return Output of asctime() with no new line appended.
 		 */
 		static std::string get_date(const std::time_t &time = 0) noexcept;
 
-		/*
-		 * @brief ISO 8601 offset from UTC in timezone (1 minute=1, 1 hour=100)
-		 * @brief If timezone cannot be determined, no characters
-		 * @return timezone like -18000
+		/**
+		 * @brief Returns the ISO 8601 offset from UTC in time zone (1 minute=1, 1 hour=100)
+		 * @details Example: -18000
+		 * @return The time zone offset
 		 */
 		static std::string get_timezone_offset() noexcept;
 
-		/*
-		 * @brief calls the current time in milliseconds and shortens it so that is can be used as a a seed
-		 * @brief can be used very fast behind each other as every millisecond the seed changes
+		/**
+		 * @brief Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme.
+		 * @details The function calls the current time in milliseconds and shortens it to fit into an in so that is can be used as a a seed.
 		 * @return random number
 		 */
 		static int get_seed() noexcept;
 
-		/*
-		 * @brief gets the tm struct for us
-		 * @brief by default, the struct std::tm gets the current time but optionally, it can be given an input for it
-		 * @param time: input for the struct std::tm
-		 * @return struct std::tm
+		/**
+		 * @brief Gets the tm struct for us
+		 * @details By default, the struct std::tm gets the current time but optionally, the wanted time can be stated.
+		 * @param[in] time Input for the struct std::tm
+		 * @return The struct std::tm
 		 */
 		static std::tm* get_tm(const std::time_t &time = 0) noexcept;
 
-		/*
-		 * @brief values in lines are save like: "key0 (key1 key2): value0 (value1 value2)"
-		 * @brief this function returns the value
-		 * @param ln: file line whose value we want
-		 * @return value
+		/**
+		 * @brief This function gets values out of settings files.
+		 * @details Values in lines are saved like: "key0 (key1 key2): value0 (value1 value2)"
+		 * @param[in] ln The file line whose value we want
+		 * @return The value for the setting
 		 */
 		static std::string get_file_ln_val(const std::string &ln) noexcept;
+
+		/**
+		 * @brief This function is thought to be used to log error messages which need treatment.
+		 * @details It should be used instead of the stderr output.
+		 * @param[in] err_msg The error message which shall be logged
+		 */
+		static void write_err_log(const std::string &err_msg) noexcept;
+
+		/**
+		 * @brief This function is thought to be used to log error messages temporarily.
+		 * @details It should be used instead of the stderr output.
+		 * @param[in] err_msg The error message which shall be logged
+		 */
+		static void write_err_log_tmp(const std::string &err_msg) noexcept;
+
+		/**
+		 * @brief Deletes the passed file
+		 * @param[in] file The file to delete
+		 */
+		static void del_file(const std::string &file) noexcept;
 	};
 }
 

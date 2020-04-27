@@ -3,21 +3,32 @@
 
 #include <memory>
 
-//@brief represents a file which shall be uploaded by a http request via multipart/form
-
 namespace tools
 {
+	/**
+	 * @struct InputFile
+	 * @brief A representation of a file which shall be uploaded by an HTTP request via "multipart/form"
+	 */
 	struct InputFile
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself
+		 */
 		typedef std::shared_ptr<InputFile> ptr;
 
-		//member variables
+		//Member variables
+		/**
+		 * @var m_path
+		 * @brief The path to the file
+		 */
 		std::string m_path;
 
-		//constructors
-
-		//@param path: states the path where the file is located
+		//Constructors
+		/**
+		 * @param[in] path The path where the file is located
+		 */
 		InputFile(const std::string &path);
 	};
 }

@@ -1,0 +1,853 @@
+\hypertarget{classtools_1_1Tools}{}\doxysection{tools\+::Tools Class Reference}
+\label{classtools_1_1Tools}\index{tools::Tools@{tools::Tools}}
+
+
+A class for all functions I use regularly.  
+
+
+
+
+{\ttfamily \#include $<$Tools.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtools_1_1Tools_a580b369bf62241705c09ffba4b741f52}\label{classtools_1_1Tools_a580b369bf62241705c09ffba4b741f52}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtools_1_1Tools}{Tools}} $>$ \mbox{\hyperlink{classtools_1_1Tools_a580b369bf62241705c09ffba4b741f52}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtools_1_1Tools_a78bebbea03bd1ee013b02bdb842f825f}{get\+\_\+args}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em All words in the passed string are listed down in a vector while one element represent a word. \end{DoxyCompactList}\item 
+static std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classtools_1_1Tools_a3a53a8b525bb3c851c7ea64ecf383788}{get\+\_\+args\+\_\+w\+\_\+lns}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em All words in the passed string are listed down in a vector while one element represent a word. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a71a70400489f14e2c7a7cf627cb36cc6}{get\+\_\+file\+\_\+cont}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em The functions gets the content of the stated file. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad16a9f95849b14d70a5290cdf2bec241}{get\+\_\+file\+\_\+cont\+\_\+wo\+\_\+srch\+\_\+ln}} (const std\+::string \&file, const std\+::string \&srch) noexcept
+\begin{DoxyCompactList}\small\item\em The functions gets the content of the stated file except one line which is skipped. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a34fca72e5edee7c8f91fac6d4bcbd58d}{is\+\_\+pos\+\_\+int}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em States whether the passed string is a positive integer. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a8168d15dcd3f74e97c30a21473e9725c}{is\+\_\+pos\+\_\+int}} (const char \&ch) noexcept
+\begin{DoxyCompactList}\small\item\em States whether the passed char is a positive integer. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}{get\+\_\+file\+\_\+ln\+\_\+w\+\_\+srch}} (const std\+::string \&file, const std\+::string \&srch) noexcept
+\begin{DoxyCompactList}\small\item\em It gets the first line which contains the passed string. \end{DoxyCompactList}\item 
+static char \mbox{\hyperlink{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}{get\+\_\+first\+\_\+char}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em Retrieves the first char of a string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}{starts\+\_\+w}} (const std\+::string \&str, const std\+::string \&beg) noexcept
+\begin{DoxyCompactList}\small\item\em It is compared whether one string starts with a sequence of chars. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a798c1760007cbbb030947b76df13baae}{ends\+\_\+w}} (const std\+::string \&str, const std\+::string \&end) noexcept
+\begin{DoxyCompactList}\small\item\em It is compared whether one string ends with a sequence of chars. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a369ab3994ff3e7af9e7eb1caae1930ad}{file\+\_\+cont\+\_\+str}} (const std\+::string \&file, const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em It is checked whether the whole string appears in the file. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad724e79ebb157e976c60a606d1bf59f0}{cut\+\_\+off\+\_\+first\+\_\+char}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em Cuts off the first char of the passed string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_a5caa2bf1c079d249017b40709044c40e}{file\+\_\+exists}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em Checks whether the file exists. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_aefa75b40dec35f463c1c48369a299208}{get\+\_\+first\+\_\+lns\+\_\+file}} (const std\+::string \&file, const int \&ln\+\_\+nums) noexcept
+\begin{DoxyCompactList}\small\item\em This function gets the first lines of a file. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a300112b0f9768b38ff2cfdd56951ae9e}{get\+\_\+last\+\_\+lns\+\_\+file}} (const std\+::string \&file, const int \&ln\+\_\+nums) noexcept
+\begin{DoxyCompactList}\small\item\em The function skips the first file lines of the file and then gathers the remaining lines. \end{DoxyCompactList}\item 
+static long long \mbox{\hyperlink{classtools_1_1Tools_a3d08afe8e3bf3e7194cb26e3a3cf2b3d}{get\+\_\+num\+\_\+ln\+\_\+end}} (const std\+::string \&entry) noexcept
+\begin{DoxyCompactList}\small\item\em This function gets the integer at the end of a string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a913a3c50de4c18afc17fbbe13da82b8d}{get\+\_\+file\+\_\+ln}} (const std\+::string \&file, const int \&ln\+\_\+num) noexcept
+\begin{DoxyCompactList}\small\item\em The function gets the line of a given file. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classtools_1_1Tools_a4b038e7ea0fbd06adbaa70e7505f61a4}{get\+\_\+amnt\+\_\+file\+\_\+lns}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em It is counted the number of lines a file has. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a5c1fb3e16e4cff1e70635cbeb98d1129}{md5\+\_\+hash}} (const std\+::string \&seed) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a md5 hash for the proper seed. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a8e483b9229a9aab7a7bd9b208f34a467}{hmac\+\_\+sha256\+\_\+hash}} (const std\+::string \&secret\+\_\+key, const std\+::string \&seed) noexcept
+\begin{DoxyCompactList}\small\item\em Computes an hmac sha256 hash for the proper seed. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}{parse\+\_\+url}} (const std\+::string \&url, const std\+::string \&escaped\+\_\+chars=\char`\"{}\char`\"{}) noexcept
+\begin{DoxyCompactList}\small\item\em It U\+RL parses the given string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_aa0dadc11e61cb5c32f8746d0e9a35ed5}{encode\+\_\+utf8}} (const std\+::wstring \&wstr) noexcept
+\begin{DoxyCompactList}\small\item\em It substitutes non-\/\+A\+S\+C\+II characters with the hex value of the char. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a7916a751d0b2ef769432d9369b094eb5}{to\+\_\+oct}} (const int \&val) noexcept
+\begin{DoxyCompactList}\small\item\em Expects an integer and turns it into its octal equivalent. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a3b9c21a815cf068b10ffc261526c3d8f}{to\+\_\+hex}} (const int \&val) noexcept
+\begin{DoxyCompactList}\small\item\em Expects an integer and turns it into its hexadecimal equivalent. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a6d1962b9c6ee66dbd607a4245059f717}{gzip\+\_\+compress}} (const std\+::string \&data) noexcept
+\begin{DoxyCompactList}\small\item\em The function G\+Z\+IP compresses the passed data. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_aaebae87ecad5ad7ca8eced233e83fc9a}{gzip\+\_\+decompress}} (const std\+::string \&data) noexcept
+\begin{DoxyCompactList}\small\item\em The function G\+Z\+IP decompresses the passed data. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classtools_1_1Tools_afcee95b785eeecd8a382a0453fc0a670}{is\+\_\+gzipped}} (const std\+::string \&data) noexcept
+\begin{DoxyCompactList}\small\item\em Checks whether the passed data is G\+Z\+IP compressed. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a6545ef17ac60378b5b1a177dfae4a1a8}{get\+\_\+json\+\_\+as\+\_\+string}} (const rapidjson\+::\+Value \&val) noexcept
+\begin{DoxyCompactList}\small\item\em A J\+S\+ON object or array is turned into a string. \end{DoxyCompactList}\item 
+static long long \mbox{\hyperlink{classtools_1_1Tools_ae0a32968f9b713320e870a3464f70e1d}{get\+\_\+time\+\_\+in\+\_\+millisec}} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns the current time in milliseconds. \end{DoxyCompactList}\item 
+static long long \mbox{\hyperlink{classtools_1_1Tools_aa4d950ba11ae8b4e9aefa478e813e6d9}{get\+\_\+time}} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns the current time in seconds. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca1943}{get\+\_\+time\+\_\+w\+\_\+millisec}} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns the current time in seconds with milliseconds. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}{get\+\_\+date}} (const std\+::time\+\_\+t \&time=0) noexcept
+\begin{DoxyCompactList}\small\item\em Returns the current time and makes the date. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}{get\+\_\+timezone\+\_\+offset}} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100) \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classtools_1_1Tools_a106306921da41953200991a264b24d9b}{get\+\_\+seed}} () noexcept
+\begin{DoxyCompactList}\small\item\em Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. \end{DoxyCompactList}\item 
+static std\+::tm $\ast$ \mbox{\hyperlink{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}{get\+\_\+tm}} (const std\+::time\+\_\+t \&time=0) noexcept
+\begin{DoxyCompactList}\small\item\em Gets the tm struct for us. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}{get\+\_\+file\+\_\+ln\+\_\+val}} (const std\+::string \&ln) noexcept
+\begin{DoxyCompactList}\small\item\em This function gets values out of settings files. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}{write\+\_\+err\+\_\+log}} (const std\+::string \&err\+\_\+msg) noexcept
+\begin{DoxyCompactList}\small\item\em This function is thought to be used to log error messages which need treatment. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}{write\+\_\+err\+\_\+log\+\_\+tmp}} (const std\+::string \&err\+\_\+msg) noexcept
+\begin{DoxyCompactList}\small\item\em This function is thought to be used to log error messages temporarily. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce5266110c}{del\+\_\+file}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em Deletes the passed file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for all functions I use regularly. 
+
+It is a monostate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtools_1_1Tools_ad724e79ebb157e976c60a606d1bf59f0}\label{classtools_1_1Tools_ad724e79ebb157e976c60a606d1bf59f0}} 
+\index{tools::Tools@{tools::Tools}!cut\_off\_first\_char@{cut\_off\_first\_char}}
+\index{cut\_off\_first\_char@{cut\_off\_first\_char}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{cut\_off\_first\_char()}{cut\_off\_first\_char()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::cut\+\_\+off\+\_\+first\+\_\+char (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Cuts off the first char of the passed string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string to shorten \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shortened string 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & The passed string is empty. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce5266110c}\label{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce5266110c}} 
+\index{tools::Tools@{tools::Tools}!del\_file@{del\_file}}
+\index{del\_file@{del\_file}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{del\_file()}{del\_file()}}
+{\footnotesize\ttfamily void tools\+::\+Tools\+::del\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Deletes the passed file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The file to delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1Tools_aa0dadc11e61cb5c32f8746d0e9a35ed5}\label{classtools_1_1Tools_aa0dadc11e61cb5c32f8746d0e9a35ed5}} 
+\index{tools::Tools@{tools::Tools}!encode\_utf8@{encode\_utf8}}
+\index{encode\_utf8@{encode\_utf8}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{encode\_utf8()}{encode\_utf8()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::encode\+\_\+utf8 (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It substitutes non-\/\+A\+S\+C\+II characters with the hex value of the char. 
+
+With the help of \href{https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5}{\texttt{ https\+://gist.\+github.\+com/\+Mighty\+Pork/52eda3e5677b4b03524e40c9f0ab1da5}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em wstr} & The string which shall be encoded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parsed string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a798c1760007cbbb030947b76df13baae}\label{classtools_1_1Tools_a798c1760007cbbb030947b76df13baae}} 
+\index{tools::Tools@{tools::Tools}!ends\_w@{ends\_w}}
+\index{ends\_w@{ends\_w}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{ends\_w()}{ends\_w()}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::ends\+\_\+w (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::string \&}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It is compared whether one string ends with a sequence of chars. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string whose end shall be checked \\
+\hline
+\mbox{\texttt{ in}}  & {\em end} & The string of which we want to know whether it occurs at the end of the other string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It is returned true if the one string ends with the other. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a369ab3994ff3e7af9e7eb1caae1930ad}\label{classtools_1_1Tools_a369ab3994ff3e7af9e7eb1caae1930ad}} 
+\index{tools::Tools@{tools::Tools}!file\_cont\_str@{file\_cont\_str}}
+\index{file\_cont\_str@{file\_cont\_str}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{file\_cont\_str()}{file\_cont\_str()}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::file\+\_\+cont\+\_\+str (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It is checked whether the whole string appears in the file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The path to the file its content we want to inspect \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & The string whose whose existence we want to know in the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It is returned true if the string appears in the file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a5caa2bf1c079d249017b40709044c40e}\label{classtools_1_1Tools_a5caa2bf1c079d249017b40709044c40e}} 
+\index{tools::Tools@{tools::Tools}!file\_exists@{file\_exists}}
+\index{file\_exists@{file\_exists}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{file\_exists()}{file\_exists()}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::file\+\_\+exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Checks whether the file exists. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The path to file we want to know whether it exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It is returned true if the file exists. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a4b038e7ea0fbd06adbaa70e7505f61a4}\label{classtools_1_1Tools_a4b038e7ea0fbd06adbaa70e7505f61a4}} 
+\index{tools::Tools@{tools::Tools}!get\_amnt\_file\_lns@{get\_amnt\_file\_lns}}
+\index{get\_amnt\_file\_lns@{get\_amnt\_file\_lns}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_amnt\_file\_lns()}{get\_amnt\_file\_lns()}}
+{\footnotesize\ttfamily int tools\+::\+Tools\+::get\+\_\+amnt\+\_\+file\+\_\+lns (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It is counted the number of lines a file has. 
+
+Empty lines do not count. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of written lines in a file 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/1} & The file does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a78bebbea03bd1ee013b02bdb842f825f}\label{classtools_1_1Tools_a78bebbea03bd1ee013b02bdb842f825f}} 
+\index{tools::Tools@{tools::Tools}!get\_args@{get\_args}}
+\index{get\_args@{get\_args}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_args()}{get\_args()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tools\+::\+Tools\+::get\+\_\+args (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+All words in the passed string are listed down in a vector while one element represent a word. 
+
+It can handle new lines and several spaces as it neglects them and only gets the pure words. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector where each element represents one argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a3a53a8b525bb3c851c7ea64ecf383788}\label{classtools_1_1Tools_a3a53a8b525bb3c851c7ea64ecf383788}} 
+\index{tools::Tools@{tools::Tools}!get\_args\_w\_lns@{get\_args\_w\_lns}}
+\index{get\_args\_w\_lns@{get\_args\_w\_lns}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_args\_w\_lns()}{get\_args\_w\_lns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ tools\+::\+Tools\+::get\+\_\+args\+\_\+w\+\_\+lns (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+All words in the passed string are listed down in a vector while one element represent a word. 
+
+It can handle new lines and several spaces but this time it only neglects several spaces.
+
+Example\+: at(0)\+: Hello,\textbackslash{}nhow at(1)\+: are at(2)\+: you? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector where each element represents one argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}\label{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}} 
+\index{tools::Tools@{tools::Tools}!get\_date@{get\_date}}
+\index{get\_date@{get\_date}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_date()}{get\_date()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+date (\begin{DoxyParamCaption}\item[{const std\+::time\+\_\+t \&}]{time = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the current time and makes the date. 
+
+\begin{DoxyReturn}{Returns}
+Output of asctime() with no new line appended. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a71a70400489f14e2c7a7cf627cb36cc6}\label{classtools_1_1Tools_a71a70400489f14e2c7a7cf627cb36cc6}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_cont@{get\_file\_cont}}
+\index{get\_file\_cont@{get\_file\_cont}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_cont()}{get\_file\_cont()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+cont (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The functions gets the content of the stated file. 
+
+Empty lines are considered. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Everything from the file is returned as a string. Additionally, a new line is included at the end which is important as when appending text I assume that it goes into a new line. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & An empty line is returned if the file does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_ad16a9f95849b14d70a5290cdf2bec241}\label{classtools_1_1Tools_ad16a9f95849b14d70a5290cdf2bec241}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_cont\_wo\_srch\_ln@{get\_file\_cont\_wo\_srch\_ln}}
+\index{get\_file\_cont\_wo\_srch\_ln@{get\_file\_cont\_wo\_srch\_ln}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_cont\_wo\_srch\_ln()}{get\_file\_cont\_wo\_srch\_ln()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+cont\+\_\+wo\+\_\+srch\+\_\+ln (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const std\+::string \&}]{srch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The functions gets the content of the stated file except one line which is skipped. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\hline
+\mbox{\texttt{ in}}  & {\em srch} & String whose line shall not be included \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Everything from the file except that one line is returned as a string. Additionally, a new line is included at the end which is important as when appending text I assume that it goes into a new line. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & An empty line is returned if the file does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a913a3c50de4c18afc17fbbe13da82b8d}\label{classtools_1_1Tools_a913a3c50de4c18afc17fbbe13da82b8d}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln@{get\_file\_ln}}
+\index{get\_file\_ln@{get\_file\_ln}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln()}{get\_file\_ln()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const int \&}]{ln\+\_\+num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The function gets the line of a given file. 
+
+The first line is line 1.
+
+Example\+: The function may get line 5 of a file. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The file path to the file whose content we want \\
+\hline
+\mbox{\texttt{ in}}  & {\em ln\+\_\+num} & The number needs to be greater than 0. It states the line we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file line with new line char included at the end is returned. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & The file or the file line does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}\label{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln\_val@{get\_file\_ln\_val}}
+\index{get\_file\_ln\_val@{get\_file\_ln\_val}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln\_val()}{get\_file\_ln\_val()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln\+\_\+val (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ln }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function gets values out of settings files. 
+
+Values in lines are saved like\+: \char`\"{}key0 (key1 key2)\+: value0 (value1 value2)\char`\"{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ln} & The file line whose value we want \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value for the setting 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}\label{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln\_w\_srch@{get\_file\_ln\_w\_srch}}
+\index{get\_file\_ln\_w\_srch@{get\_file\_ln\_w\_srch}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln\_w\_srch()}{get\_file\_ln\_w\_srch()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln\+\_\+w\+\_\+srch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const std\+::string \&}]{srch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It gets the first line which contains the passed string. 
+
+The whole string needs to be contained in the file line and not just a fraction. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\hline
+\mbox{\texttt{ in}}  & {\em srch} & The string which shall be included in the file line that we search. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file line which contains the whole string. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & The string does not appear in the file. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}\label{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}} 
+\index{tools::Tools@{tools::Tools}!get\_first\_char@{get\_first\_char}}
+\index{get\_first\_char@{get\_first\_char}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_first\_char()}{get\_first\_char()}}
+{\footnotesize\ttfamily char tools\+::\+Tools\+::get\+\_\+first\+\_\+char (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Retrieves the first char of a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string whose first char we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first char of a string 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \textquotesingle{}\textquotesingle{}} & An empty string was passed to the function. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_aefa75b40dec35f463c1c48369a299208}\label{classtools_1_1Tools_aefa75b40dec35f463c1c48369a299208}} 
+\index{tools::Tools@{tools::Tools}!get\_first\_lns\_file@{get\_first\_lns\_file}}
+\index{get\_first\_lns\_file@{get\_first\_lns\_file}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_first\_lns\_file()}{get\_first\_lns\_file()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+first\+\_\+lns\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const int \&}]{ln\+\_\+nums }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function gets the first lines of a file. 
+
+It does not matter whether the file does have sufficient lines. In that case, all are got.
+
+Empty lines are neglected. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want \\
+\hline
+\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the beginning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first lines of the file content are returned. A new line char is appended at the end. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & The file does not exist, there is no file content or the file number does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a6545ef17ac60378b5b1a177dfae4a1a8}\label{classtools_1_1Tools_a6545ef17ac60378b5b1a177dfae4a1a8}} 
+\index{tools::Tools@{tools::Tools}!get\_json\_as\_string@{get\_json\_as\_string}}
+\index{get\_json\_as\_string@{get\_json\_as\_string}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_json\_as\_string()}{get\_json\_as\_string()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+json\+\_\+as\+\_\+string (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+A J\+S\+ON object or array is turned into a string. 
+
+The library rapidjson is used. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & The J\+S\+ON object or array to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string of the J\+S\+ON 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a300112b0f9768b38ff2cfdd56951ae9e}\label{classtools_1_1Tools_a300112b0f9768b38ff2cfdd56951ae9e}} 
+\index{tools::Tools@{tools::Tools}!get\_last\_lns\_file@{get\_last\_lns\_file}}
+\index{get\_last\_lns\_file@{get\_last\_lns\_file}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_last\_lns\_file()}{get\_last\_lns\_file()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+last\+\_\+lns\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const int \&}]{ln\+\_\+nums }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The function skips the first file lines of the file and then gathers the remaining lines. 
+
+It does not matter whether the file does have sufficient lines. In that case, all are got.
+
+Empty lines are neglected. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want \\
+\hline
+\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the end \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The last lines of content as a string are returned. A new line char is appended at the end. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & The file does not exist, there is no file content or the file number does not exist. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a3d08afe8e3bf3e7194cb26e3a3cf2b3d}\label{classtools_1_1Tools_a3d08afe8e3bf3e7194cb26e3a3cf2b3d}} 
+\index{tools::Tools@{tools::Tools}!get\_num\_ln\_end@{get\_num\_ln\_end}}
+\index{get\_num\_ln\_end@{get\_num\_ln\_end}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_num\_ln\_end()}{get\_num\_ln\_end()}}
+{\footnotesize\ttfamily long long tools\+::\+Tools\+::get\+\_\+num\+\_\+ln\+\_\+end (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function gets the integer at the end of a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em entry} & The string whose ending number we want \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The positive or negative integer at the end of a file line. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/1} & There no numerals at the end of the file line or it is empty. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_a106306921da41953200991a264b24d9b}\label{classtools_1_1Tools_a106306921da41953200991a264b24d9b}} 
+\index{tools::Tools@{tools::Tools}!get\_seed@{get\_seed}}
+\index{get\_seed@{get\_seed}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_seed()}{get\_seed()}}
+{\footnotesize\ttfamily int tools\+::\+Tools\+::get\+\_\+seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. 
+
+The function calls the current time in milliseconds and shortens it to fit into an in so that is can be used as a a seed. \begin{DoxyReturn}{Returns}
+random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_aa4d950ba11ae8b4e9aefa478e813e6d9}\label{classtools_1_1Tools_aa4d950ba11ae8b4e9aefa478e813e6d9}} 
+\index{tools::Tools@{tools::Tools}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily long long tools\+::\+Tools\+::get\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the current time in seconds. 
+
+Example\+: 1583068819 \begin{DoxyReturn}{Returns}
+The Unix time in seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ae0a32968f9b713320e870a3464f70e1d}\label{classtools_1_1Tools_ae0a32968f9b713320e870a3464f70e1d}} 
+\index{tools::Tools@{tools::Tools}!get\_time\_in\_millisec@{get\_time\_in\_millisec}}
+\index{get\_time\_in\_millisec@{get\_time\_in\_millisec}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_time\_in\_millisec()}{get\_time\_in\_millisec()}}
+{\footnotesize\ttfamily long long tools\+::\+Tools\+::get\+\_\+time\+\_\+in\+\_\+millisec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the current time in milliseconds. 
+
+Example\+: 1583068819924 \begin{DoxyReturn}{Returns}
+The Unix time in milliseconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca1943}\label{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca1943}} 
+\index{tools::Tools@{tools::Tools}!get\_time\_w\_millisec@{get\_time\_w\_millisec}}
+\index{get\_time\_w\_millisec@{get\_time\_w\_millisec}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_time\_w\_millisec()}{get\_time\_w\_millisec()}}
+{\footnotesize\ttfamily double tools\+::\+Tools\+::get\+\_\+time\+\_\+w\+\_\+millisec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the current time in seconds with milliseconds. 
+
+Example\+: 1583068819.\+924 \begin{DoxyReturn}{Returns}
+The Unix time in seconds with milliseconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}\label{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}} 
+\index{tools::Tools@{tools::Tools}!get\_timezone\_offset@{get\_timezone\_offset}}
+\index{get\_timezone\_offset@{get\_timezone\_offset}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_timezone\_offset()}{get\_timezone\_offset()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+timezone\+\_\+offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100) 
+
+Example\+: -\/18000 \begin{DoxyReturn}{Returns}
+The time zone offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}\label{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}} 
+\index{tools::Tools@{tools::Tools}!get\_tm@{get\_tm}}
+\index{get\_tm@{get\_tm}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_tm()}{get\_tm()}}
+{\footnotesize\ttfamily std\+::tm $\ast$ tools\+::\+Tools\+::get\+\_\+tm (\begin{DoxyParamCaption}\item[{const std\+::time\+\_\+t \&}]{time = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Gets the tm struct for us. 
+
+By default, the struct std\+::tm gets the current time but optionally, the wanted time can be stated. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & Input for the struct std\+::tm \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The struct std\+::tm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a6d1962b9c6ee66dbd607a4245059f717}\label{classtools_1_1Tools_a6d1962b9c6ee66dbd607a4245059f717}} 
+\index{tools::Tools@{tools::Tools}!gzip\_compress@{gzip\_compress}}
+\index{gzip\_compress@{gzip\_compress}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{gzip\_compress()}{gzip\_compress()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::gzip\+\_\+compress (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The function G\+Z\+IP compresses the passed data. 
+
+Copied from here\+: \href{https://gist.github.com/yfnick/6ba33efa7ba12e93b148}{\texttt{ https\+://gist.\+github.\+com/yfnick/6ba33efa7ba12e93b148}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP compress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The G\+Z\+IP compressed data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_aaebae87ecad5ad7ca8eced233e83fc9a}\label{classtools_1_1Tools_aaebae87ecad5ad7ca8eced233e83fc9a}} 
+\index{tools::Tools@{tools::Tools}!gzip\_decompress@{gzip\_decompress}}
+\index{gzip\_decompress@{gzip\_decompress}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{gzip\_decompress()}{gzip\_decompress()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::gzip\+\_\+decompress (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The function G\+Z\+IP decompresses the passed data. 
+
+Copied from here\+: \href{https://gist.github.com/yfnick/6ba33efa7ba12e93b148}{\texttt{ https\+://gist.\+github.\+com/yfnick/6ba33efa7ba12e93b148}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP decompress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The G\+Z\+IP decompressed data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a8e483b9229a9aab7a7bd9b208f34a467}\label{classtools_1_1Tools_a8e483b9229a9aab7a7bd9b208f34a467}} 
+\index{tools::Tools@{tools::Tools}!hmac\_sha256\_hash@{hmac\_sha256\_hash}}
+\index{hmac\_sha256\_hash@{hmac\_sha256\_hash}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{hmac\_sha256\_hash()}{hmac\_sha256\_hash()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::hmac\+\_\+sha256\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{secret\+\_\+key,  }\item[{const std\+::string \&}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Computes an hmac sha256 hash for the proper seed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em secret\+\_\+key} & The key for the hmac encryption \\
+\hline
+\mbox{\texttt{ in}}  & {\em seed} & The actual string which shall be encoded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hmac sha256 hash 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_afcee95b785eeecd8a382a0453fc0a670}\label{classtools_1_1Tools_afcee95b785eeecd8a382a0453fc0a670}} 
+\index{tools::Tools@{tools::Tools}!is\_gzipped@{is\_gzipped}}
+\index{is\_gzipped@{is\_gzipped}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{is\_gzipped()}{is\_gzipped()}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::is\+\_\+gzipped (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Checks whether the passed data is G\+Z\+IP compressed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the passes data is G\+Z\+IP compressed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a8168d15dcd3f74e97c30a21473e9725c}\label{classtools_1_1Tools_a8168d15dcd3f74e97c30a21473e9725c}} 
+\index{tools::Tools@{tools::Tools}!is\_pos\_int@{is\_pos\_int}}
+\index{is\_pos\_int@{is\_pos\_int}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{is\_pos\_int()}{is\_pos\_int()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::is\+\_\+pos\+\_\+int (\begin{DoxyParamCaption}\item[{const char \&}]{ch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+States whether the passed char is a positive integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ch} & The char of which we want to know whether it is a positive interger. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the char is a number, true is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a34fca72e5edee7c8f91fac6d4bcbd58d}\label{classtools_1_1Tools_a34fca72e5edee7c8f91fac6d4bcbd58d}} 
+\index{tools::Tools@{tools::Tools}!is\_pos\_int@{is\_pos\_int}}
+\index{is\_pos\_int@{is\_pos\_int}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{is\_pos\_int()}{is\_pos\_int()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::is\+\_\+pos\+\_\+int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+States whether the passed string is a positive integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string of which we want to know whether it is a positive interger. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It is returned true when the string only consists of number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a5c1fb3e16e4cff1e70635cbeb98d1129}\label{classtools_1_1Tools_a5c1fb3e16e4cff1e70635cbeb98d1129}} 
+\index{tools::Tools@{tools::Tools}!md5\_hash@{md5\_hash}}
+\index{md5\_hash@{md5\_hash}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{md5\_hash()}{md5\_hash()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::md5\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates a md5 hash for the proper seed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em seed} & The seed which shall be encrypted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The md5 hash 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}\label{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}} 
+\index{tools::Tools@{tools::Tools}!parse\_url@{parse\_url}}
+\index{parse\_url@{parse\_url}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{parse\_url()}{parse\_url()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::parse\+\_\+url (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const std\+::string \&}]{escaped\+\_\+chars = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It U\+RL parses the given string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & U\+RL or string which shall be encoded \\
+\hline
+\mbox{\texttt{ in}}  & {\em escaped\+\_\+chars} & Non-\/\+A\+S\+C\+II chars are escaped either way but with this string there can be stated additional chars to escape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The U\+RL parsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}\label{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}} 
+\index{tools::Tools@{tools::Tools}!starts\_w@{starts\_w}}
+\index{starts\_w@{starts\_w}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{starts\_w()}{starts\_w()}}
+{\footnotesize\ttfamily bool tools\+::\+Tools\+::starts\+\_\+w (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::string \&}]{beg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It is compared whether one string starts with a sequence of chars. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string whose beginning shall be checked \\
+\hline
+\mbox{\texttt{ in}}  & {\em beg} & The string of which we want to know whether it occurs at the beginning of the other string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It is returned true if the one string starts with the other. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a3b9c21a815cf068b10ffc261526c3d8f}\label{classtools_1_1Tools_a3b9c21a815cf068b10ffc261526c3d8f}} 
+\index{tools::Tools@{tools::Tools}!to\_hex@{to\_hex}}
+\index{to\_hex@{to\_hex}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{to\_hex()}{to\_hex()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::to\+\_\+hex (\begin{DoxyParamCaption}\item[{const int \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Expects an integer and turns it into its hexadecimal equivalent. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & The integer which shall be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hexadecimal value as a string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a7916a751d0b2ef769432d9369b094eb5}\label{classtools_1_1Tools_a7916a751d0b2ef769432d9369b094eb5}} 
+\index{tools::Tools@{tools::Tools}!to\_oct@{to\_oct}}
+\index{to\_oct@{to\_oct}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{to\_oct()}{to\_oct()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::to\+\_\+oct (\begin{DoxyParamCaption}\item[{const int \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Expects an integer and turns it into its octal equivalent. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & The integer which shall be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The octal value as a string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}\label{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}} 
+\index{tools::Tools@{tools::Tools}!write\_err\_log@{write\_err\_log}}
+\index{write\_err\_log@{write\_err\_log}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{write\_err\_log()}{write\_err\_log()}}
+{\footnotesize\ttfamily void tools\+::\+Tools\+::write\+\_\+err\+\_\+log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{err\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function is thought to be used to log error messages which need treatment. 
+
+It should be used instead of the stderr output. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}\label{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}} 
+\index{tools::Tools@{tools::Tools}!write\_err\_log\_tmp@{write\_err\_log\_tmp}}
+\index{write\_err\_log\_tmp@{write\_err\_log\_tmp}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{write\_err\_log\_tmp()}{write\_err\_log\_tmp()}}
+{\footnotesize\ttfamily void tools\+::\+Tools\+::write\+\_\+err\+\_\+log\+\_\+tmp (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{err\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function is thought to be used to log error messages temporarily. 
+
+It should be used instead of the stderr output. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/Tools.\+h\item 
+src/Tools.\+cpp\end{DoxyCompactItemize}

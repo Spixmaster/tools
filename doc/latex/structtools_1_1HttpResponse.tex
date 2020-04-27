@@ -1,0 +1,66 @@
+\hypertarget{structtools_1_1HttpResponse}{}\doxysection{tools\+::Http\+Response Struct Reference}
+\label{structtools_1_1HttpResponse}\index{tools::HttpResponse@{tools::HttpResponse}}
+
+
+This object represents an H\+T\+TP response.  
+
+
+
+
+{\ttfamily \#include $<$Http\+Response.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtools_1_1HttpResponse_abbceb80c9ab8b3dd1f0a8966bc345f01}\label{structtools_1_1HttpResponse_abbceb80c9ab8b3dd1f0a8966bc345f01}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} $>$ \mbox{\hyperlink{structtools_1_1HttpResponse_abbceb80c9ab8b3dd1f0a8966bc345f01}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtools_1_1HttpResponse_aa2a7bf75c2bc308f02cdcf7a44fce829}{Http\+Response}} (const int \&code, const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&headers, const std\+::string \&body, const std\+::vector$<$ \mbox{\hyperlink{classtools_1_1HttpCookie}{Http\+Cookie}} $>$ \&cookies)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtools_1_1HttpResponse_a76a82056d8c861416bcdaa42f73f7f22}\label{structtools_1_1HttpResponse_a76a82056d8c861416bcdaa42f73f7f22}} 
+int \mbox{\hyperlink{structtools_1_1HttpResponse_a76a82056d8c861416bcdaa42f73f7f22}{m\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em The H\+T\+TP status code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1HttpResponse_a714cccd56333c2befbb1fde8f69a7d7a}\label{structtools_1_1HttpResponse_a714cccd56333c2befbb1fde8f69a7d7a}} 
+std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \mbox{\hyperlink{structtools_1_1HttpResponse_a714cccd56333c2befbb1fde8f69a7d7a}{m\+\_\+headers}}
+\begin{DoxyCompactList}\small\item\em The H\+T\+TP headers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1HttpResponse_a7b34edb2dbc1d3465fb275908c6ea9d8}\label{structtools_1_1HttpResponse_a7b34edb2dbc1d3465fb275908c6ea9d8}} 
+std\+::string \mbox{\hyperlink{structtools_1_1HttpResponse_a7b34edb2dbc1d3465fb275908c6ea9d8}{m\+\_\+body}}
+\begin{DoxyCompactList}\small\item\em The H\+T\+TP body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1HttpResponse_a73a2ab845c21d9b1adda25d3b7517763}\label{structtools_1_1HttpResponse_a73a2ab845c21d9b1adda25d3b7517763}} 
+std\+::vector$<$ \mbox{\hyperlink{classtools_1_1HttpCookie}{Http\+Cookie}} $>$ \mbox{\hyperlink{structtools_1_1HttpResponse_a73a2ab845c21d9b1adda25d3b7517763}{m\+\_\+cookies}}
+\begin{DoxyCompactList}\small\item\em The H\+T\+TP cookies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object represents an H\+T\+TP response. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtools_1_1HttpResponse_aa2a7bf75c2bc308f02cdcf7a44fce829}\label{structtools_1_1HttpResponse_aa2a7bf75c2bc308f02cdcf7a44fce829}} 
+\index{tools::HttpResponse@{tools::HttpResponse}!HttpResponse@{HttpResponse}}
+\index{HttpResponse@{HttpResponse}!tools::HttpResponse@{tools::HttpResponse}}
+\doxysubsubsection{\texorpdfstring{HttpResponse()}{HttpResponse()}}
+{\footnotesize\ttfamily tools\+::\+Http\+Response\+::\+Http\+Response (\begin{DoxyParamCaption}\item[{const int \&}]{code,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&}]{headers,  }\item[{const std\+::string \&}]{body,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classtools_1_1HttpCookie}{Http\+Cookie}} $>$ \&}]{cookies }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em code} & The request\textquotesingle{}s status code \\
+\hline
+\mbox{\texttt{ in}}  & {\em headers} & A vector where each element represents a header \\
+\hline
+\mbox{\texttt{ in}}  & {\em body} & The request\textquotesingle{}s body \\
+\hline
+\mbox{\texttt{ in}}  & {\em cookies} & The request\textquotesingle{}s cookies \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/http/Http\+Response.\+h\item 
+src/http/Http\+Respsonse.\+cpp\end{DoxyCompactItemize}

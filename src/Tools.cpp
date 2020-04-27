@@ -18,6 +18,9 @@
 #include "tools/constants/Constants.h"
 #include "tools/constants/Messages.h"
 #include <chrono>
+#include <boost/filesystem.hpp>
+#include <boost/range/iterator_range.hpp>
+#include <boost/format.hpp>
 
 namespace tools
 {
@@ -28,29 +31,30 @@ namespace tools
 
 		for(std::size_t j = 0; j < str.length(); ++j)
 		{
-			//deal with last char/word
-			//add last char to word
-			//at end no ' ' --> otherwise, last word would not be added to vector
+			//Deal with the last char of the last word.
 			if(j == (str.length() - 1) && str.at(j) != ' ')
 			{
 				word += str.at(j);
 				args.push_back(word);
 				word = "";
-				break;	//otherwise, next condition would be true
+				break;	//Otherwise, the next condition would be true.
 			}
 
-			//add characters
+			//Add the chars.
 			if(str.at(j) != ' ' && str.at(j) != '\n')
 				word += str.at(j);
 
-			//detect words
-			//&& !word.empty() --> so that e. g. several spaces would not add an empty slot in args
+			/*
+			 * Detect words.
+			 * && !word.empty() is used as a condition so that several spaces do not add empty elements in the vector.
+			 */
 			if((str.at(j) == ' ' || str.at(j) == '\n') && !word.empty())
 			{
 				args.push_back(word);
 				word = "";
 			}
 		}
+
 		return args;
 	}
 
@@ -61,27 +65,26 @@ namespace tools
 
 		for(std::size_t j = 0; j < str.length(); ++j)
 		{
-			//deal with last char/word
-			//add last char to word
-			//at end no ' ' --> otherwise, last word would not be added to vector
+			//Deal with the last char of the last word.
 			if(j == (str.length() - 1) && str.at(j) != ' ')
 			{
 				word += str.at(j);
 				args.push_back(word);
 				word = "";
-				break;	//otherwise, next condition would be true
+				break;	//Otherwise, the next condition would be true.
 			}
 
-			//add characters
+			//Add the chars.
 			if(str.at(j) != ' ')
 				word += str.at(j);
-			//detect words
+			//Detect the words.
 			else
 			{
 				args.push_back(word);
 				word = "";
 			}
 		}
+
 		return args;
 	}
 
@@ -102,19 +105,18 @@ namespace tools
 				}
 
 				/*
-				 * we need to do this as there is always a trailing \n at the end of the file
-				 * if we would not do this the file would be filled with one more empty line each time
-				 * condition: pop_back of empty string crashes the programme
+				 * We need to do this as there is always a trailing \n at the end of the file.
+				 * If we did not do this, the file would be filled with one more empty line each time.
 				 */
 				if(cont.size() > 0)
 					cont.pop_back();
 			}
+
 			return cont;
 		}
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return "";
 		}
 	}
@@ -125,7 +127,6 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cont;
-			std::size_t found;
 
 			if(inf.is_open())
 			{
@@ -134,17 +135,16 @@ namespace tools
 					std::string cur_ln;
 					std::getline(inf, cur_ln);
 
-					//srch in line
-					if((found = cur_ln.find(srch)) != std::string::npos)
+					//Check whether the string appears in the file line.
+					if(cur_ln.find(srch) != std::string::npos)
 						continue;
 					else
 						cont.append(cur_ln + "\n");
 				}
 
 				/*
-				 * we need to do this as there is always a trailing \n at the end of the file
-				 * if we would not do this the file would be filled with one more empty line each time
-				 * condition: pop_back of empty string crashes the programme
+				 * We need to do this as there is always a trailing \n at the end of the file.
+				 * If we did not do this, the file would be filled with one more empty line each time.
 				 */
 				if(cont.size() > 0)
 					cont.pop_back();
@@ -155,42 +155,7 @@ namespace tools
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return "";
-		}
-	}
-
-	std::size_t Tools::get_beg_pos_ln(const std::string &file, const std::string &srch) noexcept
-	{
-		if(Tools::file_exists(file))
-		{
-			std::ifstream inf(file);
-			std::string cur_ln;
-			std::size_t found;
-			std::size_t chars_to_srch = 0;
-
-			if(inf.is_open())
-			{
-				while(!inf.eof())
-				{
-					std::getline(inf, cur_ln);
-
-					//srch found
-					if((found = cur_ln.find(srch)) != std::string::npos)
-						break;
-
-					//due to "\n"
-					chars_to_srch += cur_ln.length();
-					chars_to_srch += 2;
-				}
-			}
-			return chars_to_srch;
-		}
-		else
-		{
-			Messages::file_non_existent(file);
-
-			return 0;
 		}
 	}
 
@@ -217,7 +182,6 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cur_ln;
-			std::size_t found;
 
 			if(inf.is_open())
 			{
@@ -225,19 +189,20 @@ namespace tools
 				{
 					std::getline(inf, cur_ln);
 
-					//srch found
-					if((found = cur_ln.find(srch)) != std::string::npos)
+					//Check whether the string is found.
+					if(cur_ln.find(srch) != std::string::npos)
 						return cur_ln;
 				}
-				//otherwise, if nothing found he would send the last line
+
+				//Otherwise, if nothing was found, it would send the last line.
 				cur_ln = "";
 			}
+
 			return cur_ln;
 		}
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return "";
 		}
 	}
@@ -254,7 +219,7 @@ namespace tools
 
 	bool Tools::starts_w(const std::string &str, const std::string &beg) noexcept
 	{
-		//otherwise beginning could not even be beginning
+		//Otherwise, the beginning could not even be a beginning.
 		if(str.length() > beg.length())
 		{
 			for(std::size_t j = 0; j < beg.length(); ++j)
@@ -263,12 +228,13 @@ namespace tools
 
 			return true;
 		}
+
 		return false;
 	}
 
 	bool Tools::ends_w(const std::string &str, const std::string &end) noexcept
 	{
-		//otherwise end could not even be end
+		//Otherwise, the end could not even be an end.
 		if(str.length() > end.length())
 		{
 			for(std::size_t j = 0; j < end.length(); ++j)
@@ -277,6 +243,7 @@ namespace tools
 
 			return true;
 		}
+
 		return false;
 	}
 
@@ -298,12 +265,12 @@ namespace tools
 						return true;
 				}
 			}
+
 			return false;
 		}
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return false;
 		}
 	}
@@ -311,11 +278,12 @@ namespace tools
 	std::string Tools::cut_off_first_char(const std::string &str) noexcept
 	{
 		std::string res;
-		//j = 1 --> omit .at(0)
+
+		//The iteration starts at 1 to omit the first char
 		for(std::size_t j = 1; j < str.length(); ++j)
 			res.push_back(str.at(j));
 
-		//as with .length() = 1 for loop is not executed
+		//This condition is needed as with .length() = 1 the for loop is not executed.
 		if(str.length() == 1)
 			res = "";
 
@@ -345,26 +313,27 @@ namespace tools
 					{
 						if(count == ln_nums)
 							break;
+
 						std::string cache;
 						std::getline(inf, cache);
 						if(!cache.empty())
 							str.append(cache + "\n");
+
 						++count;
 					}
 				}
+
 				return str;
 			}
 			else
 			{
-				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
-
+				Tools::write_err_log(Messages::enter_pos_num_to_read_in_file(file));
 				return "";
 			}
 		}
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return "";
 		}
 	}
@@ -400,19 +369,18 @@ namespace tools
 						}
 					}
 				}
+
 				return str;
 			}
 			else
 			{
-				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
-
+				Tools::write_err_log(Messages::enter_pos_num_to_read_in_file(file));
 				return "";
 			}
 		}
 		else
 		{
 			Messages::file_non_existent(file);
-
 			return "";
 		}
 	}
@@ -424,11 +392,11 @@ namespace tools
 			long long number = 0;
 			bool is_neg = false;
 
-			//get amount of numerals at the end
-			int pos = 1; //begin with last char else end sequence
-			int digits = 0;
+			//Get the amount of numerals at the end.
+			int pos = 1; //This number is subtracted from the length of the string and increases with each iteration. By starting with one, we get the last char.
+			int digits = 0; //The amount of digits of the number.
 
-			//no numerals at end --> digits = 0
+			//If there are no numerals at the end, digits equals 0.
 			while(true)
 			{
 				if(Tools::is_pos_int(entry.at(entry.length() - pos)) || entry.at(entry.length() - pos) == '-')
@@ -437,33 +405,37 @@ namespace tools
 						++digits;
 					else
 					{
-						//so that '-' cannot occur in the middle of a number
 						is_neg = true;
+						//It is broken here so that '-' cannot occur in the middle of a number.
 						break;
 					}
+
 					++pos;
 				}
 				else
 					break;
 			}
 
-			//if digits = 0 --> 0 is returned
+			//If digits equals 0, it means that there was no number found.
 			if(digits == 0)
 			{
-				std::cerr << Messages::no_num_str_end(entry) << std::endl;
+				Tools::write_err_log(Messages::no_num_str_end(entry));
 				return 0;
 			}
 
-			//get number according to digits
+			//Get the number according to amount of digits.
 			for(int j = 0; j < digits; ++j)
 			{
-				//+ 1 --> else first iteration would end sequence
+				//The + 1 is needed for right indexing.
 				char numeral = entry.at(entry.length() - (j + 1));
-				//first iteration: j = 0 --> pow(10, 0) = 1
+				/*
+				 * The value of the digit in the whole number needs to be considered.
+				 * Example for the first iteration: j = 0 --> pow(10, 0) = 1
+				 */
 				number += static_cast<long long>(pow(10, j) * static_cast<long long>(numeral - 48));
 			}
 
-			//consider sign
+			//Consider the sign.
 			if(is_neg)
 				return -number;
 			else
@@ -471,9 +443,8 @@ namespace tools
 		}
 		else
 		{
-			std::cerr << Messages::given_str_empty << std::endl;
-
-			return 0;
+			Tools::write_err_log(Messages::given_str_empty);
+			return -1;
 		}
 	}
 
@@ -496,15 +467,16 @@ namespace tools
 
 						if(count == ln_num)
 							return cache;
+
 						++count;
 					}
 				}
+
 				return str;
 			}
 			else
 			{
-				std::cerr << Messages::enter_pos_num_to_read_in_file(file) << std::endl;
-
+				Tools::write_err_log(Messages::enter_pos_num_to_read_in_file(file));
 				return "";
 			}
 		}
@@ -524,6 +496,7 @@ namespace tools
 			if(inf.is_open())
 			{
 				int x = 0;
+
 				while(!inf.eof())
 				{
 					std::string cache;
@@ -532,20 +505,14 @@ namespace tools
 					if(!cache.empty())
 						++x;
 				}
+
 				return x;
 			}
 		}
 		else
 			Messages::file_non_existent(file);
 
-		return 0;
-	}
-
-	std::string Tools::get_exe_path() noexcept
-	{
-		char result[ PATH_MAX ];
-		ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
-		return std::string(result, (count > 0) ? count : 0);
+		return -1;
 	}
 
 	std::string Tools::md5_hash(const std::string &seed) noexcept
@@ -554,15 +521,13 @@ namespace tools
 	    Poco::DigestOutputStream ds(md5);
 	    ds << seed;
 	    ds.close();
-
 	    return Poco::DigestEngine::digestToHex(md5.digest());
 	}
 
-	std::string Tools::hmac_sha256_hash(const std::string &secret_key, const std::string &str) noexcept
+	std::string Tools::hmac_sha256_hash(const std::string &secret_key, const std::string &seed) noexcept
 	{
 		Poco::HMACEngine<SHA256Engine> hmac{secret_key};
-		hmac.update(str);
-
+		hmac.update(seed);
 		return Poco::DigestEngine::digestToHex(hmac.digest());
 	}
 
@@ -570,7 +535,6 @@ namespace tools
 	{
 		std::string temp;
 		Poco::URI::encode(url, escaped_chars, temp);
-
 		return temp;
 	}
 
@@ -578,50 +542,50 @@ namespace tools
 	{
 		std::string utf8_encoded;
 
-		//iterate through the whole string
+		//Iterate through the whole string.
 		for(std::size_t j = 0; j < wstr.size(); ++j)
 		{
 			if(wstr.at(j) <= 0x7F)
 				utf8_encoded += wstr.at(j);
 			else if(wstr.at(j) <= 0x7FF)
 			{
-				//our template for unicode of 2 bytes
+				//Our template for unicode of 2 bytes
 				int utf8 = 0b11000000'10000000;
 
-				//get the first 6 bits and save them
+				//Get the first 6 bits and save them.
 				utf8 += wstr.at(j) & 0b00111111;
 
 				/*
-				 * get the last 5 remaining bits
-				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 * Get the last 5 remaining bits.
+				 * Put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b00000111'11000000) << 2;
 
-				//append to the result
+				//Append to the result.
 				std::string temp = Tools::to_hex(utf8);
 				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x"));
 			}
 			else if(wstr.at(j) <= 0xFFFF)
 			{
-				//our template for unicode of 3 bytes
+				//Our template for unicode of 3 bytes
 				int utf8 = 0b11100000'10000000'10000000;
 
-				//get the first 6 bits and save them
+				//Get the first 6 bits and save them.
 				utf8 += wstr.at(j) & 0b00111111;
 
 				/*
-				 * get the next 6 bits
-				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 * Get the next 6 bits.
+				 * Put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b00001111'11000000) << 2;
 
 				/*
-				 * get the last 4 remaining bits
-				 * put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten
+				 * Get the last 4 remaining bits.
+				 * Put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b11110000'00000000) << 4;
 
-				//append to the result
+				//Append to the result.
 				std::string temp = Tools::to_hex(utf8);
 				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x"));
 			}
@@ -630,32 +594,33 @@ namespace tools
 				//our template for unicode of 4 bytes
 				int utf8 = 0b11110000'10000000'10000000'10000000;
 
-				//get the first 6 bits and save them
+				//Get the first 6 bits and save them.
 				utf8 += wstr.at(j) & 0b00111111;
 
 				/*
-				 * get the next 6 bits
-				 * put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten
+				 * Get the next 6 bits.
+				 * Put them 2 to the left so that the 10 from 10xxxxxx (first byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b00001111'11000000) << 2;
 
 				/*
-				 * get the next 6 bits
-				 * put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten
+				 * Get the next 6 bits.
+				 * Put them 4 to the left so that the 10xx from 10xxxxxx (second byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b00000011'11110000'00000000) << 4;
 
 				/*
-				 * get the last 3 remaining bits
-				 * put them 6 to the left so that the 10xxxx from 10xxxxxx (third byte) is not overwritten
+				 * Get the last 3 remaining bits.
+				 * Put them 6 to the left so that the 10xxxx from 10xxxxxx (third byte) is not overwritten.
 				 */
 				utf8 += (wstr.at(j) & 0b00011100'00000000'00000000) << 4;
 
-				//append to the result
+				//Append to the result.
 				std::string temp = Tools::to_hex(utf8);
 				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x").insert(12, "\\x"));
 			}
 		}
+
 		return utf8_encoded;
 	}
 
@@ -665,7 +630,6 @@ namespace tools
 	    std::stringstream ss;
 	    ss << std::oct << val;
 	    ss >> result;
-
 	    return result;
 	}
 
@@ -675,7 +639,6 @@ namespace tools
 	    std::stringstream ss;
 	    ss << std::hex << val;
 	    ss >> result;
-
 	    return result;
 	}
 
@@ -688,7 +651,6 @@ namespace tools
 		out.push(boost::iostreams::gzip_compressor(boost::iostreams::gzip_params(boost::iostreams::gzip::best_compression)));
 		out.push(origin);
 		boost::iostreams::copy(out, compressed);
-
 		return compressed.str();
 	}
 
@@ -703,12 +665,11 @@ namespace tools
 			out.push(boost::iostreams::gzip_decompressor());
 			out.push(compressed);
 			boost::iostreams::copy(out, decompressed);
-
 			return decompressed.str();
 		}
 		catch(const std::exception &e)
 		{
-			std::cerr << Messages::not_gzip_compressed << std::endl;
+			Tools::write_err_log(Messages::not_gzip_compressed);
 			return "";
 		}
 	}
@@ -724,7 +685,6 @@ namespace tools
 			out.push(boost::iostreams::gzip_decompressor());
 			out.push(compressed);
 			boost::iostreams::copy(out, decompressed);
-
 			return true;
 		}
 		catch(const std::exception &e)
@@ -738,7 +698,6 @@ namespace tools
 		rapidjson::StringBuffer sb;
 		rapidjson::Writer<rapidjson::StringBuffer> writer(sb);
 		val.Accept(writer);
-
 		return sb.GetString();
 	}
 
@@ -761,12 +720,14 @@ namespace tools
 	{
 		if(time >= 0)
 		{
-			//get time
+			//Get the time.
 			std::time_t raw_time;
+
 			if(time == 0)
 				std::time(&raw_time);
 			else
 				raw_time = time;
+
 			struct std::tm *time_info;
 			time_info = std::localtime(&raw_time);
 
@@ -779,14 +740,14 @@ namespace tools
 		}
 		else
 		{
-			std::cerr << Messages::not_pos_int << std::endl;
+			Tools::write_err_log(Messages::not_pos_int);
 			return "";
 		}
 	}
 
 	std::string Tools::get_timezone_offset() noexcept
 	{
-		//get time
+		//Get the time.
 		std::time_t raw_time;
 		std::time(&raw_time);
 		struct std::tm *time_info;
@@ -794,13 +755,12 @@ namespace tools
 
 		char buf[6];
 		std::strftime(buf, sizeof(buf), "%z", time_info);
-
 		return buf;
 	}
 
 	int Tools::get_seed() noexcept
 	{
-		//get the last 9 chars of the number as this can never cause an integer overflow
+		//Get the last 9 chars of the number as this can never cause an integer overflow.
 		std::string temp = std::to_string(get_time_in_millisec());
 		std::reverse(temp.begin(), temp.end());
 		std::string result;
@@ -820,23 +780,23 @@ namespace tools
 	{
 		if(time >= 0)
 		{
-			//get time
+			//Get the time.
 			std::time_t raw_time;
+
 			if(time == 0)
 				std::time(&raw_time);
 			else
 				raw_time = time;
+
 			struct std::tm *time_info;
 			time_info = std::localtime(&raw_time);
-
 			return time_info;
 		}
 		else
 		{
-			std::cerr << Messages::not_pos_int << std::endl;
+			Tools::write_err_log(Messages::not_pos_int);
 			struct std::tm *time_info;
 			time_info = std::localtime(0);
-
 			return time_info;
 		}
 	}
@@ -847,7 +807,7 @@ namespace tools
 		{
 			std::string result;
 			std::vector<std::string> args = get_args(ln);
-			bool add = false;
+			bool add = false; //The variable indicates when chars need to be added to the output string.
 
 			for(std::size_t j = 0; j < args.size(); ++j)
 			{
@@ -859,7 +819,7 @@ namespace tools
 						result.append(" ");
 				}
 
-				//this condition at end so that the key is not added
+				//This condition defines when the chars are added to the result string.
 				if(ends_w(args.at(j), ":"))
 					add = true;
 			}
@@ -868,9 +828,68 @@ namespace tools
 		}
 		else
 		{
-			std::cerr << Messages::given_str_empty << std::endl;
-
+			Tools::write_err_log(Messages::given_str_empty);
 			return "";
 		}
+	}
+
+	void Tools::write_err_log(const std::string &err_msg) noexcept
+	{
+		//Create the necessary folder.
+		if(!tools::Tools::file_exists(Constants::folder_error_logs))
+		{
+			try
+			{
+				boost::filesystem::create_directories(Constants::folder_error_logs);
+			}
+			catch(const std::exception &e)
+			{
+				Tools::write_err_log(e.what());
+			}
+		}
+
+		std::ofstream outf(Constants::file_err_log());
+		outf << err_msg << std::endl;
+	}
+
+	void Tools::write_err_log_tmp(const std::string &err_msg) noexcept
+	{
+		//Create the necessary folder.
+		if(!tools::Tools::file_exists(Constants::folder_error_logs_tmp))
+		{
+			try
+			{
+				boost::filesystem::create_directories(Constants::folder_error_logs_tmp);
+			}
+			catch(const std::exception &e)
+			{
+				Tools::write_err_log(e.what());
+			}
+		}
+
+		//Delete old temporary error logs.
+		std::vector<std::string> files;
+		int num_files = 0;
+
+        for(const auto &entry : boost::make_iterator_range(boost::filesystem::directory_iterator(Constants::folder_error_logs_tmp), {}))
+        {
+        	files.push_back(entry.path().string());
+        	++num_files;
+        }
+
+        //Sort the vector ascendingly.
+        std::sort(files.begin(), files.end());
+
+        if(!files.empty() && files.size() >= Constants::max_tmp_err_logs)
+        	Tools::del_file(files.at(0));
+
+        std::ofstream outf(Constants::file_err_log_tmp());
+		outf << err_msg << std::endl;
+	}
+
+	void Tools::del_file(const std::string &file) noexcept
+	{
+		if(std::remove(file.c_str()) != 0)
+			Tools::write_err_log(Messages::file_del_err(file));
 	}
 }
