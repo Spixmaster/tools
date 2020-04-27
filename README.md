@@ -54,4 +54,4 @@ The source code cannot be compiled by itself as there is no main function includ
 The documentation was generated with the help of Doxygen. It is an HTML document and can be found in *./doc/html/index.html*. Open that file with your favourite browser.
 
 ## Changelog
-It can be seen on the documentation's mainpage.
+The changelog can be seen on the documentation's main page.
