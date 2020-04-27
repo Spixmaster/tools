@@ -3,9 +3,6 @@
 .project
 .settings/
 
-#Linux
-.directory
-
 #Builts
 Debug/
 Release/
