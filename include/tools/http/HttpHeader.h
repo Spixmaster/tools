@@ -4,23 +4,37 @@
 #include <string>
 #include <memory>
 
-//@brief simply a container for a key value pair of an http header
-
 namespace tools
 {
+	/**
+	 * @struct HttpHeader
+	 * @brief A container for a key value pair of an HTTP header
+	 */
 	struct HttpHeader
 	{
-		//pointer of itself
+		//Pointer of itself
+		/**
+		 * @var ptr
+		 * @brief A pointer of itself
+		 */
 		typedef std::shared_ptr<HttpHeader> ptr;
 
-		//member variables
+		//Member variables
+		/**
+		 * @var m_key
+		 * @brief The key of the HTTP header
+		 */
 		std::string m_key;
+		/**
+		 * @var m_value
+		 * @brief The value of the HTTP header
+		 */
 		std::string m_value;
 
-		//constructors
-		/*
-		 * @param key: key of the header
-		 * @param value: value of the header
+		//Constructors
+		/**
+		 * @param[in] key Key of the header
+		 * @param[in] value Value of the header
 		 */
 		HttpHeader(const std::string &key, const std::string &value);
 	};

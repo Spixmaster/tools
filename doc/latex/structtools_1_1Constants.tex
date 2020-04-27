@@ -1,0 +1,207 @@
+\hypertarget{structtools_1_1Constants}{}\doxysection{tools\+::Constants Struct Reference}
+\label{structtools_1_1Constants}\index{tools::Constants@{tools::Constants}}
+
+
+A container of all constants in the programme.  
+
+
+
+
+{\ttfamily \#include $<$Constants.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a4a3183466d7ee55882319081bf2a242b}\label{structtools_1_1Constants_a4a3183466d7ee55882319081bf2a242b}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structtools_1_1Constants}{Constants}} $>$ \mbox{\hyperlink{structtools_1_1Constants_a4a3183466d7ee55882319081bf2a242b}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{structtools_1_1Constants_a5e4fcac2d6d746673b78e2eb6e27c2da}{file\+\_\+err\+\_\+log}} () noexcept
+\begin{DoxyCompactList}\small\item\em Creates the file name for an error log. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{structtools_1_1Constants_a17c6716c618af4cb0c0e394cd5f4e64a}{file\+\_\+err\+\_\+log\+\_\+tmp}} () noexcept
+\begin{DoxyCompactList}\small\item\em Creates the file name for a temporary error log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtools_1_1Constants_aa584ebf0aaeb6172368f22672114cb25}\label{structtools_1_1Constants_aa584ebf0aaeb6172368f22672114cb25}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_aa584ebf0aaeb6172368f22672114cb25}{version}} = \char`\"{}1.\+1.\+21\char`\"{}
+\begin{DoxyCompactList}\small\item\em The version of the software. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ac5ffd7fda51d548727e969911718e560}\label{structtools_1_1Constants_ac5ffd7fda51d548727e969911718e560}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ac5ffd7fda51d548727e969911718e560}{release}} = \char`\"{}27.Apr.\+2020\char`\"{}
+\begin{DoxyCompactList}\small\item\em The release date of the current version. \end{DoxyCompactList}\item 
+static const std\+::size\+\_\+t \mbox{\hyperlink{structtools_1_1Constants_abf10d9744197b4049b56ca15159c484b}{max\+\_\+tmp\+\_\+err\+\_\+logs}} = 10
+\begin{DoxyCompactList}\small\item\em This variable defines the maximum amount of temporary error logs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a0877d9d2c50dcf90afad025d56b00653}\label{structtools_1_1Constants_a0877d9d2c50dcf90afad025d56b00653}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a0877d9d2c50dcf90afad025d56b00653}{ansii\+\_\+reset}} = \char`\"{}\textbackslash{}x1B\mbox{[}0m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_adf484ab0c8315f414d905a841bda44cf}\label{structtools_1_1Constants_adf484ab0c8315f414d905a841bda44cf}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_adf484ab0c8315f414d905a841bda44cf}{ansii\+\_\+black}} = \char`\"{}\textbackslash{}x1B\mbox{[}30m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a3da157c4f2d4e230f964c929ff0ecbd8}\label{structtools_1_1Constants_a3da157c4f2d4e230f964c929ff0ecbd8}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a3da157c4f2d4e230f964c929ff0ecbd8}{ansii\+\_\+red}} = \char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a034c0342dd8e7cc77be12c0fbba56ac3}\label{structtools_1_1Constants_a034c0342dd8e7cc77be12c0fbba56ac3}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a034c0342dd8e7cc77be12c0fbba56ac3}{ansii\+\_\+green}} = \char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a86d8d2979fd63c5585dc3d27535c6bbd}\label{structtools_1_1Constants_a86d8d2979fd63c5585dc3d27535c6bbd}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a86d8d2979fd63c5585dc3d27535c6bbd}{ansii\+\_\+yellow}} = \char`\"{}\textbackslash{}x1B\mbox{[}33m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a1dffbf731ebff28bcb58a25d27f09cd3}\label{structtools_1_1Constants_a1dffbf731ebff28bcb58a25d27f09cd3}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a1dffbf731ebff28bcb58a25d27f09cd3}{ansii\+\_\+blue}} = \char`\"{}\textbackslash{}x1B\mbox{[}34m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ad078f50bc65166fd1c0205e32230bcd4}\label{structtools_1_1Constants_ad078f50bc65166fd1c0205e32230bcd4}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ad078f50bc65166fd1c0205e32230bcd4}{ansii\+\_\+magenta}} = \char`\"{}\textbackslash{}x1B\mbox{[}35m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a5628f1f6963610378ee0f0d9e4d6168c}\label{structtools_1_1Constants_a5628f1f6963610378ee0f0d9e4d6168c}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a5628f1f6963610378ee0f0d9e4d6168c}{ansii\+\_\+cyan}} = \char`\"{}\textbackslash{}x1B\mbox{[}36m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a181bd93a874783ee57e9722908e24063}\label{structtools_1_1Constants_a181bd93a874783ee57e9722908e24063}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a181bd93a874783ee57e9722908e24063}{ansii\+\_\+white}} = \char`\"{}\textbackslash{}x1B\mbox{[}37m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ab18ac21faf4c8ac4a5e51c50e96e728c}\label{structtools_1_1Constants_ab18ac21faf4c8ac4a5e51c50e96e728c}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ab18ac21faf4c8ac4a5e51c50e96e728c}{ansii\+\_\+bright\+\_\+black}} = \char`\"{}\textbackslash{}x1B\mbox{[}90m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a70df0f5054acff95c4ad8ab7abba7f2a}\label{structtools_1_1Constants_a70df0f5054acff95c4ad8ab7abba7f2a}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a70df0f5054acff95c4ad8ab7abba7f2a}{ansii\+\_\+bright\+\_\+red}} = \char`\"{}\textbackslash{}x1B\mbox{[}91m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a5040888c9624d955dd45ef1d0be739b5}\label{structtools_1_1Constants_a5040888c9624d955dd45ef1d0be739b5}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a5040888c9624d955dd45ef1d0be739b5}{ansii\+\_\+bright\+\_\+green}} = \char`\"{}\textbackslash{}x1B\mbox{[}92m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_adc1f06c4ceb6ba584df76e0689124ff8}\label{structtools_1_1Constants_adc1f06c4ceb6ba584df76e0689124ff8}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_adc1f06c4ceb6ba584df76e0689124ff8}{ansii\+\_\+bright\+\_\+yellow}} = \char`\"{}\textbackslash{}x1B\mbox{[}93m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a66e4b20fed42e3c5096389d97f8bf96f}\label{structtools_1_1Constants_a66e4b20fed42e3c5096389d97f8bf96f}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a66e4b20fed42e3c5096389d97f8bf96f}{ansii\+\_\+bright\+\_\+blue}} = \char`\"{}\textbackslash{}x1B\mbox{[}94m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a3ec5e08722e99b40ed5f980f4588cc4f}\label{structtools_1_1Constants_a3ec5e08722e99b40ed5f980f4588cc4f}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a3ec5e08722e99b40ed5f980f4588cc4f}{ansii\+\_\+bright\+\_\+magenta}} = \char`\"{}\textbackslash{}x1B\mbox{[}95m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a920da79cdffadb3a9c1b228bd0892a2a}\label{structtools_1_1Constants_a920da79cdffadb3a9c1b228bd0892a2a}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a920da79cdffadb3a9c1b228bd0892a2a}{ansii\+\_\+bright\+\_\+cyan}} = \char`\"{}\textbackslash{}x1B\mbox{[}96m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a96eb834d909f89d39018ac3c0a575c92}\label{structtools_1_1Constants_a96eb834d909f89d39018ac3c0a575c92}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a96eb834d909f89d39018ac3c0a575c92}{ansii\+\_\+bright\+\_\+white}} = \char`\"{}\textbackslash{}x1B\mbox{[}97m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a01e0629071d054bd8e67fbe7e0f8c841}\label{structtools_1_1Constants_a01e0629071d054bd8e67fbe7e0f8c841}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a01e0629071d054bd8e67fbe7e0f8c841}{ansii\+\_\+bold\+\_\+black}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;30m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a21ad5703fc1834869f9edf8c8c1f62b0}\label{structtools_1_1Constants_a21ad5703fc1834869f9edf8c8c1f62b0}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a21ad5703fc1834869f9edf8c8c1f62b0}{ansii\+\_\+bold\+\_\+red}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;31m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a16e5073a678b27b7c20cb01432fb0ce1}\label{structtools_1_1Constants_a16e5073a678b27b7c20cb01432fb0ce1}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a16e5073a678b27b7c20cb01432fb0ce1}{ansii\+\_\+bold\+\_\+green}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;32m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a897f41126c24fc8bb61813d101c32c7c}\label{structtools_1_1Constants_a897f41126c24fc8bb61813d101c32c7c}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a897f41126c24fc8bb61813d101c32c7c}{ansii\+\_\+bold\+\_\+yellow}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;33m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a706348afe53a9c518a693a769de06a26}\label{structtools_1_1Constants_a706348afe53a9c518a693a769de06a26}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a706348afe53a9c518a693a769de06a26}{ansii\+\_\+bold\+\_\+blue}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;34m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a36fad09df6ad4a935c858a319f6a6be6}\label{structtools_1_1Constants_a36fad09df6ad4a935c858a319f6a6be6}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a36fad09df6ad4a935c858a319f6a6be6}{ansii\+\_\+bold\+\_\+magenta}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;35m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ab98c3c7764151e553611f7d0c7e62f61}\label{structtools_1_1Constants_ab98c3c7764151e553611f7d0c7e62f61}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ab98c3c7764151e553611f7d0c7e62f61}{ansii\+\_\+bold\+\_\+cyan}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;36m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ab097d604221d5bc222ac6080b93fa754}\label{structtools_1_1Constants_ab097d604221d5bc222ac6080b93fa754}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ab097d604221d5bc222ac6080b93fa754}{ansii\+\_\+bold\+\_\+white}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;37m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a9023c7f6b3bc0c41756f2e3392b4363f}\label{structtools_1_1Constants_a9023c7f6b3bc0c41756f2e3392b4363f}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a9023c7f6b3bc0c41756f2e3392b4363f}{ansii\+\_\+bold\+\_\+bright\+\_\+black}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;90m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a954d363d91529bc119f2c7c105b164fb}\label{structtools_1_1Constants_a954d363d91529bc119f2c7c105b164fb}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a954d363d91529bc119f2c7c105b164fb}{ansii\+\_\+bold\+\_\+bright\+\_\+red}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;91m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_aec99ee5b3e0a2f5d3a25dc7f08e03fb4}\label{structtools_1_1Constants_aec99ee5b3e0a2f5d3a25dc7f08e03fb4}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_aec99ee5b3e0a2f5d3a25dc7f08e03fb4}{ansii\+\_\+bold\+\_\+bright\+\_\+green}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;92m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_aa18eb7213602e6676bc5e73cb5e4f959}\label{structtools_1_1Constants_aa18eb7213602e6676bc5e73cb5e4f959}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_aa18eb7213602e6676bc5e73cb5e4f959}{ansii\+\_\+bold\+\_\+bright\+\_\+yellow}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;93m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_ac06af33424c6e82f9cd8e52bd771eac1}\label{structtools_1_1Constants_ac06af33424c6e82f9cd8e52bd771eac1}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_ac06af33424c6e82f9cd8e52bd771eac1}{ansii\+\_\+bold\+\_\+bright\+\_\+blue}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;94m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a46053c55c2b95efe795b8c59d3c4cce5}\label{structtools_1_1Constants_a46053c55c2b95efe795b8c59d3c4cce5}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a46053c55c2b95efe795b8c59d3c4cce5}{ansii\+\_\+bold\+\_\+bright\+\_\+magenta}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;95m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a604d3e49d1920fd09c2bd85b4cc59681}\label{structtools_1_1Constants_a604d3e49d1920fd09c2bd85b4cc59681}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a604d3e49d1920fd09c2bd85b4cc59681}{ansii\+\_\+bold\+\_\+bright\+\_\+cyan}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;96m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a82cf510317e7666c7f87a936b5c431b0}\label{structtools_1_1Constants_a82cf510317e7666c7f87a936b5c431b0}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a82cf510317e7666c7f87a936b5c431b0}{ansii\+\_\+bold\+\_\+bright\+\_\+white}} = \char`\"{}\textbackslash{}x1B\mbox{[}1;97m\char`\"{}
+\begin{DoxyCompactList}\small\item\em An A\+N\+S\+II colour code which is used to colour the stdout and stderr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}\label{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}{folder}} = \char`\"{}files/\char`\"{}
+\begin{DoxyCompactList}\small\item\em The base folder for all files which are created by this software. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structtools_1_1Constants_a8f1f14433c555a0518a7d0ae9570c930}\label{structtools_1_1Constants_a8f1f14433c555a0518a7d0ae9570c930}} 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a8f1f14433c555a0518a7d0ae9570c930}{folder\+\_\+error\+\_\+logs}} = \mbox{\hyperlink{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}{Constants\+::folder}} + \char`\"{}error-\/logs/\char`\"{}
+\begin{DoxyCompactList}\small\item\em The folder for all error log files which need treatment. \end{DoxyCompactList}\item 
+static const std\+::string \mbox{\hyperlink{structtools_1_1Constants_a6a62e74792b9e83217c328e774bc7016}{folder\+\_\+error\+\_\+logs\+\_\+tmp}} = \mbox{\hyperlink{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}{Constants\+::folder}} + \char`\"{}error-\/logs-\/tmp/\char`\"{}
+\begin{DoxyCompactList}\small\item\em The folder for all temporary error logs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container of all constants in the programme. 
+
+It is a monostate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtools_1_1Constants_a5e4fcac2d6d746673b78e2eb6e27c2da}\label{structtools_1_1Constants_a5e4fcac2d6d746673b78e2eb6e27c2da}} 
+\index{tools::Constants@{tools::Constants}!file\_err\_log@{file\_err\_log}}
+\index{file\_err\_log@{file\_err\_log}!tools::Constants@{tools::Constants}}
+\doxysubsubsection{\texorpdfstring{file\_err\_log()}{file\_err\_log()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Constants\+::file\+\_\+err\+\_\+log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates the file name for an error log. 
+
+\begin{DoxyReturn}{Returns}
+The file name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtools_1_1Constants_a17c6716c618af4cb0c0e394cd5f4e64a}\label{structtools_1_1Constants_a17c6716c618af4cb0c0e394cd5f4e64a}} 
+\index{tools::Constants@{tools::Constants}!file\_err\_log\_tmp@{file\_err\_log\_tmp}}
+\index{file\_err\_log\_tmp@{file\_err\_log\_tmp}!tools::Constants@{tools::Constants}}
+\doxysubsubsection{\texorpdfstring{file\_err\_log\_tmp()}{file\_err\_log\_tmp()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Constants\+::file\+\_\+err\+\_\+log\+\_\+tmp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Creates the file name for a temporary error log. 
+
+This error log is not kept long.
+
+Temporary error logs exists as some errors do not need treatment. For example, the error that occurs when an H\+T\+TP response\textquotesingle{}s status code is not 2xx, is not crucial and we cannot affect it. \begin{DoxyReturn}{Returns}
+The file name 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtools_1_1Constants_a6a62e74792b9e83217c328e774bc7016}\label{structtools_1_1Constants_a6a62e74792b9e83217c328e774bc7016}} 
+\index{tools::Constants@{tools::Constants}!folder\_error\_logs\_tmp@{folder\_error\_logs\_tmp}}
+\index{folder\_error\_logs\_tmp@{folder\_error\_logs\_tmp}!tools::Constants@{tools::Constants}}
+\doxysubsubsection{\texorpdfstring{folder\_error\_logs\_tmp}{folder\_error\_logs\_tmp}}
+{\footnotesize\ttfamily const std\+::string tools\+::\+Constants\+::folder\+\_\+error\+\_\+logs\+\_\+tmp = \mbox{\hyperlink{structtools_1_1Constants_a62145c07d1198ce8af28f014c50caaa5}{Constants\+::folder}} + \char`\"{}error-\/logs-\/tmp/\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The folder for all temporary error logs. 
+
+The old logs are deleted if the folder contains a certain amount of files. \mbox{\Hypertarget{structtools_1_1Constants_abf10d9744197b4049b56ca15159c484b}\label{structtools_1_1Constants_abf10d9744197b4049b56ca15159c484b}} 
+\index{tools::Constants@{tools::Constants}!max\_tmp\_err\_logs@{max\_tmp\_err\_logs}}
+\index{max\_tmp\_err\_logs@{max\_tmp\_err\_logs}!tools::Constants@{tools::Constants}}
+\doxysubsubsection{\texorpdfstring{max\_tmp\_err\_logs}{max\_tmp\_err\_logs}}
+{\footnotesize\ttfamily const std\+::size\+\_\+t tools\+::\+Constants\+::max\+\_\+tmp\+\_\+err\+\_\+logs = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This variable defines the maximum amount of temporary error logs. 
+
+The oldest one is deleted if a new one is created and there are too many of them. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/constants/Constants.\+h\item 
+src/constants/Constants.\+cpp\end{DoxyCompactItemize}

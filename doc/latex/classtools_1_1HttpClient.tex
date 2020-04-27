@@ -1,0 +1,251 @@
+\hypertarget{classtools_1_1HttpClient}{}\doxysection{tools\+::Http\+Client Class Reference}
+\label{classtools_1_1HttpClient}\index{tools::HttpClient@{tools::HttpClient}}
+
+
+The class represents an H\+T\+TP client which sends out H\+T\+TP requests.  
+
+
+
+
+{\ttfamily \#include $<$Http\+Client.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtools_1_1HttpClient_ad0bb1b72a68dd03943cf1aff484cd8c3}\label{classtools_1_1HttpClient_ad0bb1b72a68dd03943cf1aff484cd8c3}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtools_1_1HttpClient}{Http\+Client}} $>$ \mbox{\hyperlink{classtools_1_1HttpClient_ad0bb1b72a68dd03943cf1aff484cd8c3}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtools_1_1HttpClient_aa6866e019cc84ee44adbd18173120201}{Http\+Client}} (const std\+::string \&url, const bool \&print\+\_\+error=true)
+\item 
+\mbox{\hyperlink{classtools_1_1HttpClient_ad66cf6e88b752d80346b537b0e4ab698}{Http\+Client}} (const std\+::string \&url, const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&http\+\_\+headers, const bool \&print\+\_\+error=true)
+\item 
+\mbox{\hyperlink{classtools_1_1HttpClient_aff1b54dc8d95e69d7c4fc1e5f9138101}{Http\+Client}} (const std\+::string \&url, const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ \&http\+\_\+args, const bool \&print\+\_\+error=true)
+\item 
+\mbox{\hyperlink{classtools_1_1HttpClient_a99b3937daab9df055dd6c678cba67ecb}{Http\+Client}} (const std\+::string \&url, const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&http\+\_\+headers, const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ \&http\+\_\+args, const bool \&print\+\_\+error=true)
+\item 
+\mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} \mbox{\hyperlink{classtools_1_1HttpClient_a2b08c11d0622e3974580bfeaaf0f36a4}{send\+\_\+get\+\_\+req}} (const bool \&debug=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Makes a simple get request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} \mbox{\hyperlink{classtools_1_1HttpClient_a16ef4aa954f037242aa15a03c0a879ed}{send\+\_\+post\+\_\+req\+\_\+urlencoded}} (const bool body\+\_\+json=false, const bool \&debug=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} \mbox{\hyperlink{classtools_1_1HttpClient_a7a128f70ab299dfc8567def57d6d92f3}{send\+\_\+post\+\_\+req\+\_\+urlencoded}} (std\+::string http\+\_\+body, const bool \&debug=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} \mbox{\hyperlink{classtools_1_1HttpClient_aa95b4d71d3c50e33a8f46eaa675f0e94}{send\+\_\+post\+\_\+req\+\_\+multipart}} (const bool \&debug=false) const noexcept
+\begin{DoxyCompactList}\small\item\em Makes a post request via \char`\"{}multipart/form-\/data\char`\"{}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpClient_a04370d3344cc43e8375a0603472969a4}{get\+\_\+url}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \mbox{\hyperlink{classtools_1_1HttpClient_a23dd5162ee51e7d3c187762ad280698b}{get\+\_\+http\+\_\+headers}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ \mbox{\hyperlink{classtools_1_1HttpClient_ab242877640f4aa62bcfb0e0583fe4668}{get\+\_\+http\+\_\+args}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtools_1_1HttpClient_a87b7d1bcd55580012f6831479de02612}{get\+\_\+print\+\_\+error}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class represents an H\+T\+TP client which sends out H\+T\+TP requests. 
+
+For post methods, the content length is set automatically.
+
+If necessary, the post methods U\+RL parse the H\+T\+TP body by themselves. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtools_1_1HttpClient_aa6866e019cc84ee44adbd18173120201}\label{classtools_1_1HttpClient_aa6866e019cc84ee44adbd18173120201}} 
+\index{tools::HttpClient@{tools::HttpClient}!HttpClient@{HttpClient}}
+\index{HttpClient@{HttpClient}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{HttpClient()}{HttpClient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily tools\+::\+Http\+Client\+::\+Http\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const bool \&}]{print\+\_\+error = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1HttpClient_ad66cf6e88b752d80346b537b0e4ab698}\label{classtools_1_1HttpClient_ad66cf6e88b752d80346b537b0e4ab698}} 
+\index{tools::HttpClient@{tools::HttpClient}!HttpClient@{HttpClient}}
+\index{HttpClient@{HttpClient}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{HttpClient()}{HttpClient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily tools\+::\+Http\+Client\+::\+Http\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&}]{http\+\_\+headers,  }\item[{const bool \&}]{print\+\_\+error = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1HttpClient_aff1b54dc8d95e69d7c4fc1e5f9138101}\label{classtools_1_1HttpClient_aff1b54dc8d95e69d7c4fc1e5f9138101}} 
+\index{tools::HttpClient@{tools::HttpClient}!HttpClient@{HttpClient}}
+\index{HttpClient@{HttpClient}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{HttpClient()}{HttpClient()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily tools\+::\+Http\+Client\+::\+Http\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ \&}]{http\+\_\+args,  }\item[{const bool \&}]{print\+\_\+error = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a99b3937daab9df055dd6c678cba67ecb}\label{classtools_1_1HttpClient_a99b3937daab9df055dd6c678cba67ecb}} 
+\index{tools::HttpClient@{tools::HttpClient}!HttpClient@{HttpClient}}
+\index{HttpClient@{HttpClient}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{HttpClient()}{HttpClient()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily tools\+::\+Http\+Client\+::\+Http\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ \&}]{http\+\_\+headers,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ \&}]{http\+\_\+args,  }\item[{const bool \&}]{print\+\_\+error = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url} & Defines to which server the request shall be sent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em http\+\_\+headers} & The H\+T\+TP headers to send with the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em http\+\_\+args} & The H\+T\+TP arguments to send with the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em print\+\_\+error} & Decides whether the error message shall be output to stderr if the server responds with an error. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtools_1_1HttpClient_ab242877640f4aa62bcfb0e0583fe4668}\label{classtools_1_1HttpClient_ab242877640f4aa62bcfb0e0583fe4668}} 
+\index{tools::HttpClient@{tools::HttpClient}!get\_http\_args@{get\_http\_args}}
+\index{get\_http\_args@{get\_http\_args}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{get\_http\_args()}{get\_http\_args()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpArg}{Http\+Arg}} $>$ tools\+::\+Http\+Client\+::get\+\_\+http\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+http\+\_\+args 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a23dd5162ee51e7d3c187762ad280698b}\label{classtools_1_1HttpClient_a23dd5162ee51e7d3c187762ad280698b}} 
+\index{tools::HttpClient@{tools::HttpClient}!get\_http\_headers@{get\_http\_headers}}
+\index{get\_http\_headers@{get\_http\_headers}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{get\_http\_headers()}{get\_http\_headers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structtools_1_1HttpHeader}{Http\+Header}} $>$ tools\+::\+Http\+Client\+::get\+\_\+http\+\_\+headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+http\+\_\+header 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a87b7d1bcd55580012f6831479de02612}\label{classtools_1_1HttpClient_a87b7d1bcd55580012f6831479de02612}} 
+\index{tools::HttpClient@{tools::HttpClient}!get\_print\_error@{get\_print\_error}}
+\index{get\_print\_error@{get\_print\_error}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{get\_print\_error()}{get\_print\_error()}}
+{\footnotesize\ttfamily bool tools\+::\+Http\+Client\+::get\+\_\+print\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+print\+\_\+error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a04370d3344cc43e8375a0603472969a4}\label{classtools_1_1HttpClient_a04370d3344cc43e8375a0603472969a4}} 
+\index{tools::HttpClient@{tools::HttpClient}!get\_url@{get\_url}}
+\index{get\_url@{get\_url}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{get\_url()}{get\_url()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Client\+::get\+\_\+url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+url 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a2b08c11d0622e3974580bfeaaf0f36a4}\label{classtools_1_1HttpClient_a2b08c11d0622e3974580bfeaaf0f36a4}} 
+\index{tools::HttpClient@{tools::HttpClient}!send\_get\_req@{send\_get\_req}}
+\index{send\_get\_req@{send\_get\_req}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{send\_get\_req()}{send\_get\_req()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} tools\+::\+Http\+Client\+::send\+\_\+get\+\_\+req (\begin{DoxyParamCaption}\item[{const bool \&}]{debug = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Makes a simple get request. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The server response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_aa95b4d71d3c50e33a8f46eaa675f0e94}\label{classtools_1_1HttpClient_aa95b4d71d3c50e33a8f46eaa675f0e94}} 
+\index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_multipart@{send\_post\_req\_multipart}}
+\index{send\_post\_req\_multipart@{send\_post\_req\_multipart}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{send\_post\_req\_multipart()}{send\_post\_req\_multipart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} tools\+::\+Http\+Client\+::send\+\_\+post\+\_\+req\+\_\+multipart (\begin{DoxyParamCaption}\item[{const bool \&}]{debug = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Makes a post request via \char`\"{}multipart/form-\/data\char`\"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The server response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a16ef4aa954f037242aa15a03c0a879ed}\label{classtools_1_1HttpClient_a16ef4aa954f037242aa15a03c0a879ed}} 
+\index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}}
+\index{send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{send\_post\_req\_urlencoded()}{send\_post\_req\_urlencoded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} tools\+::\+Http\+Client\+::send\+\_\+post\+\_\+req\+\_\+urlencoded (\begin{DoxyParamCaption}\item[{const bool}]{body\+\_\+json = {\ttfamily false},  }\item[{const bool \&}]{debug = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`\"{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em body\+\_\+json} & If value is true, it converts the H\+T\+TP args to json before they are sent. \\
+\hline
+\mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The server response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpClient_a7a128f70ab299dfc8567def57d6d92f3}\label{classtools_1_1HttpClient_a7a128f70ab299dfc8567def57d6d92f3}} 
+\index{tools::HttpClient@{tools::HttpClient}!send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}}
+\index{send\_post\_req\_urlencoded@{send\_post\_req\_urlencoded}!tools::HttpClient@{tools::HttpClient}}
+\doxysubsubsection{\texorpdfstring{send\_post\_req\_urlencoded()}{send\_post\_req\_urlencoded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtools_1_1HttpResponse}{Http\+Response}} tools\+::\+Http\+Client\+::send\+\_\+post\+\_\+req\+\_\+urlencoded (\begin{DoxyParamCaption}\item[{std\+::string}]{http\+\_\+body,  }\item[{const bool \&}]{debug = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Makes a post request via \char`\"{}application/x-\/www-\/form-\/urlencoded\char`\"{}. 
+
+This overload is necessary as Instagram for example demands very specific http bodies (hmac sha256 hashed and prefix). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em http\+\_\+body} & The special H\+T\+TP body which is going to be sent \\
+\hline
+\mbox{\texttt{ in}}  & {\em debug} & Prints to stdout headers and args of the request and the response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The server response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/http/Http\+Client.\+h\item 
+src/http/Http\+Client.\+cpp\end{DoxyCompactItemize}

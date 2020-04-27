@@ -1,0 +1,185 @@
+\hypertarget{classtools_1_1HttpCookie}{}\doxysection{tools\+::Http\+Cookie Class Reference}
+\label{classtools_1_1HttpCookie}\index{tools::HttpCookie@{tools::HttpCookie}}
+
+
+A container which expects the value of a \char`\"{}\+Set-\/\+Cookie\char`\"{} header and makes each attribute accessible via a member variable.  
+
+
+
+
+{\ttfamily \#include $<$Http\+Cookie.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a669e54a3d90ec24afb5060cff1c65934}\label{classtools_1_1HttpCookie_a669e54a3d90ec24afb5060cff1c65934}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtools_1_1HttpCookie}{Http\+Cookie}} $>$ \mbox{\hyperlink{classtools_1_1HttpCookie_a669e54a3d90ec24afb5060cff1c65934}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtools_1_1HttpCookie_afe5e6ae70fb629805c3e1cb4d71db260}{Http\+Cookie}} (const std\+::string \&set\+\_\+cookie\+\_\+val)
+\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_aed04f855d6a68c9b85d088cb9754d532}{to\+\_\+string}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_a2b74b80430c5dd9406f423b4990b348a}{get\+\_\+name}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_a7de21b4794db3dd4f78dee2eb9945f8e}{get\+\_\+value}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_a5e1de04e998d8262c14d33be399bbd34}{get\+\_\+domain}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_a987346432517004213d46f21d09cd4c3}{get\+\_\+path}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtools_1_1HttpCookie_a941482d666aac1ca8dcf3bf7bf0e93a8}{get\+\_\+expires}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtools_1_1HttpCookie_a8681ba408b1fbcf984018c9d45105fa3}{get\+\_\+max\+\_\+age}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtools_1_1HttpCookie_a8031e30984b7979b7e51c0a43a2b7b6a}{get\+\_\+http\+\_\+only}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtools_1_1HttpCookie_a684f8d2b7068bb5def24aee81f9f1e79}{get\+\_\+secure}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container which expects the value of a \char`\"{}\+Set-\/\+Cookie\char`\"{} header and makes each attribute accessible via a member variable. 
+
+It allows access to all the cookie\textquotesingle{}s properties. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_afe5e6ae70fb629805c3e1cb4d71db260}\label{classtools_1_1HttpCookie_afe5e6ae70fb629805c3e1cb4d71db260}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!HttpCookie@{HttpCookie}}
+\index{HttpCookie@{HttpCookie}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{HttpCookie()}{HttpCookie()}}
+{\footnotesize\ttfamily tools\+::\+Http\+Cookie\+::\+Http\+Cookie (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{set\+\_\+cookie\+\_\+val }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em set\+\_\+cookie\+\_\+val} & The value of the H\+T\+TP header \char`\"{}\+Set-\/\+Cookie\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a5e1de04e998d8262c14d33be399bbd34}\label{classtools_1_1HttpCookie_a5e1de04e998d8262c14d33be399bbd34}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_domain@{get\_domain}}
+\index{get\_domain@{get\_domain}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_domain()}{get\_domain()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::get\+\_\+domain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+domain 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a941482d666aac1ca8dcf3bf7bf0e93a8}\label{classtools_1_1HttpCookie_a941482d666aac1ca8dcf3bf7bf0e93a8}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_expires@{get\_expires}}
+\index{get\_expires@{get\_expires}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_expires()}{get\_expires()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::get\+\_\+expires (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+expires 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a8031e30984b7979b7e51c0a43a2b7b6a}\label{classtools_1_1HttpCookie_a8031e30984b7979b7e51c0a43a2b7b6a}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_http\_only@{get\_http\_only}}
+\index{get\_http\_only@{get\_http\_only}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_http\_only()}{get\_http\_only()}}
+{\footnotesize\ttfamily bool tools\+::\+Http\+Cookie\+::get\+\_\+http\+\_\+only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+http\+\_\+only 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a8681ba408b1fbcf984018c9d45105fa3}\label{classtools_1_1HttpCookie_a8681ba408b1fbcf984018c9d45105fa3}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_max\_age@{get\_max\_age}}
+\index{get\_max\_age@{get\_max\_age}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_max\_age()}{get\_max\_age()}}
+{\footnotesize\ttfamily int tools\+::\+Http\+Cookie\+::get\+\_\+max\+\_\+age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+max\+\_\+age 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a2b74b80430c5dd9406f423b4990b348a}\label{classtools_1_1HttpCookie_a2b74b80430c5dd9406f423b4990b348a}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a987346432517004213d46f21d09cd4c3}\label{classtools_1_1HttpCookie_a987346432517004213d46f21d09cd4c3}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_path@{get\_path}}
+\index{get\_path@{get\_path}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_path()}{get\_path()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::get\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a684f8d2b7068bb5def24aee81f9f1e79}\label{classtools_1_1HttpCookie_a684f8d2b7068bb5def24aee81f9f1e79}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_secure@{get\_secure}}
+\index{get\_secure@{get\_secure}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_secure()}{get\_secure()}}
+{\footnotesize\ttfamily bool tools\+::\+Http\+Cookie\+::get\+\_\+secure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+secure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_a7de21b4794db3dd4f78dee2eb9945f8e}\label{classtools_1_1HttpCookie_a7de21b4794db3dd4f78dee2eb9945f8e}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::get\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1HttpCookie_aed04f855d6a68c9b85d088cb9754d532}\label{classtools_1_1HttpCookie_aed04f855d6a68c9b85d088cb9754d532}} 
+\index{tools::HttpCookie@{tools::HttpCookie}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!tools::HttpCookie@{tools::HttpCookie}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Http\+Cookie\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Getter. 
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+origin 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/http/Http\+Cookie.\+h\item 
+src/http/Http\+Cookie.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,149 @@
+\hypertarget{classtools_1_1Messages}{}\doxysection{tools\+::Messages Class Reference}
+\label{classtools_1_1Messages}\index{tools::Messages@{tools::Messages}}
+
+
+The class contains messages which are used throughout the programme.  
+
+
+
+
+{\ttfamily \#include $<$Messages.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtools_1_1Messages_a2058bef80cc5838e98b0baf408d3f0b3}\label{classtools_1_1Messages_a2058bef80cc5838e98b0baf408d3f0b3}} 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classtools_1_1Messages}{Messages}} $>$ \mbox{\hyperlink{classtools_1_1Messages_a2058bef80cc5838e98b0baf408d3f0b3}{ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer of itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classtools_1_1Messages_ad600a187e95fd08ac3d515cdd6dafad7}{file\+\_\+non\+\_\+existent}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em Logs an error message that the file does not exist. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Messages_a13f890030664c417520bd1777bd2d311}{enter\+\_\+pos\+\_\+num\+\_\+to\+\_\+read\+\_\+in\+\_\+file}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em Returns a message that asks for a positive line number as there are no negative ones. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Messages_a3c7c40791351260ebbe494d30342512b}{no\+\_\+num\+\_\+str\+\_\+end}} (const std\+::string \&str) noexcept
+\begin{DoxyCompactList}\small\item\em Returns a message that states that there are no numerals at the end of the string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Messages_ac6a505ff18e0e0d30e505eb1f7c11693}{file\+\_\+del\+\_\+err}} (const std\+::string \&file) noexcept
+\begin{DoxyCompactList}\small\item\em Returns a message that states that the given file cannot be deleted. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Messages_a1f7b2572026f11b3959e20e53b438d38}{resp}} (const int \&status\+\_\+code) noexcept
+\begin{DoxyCompactList}\small\item\em The introduction for the following H\+T\+TP response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtools_1_1Messages_ade7494fd8034326536fc5d056ce28edd}\label{classtools_1_1Messages_ade7494fd8034326536fc5d056ce28edd}} 
+static const std\+::string \mbox{\hyperlink{classtools_1_1Messages_ade7494fd8034326536fc5d056ce28edd}{given\+\_\+str\+\_\+empty}} = \char`\"{}The given string is empty.\char`\"{}
+\begin{DoxyCompactList}\small\item\em Message that the given string is empty. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtools_1_1Messages_aeffbf1360f02f55d3083112e6c40204c}\label{classtools_1_1Messages_aeffbf1360f02f55d3083112e6c40204c}} 
+static const std\+::string \mbox{\hyperlink{classtools_1_1Messages_aeffbf1360f02f55d3083112e6c40204c}{not\+\_\+gzip\+\_\+compressed}} = \char`\"{}That is not gzip compressed data.\char`\"{}
+\begin{DoxyCompactList}\small\item\em Message that the data is not compressed with G\+Z\+IP. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtools_1_1Messages_ac85e1b9c20d4cb60e399bfc99cdcf472}\label{classtools_1_1Messages_ac85e1b9c20d4cb60e399bfc99cdcf472}} 
+static const std\+::string \mbox{\hyperlink{classtools_1_1Messages_ac85e1b9c20d4cb60e399bfc99cdcf472}{http\+\_\+response\+\_\+code\+\_\+not\+\_\+200}} = \char`\"{}The response\textquotesingle{}s H\+T\+TP code is not 200!\char`\"{}
+\begin{DoxyCompactList}\small\item\em Message that the H\+T\+TP status code is not 200. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtools_1_1Messages_ab6483c92776bba0b186bb242bd257bb4}\label{classtools_1_1Messages_ab6483c92776bba0b186bb242bd257bb4}} 
+static const std\+::string \mbox{\hyperlink{classtools_1_1Messages_ab6483c92776bba0b186bb242bd257bb4}{not\+\_\+pos\+\_\+int}} = \char`\"{}It was not given a positive integer.\char`\"{}
+\begin{DoxyCompactList}\small\item\em Message that the string or number is not a positive integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtools_1_1Messages_a90a63510262d4917868b03c7de6f532b}\label{classtools_1_1Messages_a90a63510262d4917868b03c7de6f532b}} 
+static const std\+::string \mbox{\hyperlink{classtools_1_1Messages_a90a63510262d4917868b03c7de6f532b}{req}} = \char`\"{}The request\+:\char`\"{}
+\begin{DoxyCompactList}\small\item\em This string is used before outputting the H\+T\+TP request in the debug mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class contains messages which are used throughout the programme. 
+
+It is a monostate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtools_1_1Messages_a13f890030664c417520bd1777bd2d311}\label{classtools_1_1Messages_a13f890030664c417520bd1777bd2d311}} 
+\index{tools::Messages@{tools::Messages}!enter\_pos\_num\_to\_read\_in\_file@{enter\_pos\_num\_to\_read\_in\_file}}
+\index{enter\_pos\_num\_to\_read\_in\_file@{enter\_pos\_num\_to\_read\_in\_file}!tools::Messages@{tools::Messages}}
+\doxysubsubsection{\texorpdfstring{enter\_pos\_num\_to\_read\_in\_file()}{enter\_pos\_num\_to\_read\_in\_file()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Messages\+::enter\+\_\+pos\+\_\+num\+\_\+to\+\_\+read\+\_\+in\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a message that asks for a positive line number as there are no negative ones. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The file name which is included in the error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Messages_ac6a505ff18e0e0d30e505eb1f7c11693}\label{classtools_1_1Messages_ac6a505ff18e0e0d30e505eb1f7c11693}} 
+\index{tools::Messages@{tools::Messages}!file\_del\_err@{file\_del\_err}}
+\index{file\_del\_err@{file\_del\_err}!tools::Messages@{tools::Messages}}
+\doxysubsubsection{\texorpdfstring{file\_del\_err()}{file\_del\_err()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Messages\+::file\+\_\+del\+\_\+err (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a message that states that the given file cannot be deleted. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The file name which is included in the error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Messages_ad600a187e95fd08ac3d515cdd6dafad7}\label{classtools_1_1Messages_ad600a187e95fd08ac3d515cdd6dafad7}} 
+\index{tools::Messages@{tools::Messages}!file\_non\_existent@{file\_non\_existent}}
+\index{file\_non\_existent@{file\_non\_existent}!tools::Messages@{tools::Messages}}
+\doxysubsubsection{\texorpdfstring{file\_non\_existent()}{file\_non\_existent()}}
+{\footnotesize\ttfamily void tools\+::\+Messages\+::file\+\_\+non\+\_\+existent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Logs an error message that the file does not exist. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & The file name which is included in the error message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtools_1_1Messages_a3c7c40791351260ebbe494d30342512b}\label{classtools_1_1Messages_a3c7c40791351260ebbe494d30342512b}} 
+\index{tools::Messages@{tools::Messages}!no\_num\_str\_end@{no\_num\_str\_end}}
+\index{no\_num\_str\_end@{no\_num\_str\_end}!tools::Messages@{tools::Messages}}
+\doxysubsubsection{\texorpdfstring{no\_num\_str\_end()}{no\_num\_str\_end()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Messages\+::no\+\_\+num\+\_\+str\+\_\+end (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a message that states that there are no numerals at the end of the string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string where the numbers at the end are missing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Messages_a1f7b2572026f11b3959e20e53b438d38}\label{classtools_1_1Messages_a1f7b2572026f11b3959e20e53b438d38}} 
+\index{tools::Messages@{tools::Messages}!resp@{resp}}
+\index{resp@{resp}!tools::Messages@{tools::Messages}}
+\doxysubsubsection{\texorpdfstring{resp()}{resp()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Messages\+::resp (\begin{DoxyParamCaption}\item[{const int \&}]{status\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+The introduction for the following H\+T\+TP response. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em status\+\_\+code} & The status code of the H\+T\+TP response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The message 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/tools/constants/Messages.\+h\item 
+src/constants/Messages.\+cpp\end{DoxyCompactItemize}
