@@ -17,29 +17,29 @@ namespace tools
 		//Pointer of itself
 		/**
 		 * @var ptr
-		 * @brief A pointer of itself
+		 * @brief A pointer of itself.
 		 */
 		typedef std::shared_ptr<Messages> ptr;
 
 		//Member variables
 		/**
 		 * @var given_str_empty
-		 * @brief Message that the given string is empty
+		 * @brief Message that the given string is empty.
 		 */
 		static const std::string given_str_empty;
 		/**
 		 * @var not_gzip_compressed
-		 * @brief Message that the data is not compressed with GZIP
+		 * @brief Message that the data is not compressed with GZIP.
 		 */
 		static const std::string not_gzip_compressed;
 		/**
 		 * @var http_response_code_not_200
-		 * @brief Message that the HTTP status code is not 200
+		 * @brief Message that the HTTP status code is not 200.
 		 */
 		static const std::string http_response_code_not_200;
 		/**
 		 * @var not_pos_int
-		 * @brief Message that the string or number is not a positive integer
+		 * @brief Message that the string or number is not a positive integer.
 		 */
 		static const std::string not_pos_int;
 		/**
@@ -77,9 +77,9 @@ namespace tools
 		static std::string file_del_err(const std::string &file) noexcept;
 
 		/**
-		 * @brief The introduction for the following HTTP response
-		 * @param[in] status_code The status code of the HTTP response
-		 * @return The message
+		 * @brief The introduction for the following HTTP response.
+		 * @param[in] status_code The status code of the HTTP response.
+		 * @return The message.
 		 */
 		static std::string resp(const int &status_code) noexcept;
 	};

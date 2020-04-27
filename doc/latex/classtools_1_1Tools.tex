@@ -83,7 +83,7 @@ static double \mbox{\hyperlink{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca
 static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}{get\+\_\+date}} (const std\+::time\+\_\+t \&time=0) noexcept
 \begin{DoxyCompactList}\small\item\em Returns the current time and makes the date. \end{DoxyCompactList}\item 
 static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}{get\+\_\+timezone\+\_\+offset}} () noexcept
-\begin{DoxyCompactList}\small\item\em Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100). \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{classtools_1_1Tools_a106306921da41953200991a264b24d9b}{get\+\_\+seed}} () noexcept
 \begin{DoxyCompactList}\small\item\em Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. \end{DoxyCompactList}\item 
 static std\+::tm $\ast$ \mbox{\hyperlink{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}{get\+\_\+tm}} (const std\+::time\+\_\+t \&time=0) noexcept
@@ -116,11 +116,11 @@ Cuts off the first char of the passed string.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string to shorten \\
+\mbox{\texttt{ in}}  & {\em str} & The string to shorten. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The shortened string 
+The shortened string. 
 \end{DoxyReturn}
 
 \begin{DoxyRetVals}{Return values}
@@ -139,7 +139,7 @@ Deletes the passed file.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The file to delete \\
+\mbox{\texttt{ in}}  & {\em file} & The file to delete. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classtools_1_1Tools_aa0dadc11e61cb5c32f8746d0e9a35ed5}\label{classtools_1_1Tools_aa0dadc11e61cb5c32f8746d0e9a35ed5}} 
@@ -154,11 +154,11 @@ It substitutes non-\/\+A\+S\+C\+II characters with the hex value of the char.
 
 With the help of \href{https://gist.github.com/MightyPork/52eda3e5677b4b03524e40c9f0ab1da5}{\texttt{ https\+://gist.\+github.\+com/\+Mighty\+Pork/52eda3e5677b4b03524e40c9f0ab1da5}}. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em wstr} & The string which shall be encoded \\
+\mbox{\texttt{ in}}  & {\em wstr} & The string which shall be encoded. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The parsed string 
+The parsed string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a798c1760007cbbb030947b76df13baae}\label{classtools_1_1Tools_a798c1760007cbbb030947b76df13baae}} 
 \index{tools::Tools@{tools::Tools}!ends\_w@{ends\_w}}
@@ -172,9 +172,9 @@ It is compared whether one string ends with a sequence of chars.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string whose end shall be checked \\
+\mbox{\texttt{ in}}  & {\em str} & The string whose end shall be checked. \\
 \hline
-\mbox{\texttt{ in}}  & {\em end} & The string of which we want to know whether it occurs at the end of the other string \\
+\mbox{\texttt{ in}}  & {\em end} & The string of which we want to know whether it occurs at the end of the other string. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -192,13 +192,13 @@ It is checked whether the whole string appears in the file.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The path to the file its content we want to inspect \\
+\mbox{\texttt{ in}}  & {\em file} & The path to the file its content we want to inspect. \\
 \hline
-\mbox{\texttt{ in}}  & {\em str} & The string whose whose existence we want to know in the file \\
+\mbox{\texttt{ in}}  & {\em str} & The string whose whose existence we want to know in the file. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-It is returned true if the string appears in the file 
+It is returned true if the string appears in the file. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a5caa2bf1c079d249017b40709044c40e}\label{classtools_1_1Tools_a5caa2bf1c079d249017b40709044c40e}} 
 \index{tools::Tools@{tools::Tools}!file\_exists@{file\_exists}}
@@ -212,7 +212,7 @@ Checks whether the file exists.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The path to file we want to know whether it exists \\
+\mbox{\texttt{ in}}  & {\em file} & The path to file we want to know whether it exists. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -230,11 +230,11 @@ It is counted the number of lines a file has.
 
 Empty lines do not count. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The path to file \\
+\mbox{\texttt{ in}}  & {\em file} & The path to file. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The amount of written lines in a file 
+The amount of written lines in a file. 
 \end{DoxyReturn}
 
 \begin{DoxyRetVals}{Return values}
@@ -253,11 +253,11 @@ All words in the passed string are listed down in a vector while one element rep
 
 It can handle new lines and several spaces as it neglects them and only gets the pure words. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments \\
+\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The vector where each element represents one argument 
+The vector where each element represents one argument. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a3a53a8b525bb3c851c7ea64ecf383788}\label{classtools_1_1Tools_a3a53a8b525bb3c851c7ea64ecf383788}} 
 \index{tools::Tools@{tools::Tools}!get\_args\_w\_lns@{get\_args\_w\_lns}}
@@ -273,11 +273,11 @@ It can handle new lines and several spaces but this time it only neglects severa
 
 Example\+: at(0)\+: Hello,\textbackslash{}nhow at(1)\+: are at(2)\+: you? 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments \\
+\mbox{\texttt{ in}}  & {\em str} & The string from which we want to get the arguments. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The vector where each element represents one argument 
+The vector where each element represents one argument. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}\label{classtools_1_1Tools_a046d7b0ec0fc6308ddb98bc10a7253e8}} 
 \index{tools::Tools@{tools::Tools}!get\_date@{get\_date}}
@@ -304,7 +304,7 @@ The functions gets the content of the stated file.
 
 Empty lines are considered. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -327,9 +327,9 @@ The functions gets the content of the stated file except one line which is skipp
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want. \\
 \hline
-\mbox{\texttt{ in}}  & {\em srch} & String whose line shall not be included \\
+\mbox{\texttt{ in}}  & {\em srch} & String whose line shall not be included. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -354,7 +354,7 @@ The first line is line 1.
 
 Example\+: The function may get line 5 of a file. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The file path to the file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & The file path to the file whose content we want. \\
 \hline
 \mbox{\texttt{ in}}  & {\em ln\+\_\+num} & The number needs to be greater than 0. It states the line we want. \\
 \hline
@@ -377,13 +377,13 @@ The file line with new line char included at the end is returned.
 
 This function gets values out of settings files. 
 
-Values in lines are saved like\+: \char`\"{}key0 (key1 key2)\+: value0 (value1 value2)\char`\"{} 
+Values in lines are saved like\+: \char`\"{}key0 (key1 key2)\+: value0 (value1 value2)\char`\"{}. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em ln} & The file line whose value we want \\
+\mbox{\texttt{ in}}  & {\em ln} & The file line whose value we want. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The value for the setting 
+The value for the setting. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}\label{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}} 
 \index{tools::Tools@{tools::Tools}!get\_file\_ln\_w\_srch@{get\_file\_ln\_w\_srch}}
@@ -397,7 +397,7 @@ It gets the first line which contains the passed string.
 
 The whole string needs to be contained in the file line and not just a fraction. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want. \\
 \hline
 \mbox{\texttt{ in}}  & {\em srch} & The string which shall be included in the file line that we search. \\
 \hline
@@ -426,7 +426,7 @@ Retrieves the first char of a string.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The first char of a string 
+The first char of a string. 
 \end{DoxyReturn}
 
 \begin{DoxyRetVals}{Return values}
@@ -447,9 +447,9 @@ It does not matter whether the file does have sufficient lines. In that case, al
 
 Empty lines are neglected. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want. \\
 \hline
-\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the beginning \\
+\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the beginning. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -472,11 +472,11 @@ A J\+S\+ON object or array is turned into a string.
 
 The library rapidjson is used. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em val} & The J\+S\+ON object or array to convert \\
+\mbox{\texttt{ in}}  & {\em val} & The J\+S\+ON object or array to convert. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The string of the J\+S\+ON 
+The string of the J\+S\+ON. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a300112b0f9768b38ff2cfdd56951ae9e}\label{classtools_1_1Tools_a300112b0f9768b38ff2cfdd56951ae9e}} 
 \index{tools::Tools@{tools::Tools}!get\_last\_lns\_file@{get\_last\_lns\_file}}
@@ -492,9 +492,9 @@ It does not matter whether the file does have sufficient lines. In that case, al
 
 Empty lines are neglected. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want \\
+\mbox{\texttt{ in}}  & {\em file} & The path to file whose content we want. \\
 \hline
-\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the end \\
+\mbox{\texttt{ in}}  & {\em ln\+\_\+nums} & The number of lines we want from the end. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -517,7 +517,7 @@ This function gets the integer at the end of a string.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em entry} & The string whose ending number we want \\
+\mbox{\texttt{ in}}  & {\em entry} & The string whose ending number we want. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -539,7 +539,7 @@ The positive or negative integer at the end of a file line.
 Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. 
 
 The function calls the current time in milliseconds and shortens it to fit into an in so that is can be used as a a seed. \begin{DoxyReturn}{Returns}
-random number 
+A random number. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_aa4d950ba11ae8b4e9aefa478e813e6d9}\label{classtools_1_1Tools_aa4d950ba11ae8b4e9aefa478e813e6d9}} 
 \index{tools::Tools@{tools::Tools}!get\_time@{get\_time}}
@@ -551,8 +551,8 @@ random number
 
 Returns the current time in seconds. 
 
-Example\+: 1583068819 \begin{DoxyReturn}{Returns}
-The Unix time in seconds 
+Example\+: 1583068819. \begin{DoxyReturn}{Returns}
+The Unix time in seconds. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_ae0a32968f9b713320e870a3464f70e1d}\label{classtools_1_1Tools_ae0a32968f9b713320e870a3464f70e1d}} 
 \index{tools::Tools@{tools::Tools}!get\_time\_in\_millisec@{get\_time\_in\_millisec}}
@@ -564,8 +564,8 @@ The Unix time in seconds
 
 Returns the current time in milliseconds. 
 
-Example\+: 1583068819924 \begin{DoxyReturn}{Returns}
-The Unix time in milliseconds 
+Example\+: 1583068819924. \begin{DoxyReturn}{Returns}
+The Unix time in milliseconds. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca1943}\label{classtools_1_1Tools_aa27b6ac60074c530a667239d02ca1943}} 
 \index{tools::Tools@{tools::Tools}!get\_time\_w\_millisec@{get\_time\_w\_millisec}}
@@ -577,8 +577,8 @@ The Unix time in milliseconds
 
 Returns the current time in seconds with milliseconds. 
 
-Example\+: 1583068819.\+924 \begin{DoxyReturn}{Returns}
-The Unix time in seconds with milliseconds 
+Example\+: 1583068819.\+924. \begin{DoxyReturn}{Returns}
+The Unix time in seconds with milliseconds. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}\label{classtools_1_1Tools_a9b7737be328c764c6752f148fe15157d}} 
 \index{tools::Tools@{tools::Tools}!get\_timezone\_offset@{get\_timezone\_offset}}
@@ -588,10 +588,10 @@ The Unix time in seconds with milliseconds
 
 
 
-Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100) 
+Returns the I\+SO 8601 offset from U\+TC in time zone (1 minute=1, 1 hour=100). 
 
-Example\+: -\/18000 \begin{DoxyReturn}{Returns}
-The time zone offset 
+Example\+: -\/18000. \begin{DoxyReturn}{Returns}
+The time zone offset. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}\label{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}} 
 \index{tools::Tools@{tools::Tools}!get\_tm@{get\_tm}}
@@ -605,11 +605,11 @@ Gets the tm struct for us.
 
 By default, the struct std\+::tm gets the current time but optionally, the wanted time can be stated. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em time} & Input for the struct std\+::tm \\
+\mbox{\texttt{ in}}  & {\em time} & Input for the struct std\+::tm. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The struct std\+::tm 
+The struct std\+::tm. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a6d1962b9c6ee66dbd607a4245059f717}\label{classtools_1_1Tools_a6d1962b9c6ee66dbd607a4245059f717}} 
 \index{tools::Tools@{tools::Tools}!gzip\_compress@{gzip\_compress}}
@@ -623,11 +623,11 @@ The function G\+Z\+IP compresses the passed data.
 
 Copied from here\+: \href{https://gist.github.com/yfnick/6ba33efa7ba12e93b148}{\texttt{ https\+://gist.\+github.\+com/yfnick/6ba33efa7ba12e93b148}}. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP compress \\
+\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP compress. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The G\+Z\+IP compressed data 
+The G\+Z\+IP compressed data. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_aaebae87ecad5ad7ca8eced233e83fc9a}\label{classtools_1_1Tools_aaebae87ecad5ad7ca8eced233e83fc9a}} 
 \index{tools::Tools@{tools::Tools}!gzip\_decompress@{gzip\_decompress}}
@@ -641,11 +641,11 @@ The function G\+Z\+IP decompresses the passed data.
 
 Copied from here\+: \href{https://gist.github.com/yfnick/6ba33efa7ba12e93b148}{\texttt{ https\+://gist.\+github.\+com/yfnick/6ba33efa7ba12e93b148}}. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP decompress \\
+\mbox{\texttt{ in}}  & {\em data} & The data to G\+Z\+IP decompress. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The G\+Z\+IP decompressed data 
+The G\+Z\+IP decompressed data. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a8e483b9229a9aab7a7bd9b208f34a467}\label{classtools_1_1Tools_a8e483b9229a9aab7a7bd9b208f34a467}} 
 \index{tools::Tools@{tools::Tools}!hmac\_sha256\_hash@{hmac\_sha256\_hash}}
@@ -659,13 +659,13 @@ Computes an hmac sha256 hash for the proper seed.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em secret\+\_\+key} & The key for the hmac encryption \\
+\mbox{\texttt{ in}}  & {\em secret\+\_\+key} & The key for the hmac encryption. \\
 \hline
-\mbox{\texttt{ in}}  & {\em seed} & The actual string which shall be encoded \\
+\mbox{\texttt{ in}}  & {\em seed} & The actual string which shall be encoded. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The hmac sha256 hash 
+The hmac sha256 hash. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_afcee95b785eeecd8a382a0453fc0a670}\label{classtools_1_1Tools_afcee95b785eeecd8a382a0453fc0a670}} 
 \index{tools::Tools@{tools::Tools}!is\_gzipped@{is\_gzipped}}
@@ -679,7 +679,7 @@ Checks whether the passed data is G\+Z\+IP compressed.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em data} & The data to check \\
+\mbox{\texttt{ in}}  & {\em data} & The data to check. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -697,7 +697,7 @@ States whether the passed char is a positive integer.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em ch} & The char of which we want to know whether it is a positive interger. \\
+\mbox{\texttt{ in}}  & {\em ch} & The char of which we want to know whether it is a positive integer. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -715,7 +715,7 @@ States whether the passed string is a positive integer.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string of which we want to know whether it is a positive interger. \\
+\mbox{\texttt{ in}}  & {\em str} & The string of which we want to know whether it is a positive integer. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -733,11 +733,11 @@ Creates a md5 hash for the proper seed.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em seed} & The seed which shall be encrypted \\
+\mbox{\texttt{ in}}  & {\em seed} & The seed which shall be encrypted. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The md5 hash 
+The md5 hash. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}\label{classtools_1_1Tools_ae45598fa380b66ab86a96373c885713a}} 
 \index{tools::Tools@{tools::Tools}!parse\_url@{parse\_url}}
@@ -751,13 +751,13 @@ It U\+RL parses the given string.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em url} & U\+RL or string which shall be encoded \\
+\mbox{\texttt{ in}}  & {\em url} & U\+RL or string which shall be encoded. \\
 \hline
 \mbox{\texttt{ in}}  & {\em escaped\+\_\+chars} & Non-\/\+A\+S\+C\+II chars are escaped either way but with this string there can be stated additional chars to escape. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The U\+RL parsed 
+The U\+RL parsed string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}\label{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}} 
 \index{tools::Tools@{tools::Tools}!starts\_w@{starts\_w}}
@@ -771,9 +771,9 @@ It is compared whether one string starts with a sequence of chars.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em str} & The string whose beginning shall be checked \\
+\mbox{\texttt{ in}}  & {\em str} & The string whose beginning shall be checked. \\
 \hline
-\mbox{\texttt{ in}}  & {\em beg} & The string of which we want to know whether it occurs at the beginning of the other string \\
+\mbox{\texttt{ in}}  & {\em beg} & The string of which we want to know whether it occurs at the beginning of the other string. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -795,7 +795,7 @@ Expects an integer and turns it into its hexadecimal equivalent.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The hexadecimal value as a string 
+The hexadecimal value as a string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a7916a751d0b2ef769432d9369b094eb5}\label{classtools_1_1Tools_a7916a751d0b2ef769432d9369b094eb5}} 
 \index{tools::Tools@{tools::Tools}!to\_oct@{to\_oct}}
@@ -813,7 +813,7 @@ Expects an integer and turns it into its octal equivalent.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The octal value as a string 
+The octal value as a string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}\label{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}} 
 \index{tools::Tools@{tools::Tools}!write\_err\_log@{write\_err\_log}}
@@ -827,7 +827,7 @@ This function is thought to be used to log error messages which need treatment.
 
 It should be used instead of the stderr output. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged \\
+\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}\label{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124ca3}} 
@@ -842,7 +842,7 @@ This function is thought to be used to log error messages temporarily.
 
 It should be used instead of the stderr output. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged \\
+\mbox{\texttt{ in}}  & {\em err\+\_\+msg} & The error message which shall be logged. \\
 \hline
 \end{DoxyParams}
 

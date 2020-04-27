@@ -1,4 +1,4 @@
-# Contributing v0.0.24 (27.04.2020)
+# Contributing v0.0.25 (27.04.2020)
 This file may content irrelevant content as all my projects include the same CONTRIBUTING.md for easier maintenance. I want to keep this file as simple as possible. Therefore, all rules a grouped in suitable subsections. Overall, British English is used as language for all text.
 
 ## 1. Description on how to contribute
@@ -7,7 +7,7 @@ Contributing works as always by forking the repository and then making a pull re
 ## 2. Commenting
 * The Doxygen syntax is used. 
 * Everything is commented so that Doxygen does not output any error on documentation creation: classes, structs, functions, member variables. Additional comments are voluntary.
-* Comments are sentences in most cases if useful.
+* Comments are sentences in most cases if useful. Sentence endings are to use either way as Doxygen will add them too either way.
 * // only for single a comment, otherwise /**/.
 * In dynamic programming languages, the first word of the description shall contain the type.
 ```
