@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.24 (27.04.2020)
+ * - Minor source code fixes.
+ * @version
  * 1.1.23 (27.04.2020)
  * - Added the function "tools::Tools::mkdir()".
  * @version
