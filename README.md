@@ -5,7 +5,7 @@ A C++ library which contains all functions I use in general.
 ### As a submodule
 ```sh
 cd to/your/project
-git submodule add *link to this repo*
+git submodule add *link-to-this-repo*
 ```
 
 ### As a contributor
