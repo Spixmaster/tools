@@ -14,7 +14,7 @@
  * @copyright GNU General Public License v2.0
  * @version
  * 1.1.22 (27.04.2020)
- * - Revision of all comments
+ * - Revision of all comments.
  * @version
  * 1.1.21 (27.04.2020)
  * - All the source code was improved.
