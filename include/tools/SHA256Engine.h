@@ -9,7 +9,7 @@ namespace tools
 {
 	/**
 	 * @class SHA256Engine
-	 * @brief A simple help class that is only needed due to Poco
+	 * @brief A simple help class that is only needed due to Poco.
 	 */
 	class SHA256Engine : public Poco::Crypto::DigestEngine
 	{
@@ -17,7 +17,7 @@ namespace tools
 		//Pointer of itself
 		/**
 		 * @var ptr
-		 * @brief A pointer of itself
+		 * @brief A pointer of itself.
 		 */
 		typedef std::shared_ptr<SHA256Engine> ptr;
 
