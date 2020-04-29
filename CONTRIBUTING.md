@@ -6,7 +6,7 @@ Contributing works as always by forking the repository and then making a pull re
 
 ## 2. Commenting
 * The Doxygen syntax is used. 
-* Everything is commented so that Doxygen does not output any error on documentation creation: classes, structs, functions, member variables. Additional comments are voluntary.
+* Everything is commented so that Doxygen does not output any error on documentation creation: classes, structs, functions, member variables... Additional comments are voluntary.
 * All Doxygen comments are sentences in most cases if useful. There, sentence endings are to use either way. The reason is that Doxygen will add them too either way.
 * Non-Doxygen comments shall be sentences except those which structure like the ones used in classes.
 * // only for single a comment, otherwise /**/.
