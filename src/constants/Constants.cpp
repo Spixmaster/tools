@@ -7,13 +7,8 @@
 
 namespace tools
 {
-<<<<<<< HEAD
-	const std::string Constants::version = "1.1.28";
-	const std::string Constants::release = "01.May.2020";
-=======
 	const std::string Constants::version = "1.1.29";
 	const std::string Constants::release = "11.May.2020";
->>>>>>> 2ce77388a1a96a29d7cf5b455ce34b0c85504d55
 	const std::size_t Constants::max_tmp_err_logs = 10;
 
 	const std::string Constants::ansii_reset = "\x1B[0m";
