@@ -2,6 +2,7 @@
 #define TOOLS_HTTP_INPUTFILE_H
 
 #include <memory>
+#include <string>
 
 namespace tools
 {
