@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.31 (15.05.2020)
+ * - Readme update.
+ * @version
  * 1.1.30 (15.05.2020)
  * - Contributing.md update.
  * @version
