@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.33 (17.05.2020)
+ * - Added the function "tools::Tools::exec".
+ * @version
  * 1.1.32 (15.05.2020)
  * - Bug fix.
  * @version
@@ -388,6 +391,13 @@ namespace tools
 		 * @param[in] path The path to the directory which shall be made.
 		 */
 		static void mkdir(const std::string &path) noexcept;
+
+		/**
+		 * @brief Calls a command and return the stdout.
+		 * @param[in] cmd The called command.
+		 * @return The output made to stdout.
+		 */
+		static std::string exec(const char *cmd) noexcept;
 	};
 }
 

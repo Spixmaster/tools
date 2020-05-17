@@ -97,7 +97,9 @@ static void \mbox{\hyperlink{classtools_1_1Tools_ac8ec8bd83226d2e105e4351318124c
 static void \mbox{\hyperlink{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce5266110c}{del\+\_\+file}} (const std\+::string \&file) noexcept
 \begin{DoxyCompactList}\small\item\em Deletes the passed file. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classtools_1_1Tools_ad71cdaf446984ff95a2b65b7e1a82f70}{mkdir}} (const std\+::string \&path) noexcept
-\begin{DoxyCompactList}\small\item\em Makes a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Makes a directory. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a64d9f0bc95d984e6018498a920cfe9fc}{exec}} (const char $\ast$cmd) noexcept
+\begin{DoxyCompactList}\small\item\em Calls a command and return the stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -181,6 +183,24 @@ It is compared whether one string ends with a sequence of chars.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 It is returned true if the one string ends with the other. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a64d9f0bc95d984e6018498a920cfe9fc}\label{classtools_1_1Tools_a64d9f0bc95d984e6018498a920cfe9fc}} 
+\index{tools::Tools@{tools::Tools}!exec@{exec}}
+\index{exec@{exec}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::exec (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Calls a command and return the stdout. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & The called command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output made to stdout. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_a369ab3994ff3e7af9e7eb1caae1930ad}\label{classtools_1_1Tools_a369ab3994ff3e7af9e7eb1caae1930ad}} 
 \index{tools::Tools@{tools::Tools}!file\_cont\_str@{file\_cont\_str}}
