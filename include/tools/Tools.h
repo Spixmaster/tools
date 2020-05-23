@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.34 (23.05.2020)
+ * - Contributing.md update.
+ * @version
  * 1.1.33 (17.05.2020)
  * - Added the function "tools::Tools::exec".
  * @version
