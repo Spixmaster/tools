@@ -889,6 +889,18 @@ namespace tools
 		}
 	}
 
+	void Tools::rmdir(const std::string &path) noexcept
+	{
+		try
+		{
+			boost::filesystem::remove_all(path);
+		}
+		catch(const std::exception &e)
+		{
+			Tools::write_err_log(e.what());
+		}
+	}
+
 	std::string Tools::exec(const char *cmd) noexcept
 	{
 	    std::array<char, 128> buffer;

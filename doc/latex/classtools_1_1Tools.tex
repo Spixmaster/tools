@@ -98,6 +98,8 @@ static void \mbox{\hyperlink{classtools_1_1Tools_ab603d7e471e4f679cc1db1ce526611
 \begin{DoxyCompactList}\small\item\em Deletes the passed file. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classtools_1_1Tools_ad71cdaf446984ff95a2b65b7e1a82f70}{mkdir}} (const std\+::string \&path) noexcept
 \begin{DoxyCompactList}\small\item\em Makes a directory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classtools_1_1Tools_ad98ca1531d40a09d0116d4edca739c4d}{rmdir}} (const std\+::string \&path) noexcept
+\begin{DoxyCompactList}\small\item\em Deletes a directory. \end{DoxyCompactList}\item 
 static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a64d9f0bc95d984e6018498a920cfe9fc}{exec}} (const char $\ast$cmd) noexcept
 \begin{DoxyCompactList}\small\item\em Calls a command and return the stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -796,6 +798,21 @@ It U\+RL parses the given string.
 \begin{DoxyReturn}{Returns}
 The U\+RL parsed string. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_ad98ca1531d40a09d0116d4edca739c4d}\label{classtools_1_1Tools_ad98ca1531d40a09d0116d4edca739c4d}} 
+\index{tools::Tools@{tools::Tools}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{rmdir()}{rmdir()}}
+{\footnotesize\ttfamily void tools\+::\+Tools\+::rmdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Deletes a directory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & The path to the directory which shall be deleted. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}\label{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}} 
 \index{tools::Tools@{tools::Tools}!starts\_w@{starts\_w}}
 \index{starts\_w@{starts\_w}!tools::Tools@{tools::Tools}}
