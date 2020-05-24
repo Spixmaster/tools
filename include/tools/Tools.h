@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.35 (24.05.2020)
+ * - Added a function.
+ * @version
  * 1.1.34 (23.05.2020)
  * - Contributing.md update.
  * @version
@@ -394,6 +397,12 @@ namespace tools
 		 * @param[in] path The path to the directory which shall be made.
 		 */
 		static void mkdir(const std::string &path) noexcept;
+
+		/**
+		 * @brief Deletes a directory.
+		 * @param[in] path The path to the directory which shall be deleted.
+		 */
+		static void rmdir(const std::string &path) noexcept;
 
 		/**
 		 * @brief Calls a command and return the stdout.
