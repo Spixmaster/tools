@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.36 (28.05.2020)
+ * - Comment updated.
+ * @version
  * 1.1.35 (24.05.2020)
  * - Added a function.
  * @version
@@ -119,7 +122,7 @@ namespace tools
 		static std::string get_file_cont_wo_srch_ln(const std::string &file, const std::string &srch) noexcept;
 
 		/**
-		 * @brief States whether the passed string is a positive integer.
+		 * @brief States whether the passed string is a positive integer. The number 0 counts too.
 		 * @param[in] str The string of which we want to know whether it is a positive integer.
 		 * @return It is returned true when the string only consists of number.
 		 */
