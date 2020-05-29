@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.37 (29.05.2020)
+ * - Changed the name of error log files from the current Unix timestamp in second to milliseconds to prevent files from being overwritten.
+ * @version
  * 1.1.36 (28.05.2020)
  * - Comment updated.
  * @version
