@@ -165,7 +165,10 @@ namespace tools
 			if(!std::isdigit(str[j]))
 				return false;
 
-		return true;
+		if(!str.empty())
+			return true;
+		else
+			return false;
 	}
 
 	bool Tools::is_pos_int(const char &ch) noexcept
