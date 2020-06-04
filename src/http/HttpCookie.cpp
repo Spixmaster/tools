@@ -49,7 +49,7 @@ namespace tools
 				 * Save the value of j so that we do not manipulate it itself.
 				 * Now, we iterate through the key and check whether is corresponds to the following content chars.
 				 */
-				std::size_t temp = j;
+				std::size_t tmp = j;
 
 				//Iterate through the key
 				for(std::size_t k = 0; k < key.size(); ++k)
@@ -58,19 +58,19 @@ namespace tools
 					 * Check whether we are still in the range of cont to access cont.at(temp).
 					 * We subtract 1 as we check whether the next char is '='.
 					 */
-					if(temp < (cont.size() - 1))
+					if(tmp < (cont.size() - 1))
 					{
-						if(!(cont.at(temp) == key.at(k)))
+						if(!(cont.at(tmp) == key.at(k)))
 							break;
 
 						/*
 						 * The key is found when we were able to iterate through the whole key without breaking out of the loop.
 						 * Additional conditions: The next char in cont would be '='.
 						 */
-						if(k == key.size() - 1 && cont.at(temp + 1) == '=')
+						if(k == key.size() - 1 && cont.at(tmp + 1) == '=')
 							key_found = true;
 
-						++temp;
+						++tmp;
 					}
 					else
 						break;
@@ -78,10 +78,11 @@ namespace tools
 
 				//Get the value.
 				std::string val;
+
 				if(key_found == true)
 				{
 					//Right now, temp is at the '=' in cont.
-					for(std::size_t l = temp + 1; l < cont.size(); ++l)
+					for(std::size_t l = tmp + 1; l < cont.size(); ++l)
 					{
 						if(cont.at(l) == ';')
 							break;
