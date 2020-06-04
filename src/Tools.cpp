@@ -296,7 +296,6 @@ namespace tools
 	bool Tools::file_exists(const std::string &file) noexcept
 	{
 		std::ifstream inf(file);
-
 		return inf.good();
 	}
 
@@ -432,7 +431,7 @@ namespace tools
 			for(int j = 0; j < digits; ++j)
 			{
 				//The + 1 is needed for right indexing.
-				char numeral = entry.at(entry.length() - (j + 1));
+				const char numeral = entry.at(entry.length() - (j + 1));
 				/*
 				 * The value of the digit in the whole number needs to be considered.
 				 * Example for the first iteration: j = 0 --> pow(10, 0) = 1
@@ -766,14 +765,14 @@ namespace tools
 	int Tools::get_seed() noexcept
 	{
 		//Get the last 9 chars of the number as this can never cause an integer overflow.
-		std::string temp = std::to_string(get_time_in_millisec());
-		std::reverse(temp.begin(), temp.end());
+		std::string tmp = std::to_string(get_time_in_millisec());
+		std::reverse(tmp.begin(), tmp.end());
 		std::string result;
 
-		for(std::size_t j = 0; j < temp.size(); ++j)
+		for(std::size_t j = 0; j < tmp.size(); ++j)
 		{
 			if(j < 9)
-				result += temp.at(j);
+				result += tmp.at(j);
 			else
 				break;
 		}
@@ -846,6 +845,7 @@ namespace tools
 
 		std::ofstream outf(Constants::file_err_log());
 		outf << err_msg << std::endl;
+		outf.close();
 	}
 
 	void Tools::write_err_log_tmp(const std::string &err_msg) noexcept
@@ -872,6 +872,7 @@ namespace tools
 
         std::ofstream outf(Constants::file_err_log_tmp());
 		outf << err_msg << std::endl;
+		outf.close();
 	}
 
 	void Tools::del_file(const std::string &file) noexcept
