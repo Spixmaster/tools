@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Matheus Gabriel Werny de Lima
-# This file is distributed under the same license as the pronos-bot package.
+# This file is distributed under the same license as the tools-cpp package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pronos-bot\n"
+"Project-Id-Version: tools-cpp\n"
 "Report-Msgid-Bugs-To: spixmaster528@gmail.com\n"
-"POT-Creation-Date: 2020-06-06 17:56+0200\n"
+"POT-Creation-Date: 2020-06-15 21:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "The file %1% could not be deleted: %2%"
 msgstr ""
 
 #: ../src/constants/Messages.cpp:19
-msgid "The file %1% does not exist"
+msgid "The file %1% does not exist."
 msgstr ""
 
 #: ../src/constants/Messages.cpp:11

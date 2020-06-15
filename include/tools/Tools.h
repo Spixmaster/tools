@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.41 (15.06.2020)
+ * - Code update.
+ * @version
  * 1.1.40 (06.06.2020)
  * - Added a .pot file.
  * - Modified the messages.
