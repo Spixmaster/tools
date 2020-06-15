@@ -16,7 +16,7 @@ namespace tools
 
 	void Messages::file_non_existent(const std::string &file) noexcept
 	{
-		Tools::write_err_log(boost::str(boost::format(_("The file %1% does not exist")) % file));
+		Tools::write_err_log(boost::str(boost::format(_("The file %1% does not exist.")) % file));
 	}
 
 	std::string Messages::enter_pos_num_to_read_in_file(const std::string &file) noexcept

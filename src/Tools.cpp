@@ -852,7 +852,7 @@ namespace tools
 	{
 		//Create the necessary folder.
 		if(!tools::Tools::file_exists(Constants::folder_error_logs_tmp))
-			Tools::mkdir(Constants::Constants::folder_error_logs_tmp);
+			Tools::mkdir(Constants::folder_error_logs_tmp);
 
 		//Delete old temporary error logs.
 		std::vector<std::string> files;
