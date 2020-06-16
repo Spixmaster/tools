@@ -80,7 +80,7 @@
  * 1.1.21 (27.04.2020)
  * - All the source code was improved.
  * - All suitable comments are revised to fit the Doxygen syntax.
- * - Two functions were included for logging error messages instead of the stderr.
+ * - Two functions were included for logging error messages instead of using stderr.
  * - String formatting was applied to the Messages object to ease translations.
  */
 
