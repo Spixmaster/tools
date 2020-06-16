@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.1.42 (16.06.2020)
+ * - Script update.
+ * @version
  * 1.1.41 (15.06.2020)
  * - Code update.
  * @version
