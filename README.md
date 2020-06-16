@@ -46,6 +46,7 @@ sudo pacman -S boost
 * PocoCrypto
 * boost_iostreams
 * boost_filesystem
+* boost_locale
 
 ## Usage
 The source code cannot be compiled by itself as there is no main function included. It is thought to be used in other software as a library.
