@@ -3,7 +3,6 @@
 #include <fstream>
 #include <cmath>
 #include <unistd.h>
-#include <limits.h>
 #include "Poco/MD5Engine.h"
 #include "Poco/DigestStream.h"
 #include "Poco/HMACEngine.h"
