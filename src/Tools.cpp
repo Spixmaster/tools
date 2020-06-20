@@ -107,7 +107,7 @@ namespace tools
 				 * We need to do this as there is always a trailing \n at the end of the file.
 				 * If we did not do this, the file would be filled with one more empty line each time.
 				 */
-				if(cont.size() > 0)
+				if(!cont.empty())
 					cont.pop_back();
 			}
 
@@ -145,7 +145,7 @@ namespace tools
 				 * We need to do this as there is always a trailing \n at the end of the file.
 				 * If we did not do this, the file would be filled with one more empty line each time.
 				 */
-				if(cont.size() > 0)
+				if(!cont.empty())
 					cont.pop_back();
 			}
 
@@ -266,7 +266,7 @@ namespace tools
 
 	char Tools::get_first_char(const std::string &str) noexcept
 	{
-		if(str.size() >= 1)
+		if(!str.empty())
 			return str.at(0);
 
 		const char *c = "";
