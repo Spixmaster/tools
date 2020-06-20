@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.1 (20.06.2020)
+ * - Code revision.
+ * @version
  * 1.2.0 (20.06.2020)
  * - Added functions for better reading out of files.
  * @version
