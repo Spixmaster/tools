@@ -235,7 +235,6 @@ namespace tools
 		}
 	}
 
-	//todo
 	std::string Tools::get_file_ln_w_val(const std::string &file, const std::string &val) noexcept
 	{
 		if(Tools::file_exists(file))
@@ -311,7 +310,6 @@ namespace tools
 		{
 			std::ifstream inf(file);
 			std::string cur_ln;
-			std::size_t found;
 
 			if(inf.is_open())
 			{
@@ -319,7 +317,7 @@ namespace tools
 				{
 					std::getline(inf, cur_ln);
 
-					if((found = cur_ln.find(str)) != std::string::npos)
+					if(cur_ln.find(str) != std::string::npos)
 						return true;
 				}
 			}
@@ -337,7 +335,7 @@ namespace tools
 	{
 		std::string res;
 
-		//The iteration starts at 1 to omit the first char
+		//The iteration starts at 1 to omit the first char.
 		for(std::size_t j = 1; j < str.length(); ++j)
 			res.push_back(str.at(j));
 
@@ -806,14 +804,8 @@ namespace tools
 
 	std::string Tools::get_timezone_offset() noexcept
 	{
-		//Get the time.
-		std::time_t raw_time;
-		std::time(&raw_time);
-		struct std::tm *time_info;
-		time_info = std::localtime(&raw_time);
-
 		char buf[6];
-		std::strftime(buf, sizeof(buf), "%z", time_info);
+		std::strftime(buf, sizeof(buf), "%z", Tools::get_tm());
 		return buf;
 	}
 
@@ -860,39 +852,6 @@ namespace tools
 		}
 	}
 
-	//todo
-	std::string Tools::get_file_ln_val(const std::string &ln) noexcept
-	{
-		if(!ln.empty())
-		{
-			std::string result;
-			std::vector<std::string> args = Tools::get_args(ln);
-			bool add = false; //The variable indicates when chars need to be added to the output string.
-
-			for(std::size_t j = 0; j < args.size(); ++j)
-			{
-				if(add == true)
-				{
-					result.append(args.at(j));
-
-					if(j != args.size() - 1)
-						result.append(" ");
-				}
-
-				//This condition defines when the chars are added to the result string.
-				if(Tools::ends_w(args.at(j), ":"))
-					add = true;
-			}
-
-			return result;
-		}
-		else
-		{
-			Tools::write_err_log(Messages::given_str_empty);
-			return "";
-		}
-	}
-
 	std::string Tools::get_file_ln_key(const std::string &ln) noexcept
 	{
 		if(!ln.empty())
@@ -919,6 +878,38 @@ namespace tools
 			}
 
 			return "";
+		}
+		else
+		{
+			Tools::write_err_log(Messages::given_str_empty);
+			return "";
+		}
+	}
+
+	std::string Tools::get_file_ln_val(const std::string &ln) noexcept
+	{
+		if(!ln.empty())
+		{
+			std::string result;
+			std::vector<std::string> args = Tools::get_args(ln);
+			bool add = false; //The variable indicates when chars need to be added to the output string.
+
+			for(std::size_t j = 0; j < args.size(); ++j)
+			{
+				if(add == true)
+				{
+					result.append(args.at(j));
+
+					if(j != args.size() - 1)
+						result.append(" ");
+				}
+
+				//This condition defines when the chars are added to the result string.
+				if(Tools::ends_w(args.at(j), ":"))
+					add = true;
+			}
+
+			return result;
 		}
 		else
 		{
