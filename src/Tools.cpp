@@ -195,12 +195,68 @@ namespace tools
 					if(cur_ln.find(srch) != std::string::npos)
 						return cur_ln;
 				}
-
-				//Otherwise, if nothing was found, it would send the last line.
-				cur_ln = "";
 			}
 
-			return cur_ln;
+			return "";
+		}
+		else
+		{
+			Messages::file_non_existent(file);
+			return "";
+		}
+	}
+
+	std::string Tools::get_file_ln_w_key(const std::string &file, const std::string &key) noexcept
+	{
+		if(Tools::file_exists(file))
+		{
+			std::ifstream inf(file);
+			std::string cur_ln;
+
+			if(inf.is_open())
+			{
+				while(!inf.eof())
+				{
+					std::getline(inf, cur_ln);
+
+					std::string key_tmp = Tools::get_file_ln_key(cur_ln);
+
+					if(key_tmp == key)
+						return cur_ln;
+				}
+			}
+
+			return "";
+		}
+		else
+		{
+			Messages::file_non_existent(file);
+			return "";
+		}
+	}
+
+	//todo
+	std::string Tools::get_file_ln_w_val(const std::string &file, const std::string &val) noexcept
+	{
+		if(Tools::file_exists(file))
+		{
+			std::ifstream inf(file);
+			std::string cur_ln;
+
+			if(inf.is_open())
+			{
+				while(!inf.eof())
+				{
+					std::getline(inf, cur_ln);
+
+					std::string val_tmp = Tools::get_file_ln_val(cur_ln);
+
+					if(val_tmp == val)
+						return cur_ln;
+				}
+			}
+
+			return "";
 		}
 		else
 		{
@@ -804,6 +860,7 @@ namespace tools
 		}
 	}
 
+	//todo
 	std::string Tools::get_file_ln_val(const std::string &ln) noexcept
 	{
 		if(!ln.empty())
@@ -828,6 +885,40 @@ namespace tools
 			}
 
 			return result;
+		}
+		else
+		{
+			Tools::write_err_log(Messages::given_str_empty);
+			return "";
+		}
+	}
+
+	std::string Tools::get_file_ln_key(const std::string &ln) noexcept
+	{
+		if(!ln.empty())
+		{
+			std::string result;
+			std::vector<std::string> args = Tools::get_args(ln);
+
+			for(std::size_t j = 0; j < args.size(); ++j)
+			{
+				result.append(args.at(j));
+
+				if(j != args.size() - 1)
+					result.append(" ");
+
+				//This condition defines when the key is over.
+				if(Tools::ends_w(args.at(j), ":") || Tools::ends_w(args.at(j), ": "))
+				{
+					//At this moment, we have: "key0 key1 key2: " or "key0 key1 key2:"
+					while(tools::Tools::ends_w(result, ":") || tools::Tools::ends_w(result, " "))
+						result.pop_back();
+
+					return result;
+				}
+			}
+
+			return "";
 		}
 		else
 		{

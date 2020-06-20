@@ -171,6 +171,28 @@ namespace tools
 		static std::string get_file_ln_w_srch(const std::string &file, const std::string &srch) noexcept;
 
 		/**
+		 * @brief It gets the first line which contains the passed key.
+		 * @details The whole string needs to be contained in the file line and not just a fraction.
+		 * @note key0 key1 key2: val0 val1
+		 * @param[in] file Path to file whose content we want.
+		 * @param[in] key The key of the file line we want.
+		 * @return The file line which contains the whole key.
+		 * @retval "" There is no such key in the file.
+		 */
+		static std::string get_file_ln_w_key(const std::string &file, const std::string &key) noexcept;
+
+		/**
+		 * @brief It gets the first line which contains the passed value.
+		 * @details The whole string needs to be contained in the value and not just a fraction.
+		 * @note key0 key1 key2: val0 val1
+		 * @param[in] file Path to file whose content we want.
+		 * @param[in] val The value of the file line we want.
+		 * @return The file line which contains the whole value.
+		 * @retval "" There is no such value in the file.
+		 */
+		static std::string get_file_ln_w_val(const std::string &file, const std::string &val) noexcept;
+
+		/**
 		 * @brief Retrieves the first char of a string.
 		 * @param[in] str The string whose first char we want.
 		 * @return The first char of a string.
@@ -394,11 +416,19 @@ namespace tools
 
 		/**
 		 * @brief This function gets values out of settings files.
-		 * @details Values in lines are saved like: "key0 (key1 key2): value0 (value1 value2)".
+		 * @details Key-value pairs are saved like: "key0 (key1 key2): value0 (value1 value2)".
 		 * @param[in] ln The file line whose value we want.
-		 * @return The value for the setting.
+		 * @return The value of the line.
 		 */
 		static std::string get_file_ln_val(const std::string &ln) noexcept;
+
+		/**
+		 * @brief This function gets keys out of settings files.
+		 * @details Key-value pairs are saved like: "key0 (key1 key2): value0 (value1 value2)".
+		 * @param[in] ln The file line whose key we want.
+		 * @return The key of the line without ending colon.
+		 */
+		static std::string get_file_ln_key(const std::string &ln) noexcept;
 
 		/**
 		 * @brief This function is thought to be used to log error messages which need treatment.
