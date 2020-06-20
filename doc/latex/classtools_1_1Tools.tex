@@ -32,6 +32,10 @@ static bool \mbox{\hyperlink{classtools_1_1Tools_a8168d15dcd3f74e97c30a21473e972
 \begin{DoxyCompactList}\small\item\em States whether the passed char is a positive integer. \end{DoxyCompactList}\item 
 static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}{get\+\_\+file\+\_\+ln\+\_\+w\+\_\+srch}} (const std\+::string \&file, const std\+::string \&srch) noexcept
 \begin{DoxyCompactList}\small\item\em It gets the first line which contains the passed string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_a4efd036d5eb3f67ac9c0d389ade30eae}{get\+\_\+file\+\_\+ln\+\_\+w\+\_\+key}} (const std\+::string \&file, const std\+::string \&key) noexcept
+\begin{DoxyCompactList}\small\item\em It gets the first line which contains the passed key. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_acf0b267d9a8ba8ac580acdb4ea220aec}{get\+\_\+file\+\_\+ln\+\_\+w\+\_\+val}} (const std\+::string \&file, const std\+::string \&val) noexcept
+\begin{DoxyCompactList}\small\item\em It gets the first line which contains the passed value. \end{DoxyCompactList}\item 
 static char \mbox{\hyperlink{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}{get\+\_\+first\+\_\+char}} (const std\+::string \&str) noexcept
 \begin{DoxyCompactList}\small\item\em Retrieves the first char of a string. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classtools_1_1Tools_a51b324163e66294b1ad2aaea36cc422a}{starts\+\_\+w}} (const std\+::string \&str, const std\+::string \&beg) noexcept
@@ -88,6 +92,8 @@ static int \mbox{\hyperlink{classtools_1_1Tools_a106306921da41953200991a264b24d9
 \begin{DoxyCompactList}\small\item\em Returns a seed which changes every millisecond to ensure that not the same seed is used in a programme. \end{DoxyCompactList}\item 
 static std\+::tm $\ast$ \mbox{\hyperlink{classtools_1_1Tools_ab1c35cbcea1ef16b79af2acbb11f7cec}{get\+\_\+tm}} (const std\+::time\+\_\+t \&time=0) noexcept
 \begin{DoxyCompactList}\small\item\em Gets the tm struct for us. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classtools_1_1Tools_addbf9205523ec108e8db033cbcd32640}{get\+\_\+file\+\_\+ln\+\_\+key}} (const std\+::string \&ln) noexcept
+\begin{DoxyCompactList}\small\item\em This function gets keys out of files. \end{DoxyCompactList}\item 
 static std\+::string \mbox{\hyperlink{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}{get\+\_\+file\+\_\+ln\+\_\+val}} (const std\+::string \&ln) noexcept
 \begin{DoxyCompactList}\small\item\em This function gets values out of settings files. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{classtools_1_1Tools_a529d9136e8e62919cd59a5bea4d2cbf1}{write\+\_\+err\+\_\+log}} (const std\+::string \&err\+\_\+msg) noexcept
@@ -391,6 +397,24 @@ The file line with new line char included at the end is returned.
 {\em \char`\"{}\char`\"{}} & The file or the file line does not exist. \\
 \hline
 \end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_addbf9205523ec108e8db033cbcd32640}\label{classtools_1_1Tools_addbf9205523ec108e8db033cbcd32640}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln\_key@{get\_file\_ln\_key}}
+\index{get\_file\_ln\_key@{get\_file\_ln\_key}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln\_key()}{get\_file\_ln\_key()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln\+\_\+key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ln }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This function gets keys out of files. 
+
+Key-\/value pairs are saved like\+: key0 key1 key2\+: value0 value1 value2 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ln} & The file line whose key we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The key of the line without ending colon. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}\label{classtools_1_1Tools_ad56b3c44c372ceeda32b6724f067debd}} 
 \index{tools::Tools@{tools::Tools}!get\_file\_ln\_val@{get\_file\_ln\_val}}
 \index{get\_file\_ln\_val@{get\_file\_ln\_val}!tools::Tools@{tools::Tools}}
@@ -401,14 +425,42 @@ The file line with new line char included at the end is returned.
 
 This function gets values out of settings files. 
 
-Values in lines are saved like\+: \char`\"{}key0 (key1 key2)\+: value0 (value1 value2)\char`\"{}. 
+Key-\/value pairs are saved like\+: key0 key1 key2\+: value0 value1 value2 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em ln} & The file line whose value we want. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The value for the setting. 
+The value of the line. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtools_1_1Tools_a4efd036d5eb3f67ac9c0d389ade30eae}\label{classtools_1_1Tools_a4efd036d5eb3f67ac9c0d389ade30eae}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln\_w\_key@{get\_file\_ln\_w\_key}}
+\index{get\_file\_ln\_w\_key@{get\_file\_ln\_w\_key}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln\_w\_key()}{get\_file\_ln\_w\_key()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln\+\_\+w\+\_\+key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It gets the first line which contains the passed key. 
+
+The whole string needs to be contained in the file line and not just a fraction. \begin{DoxyNote}{Note}
+How values are saved\+: key0 key1 key2\+: val0 val1 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want. \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key of the file line we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file line which contains the whole key. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & There is no such key in the file. \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}\label{classtools_1_1Tools_ad3aeecced1698e062c2317228d59138e}} 
 \index{tools::Tools@{tools::Tools}!get\_file\_ln\_w\_srch@{get\_file\_ln\_w\_srch}}
 \index{get\_file\_ln\_w\_srch@{get\_file\_ln\_w\_srch}!tools::Tools@{tools::Tools}}
@@ -432,6 +484,34 @@ The file line which contains the whole string.
 
 \begin{DoxyRetVals}{Return values}
 {\em \char`\"{}\char`\"{}} & The string does not appear in the file. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{classtools_1_1Tools_acf0b267d9a8ba8ac580acdb4ea220aec}\label{classtools_1_1Tools_acf0b267d9a8ba8ac580acdb4ea220aec}} 
+\index{tools::Tools@{tools::Tools}!get\_file\_ln\_w\_val@{get\_file\_ln\_w\_val}}
+\index{get\_file\_ln\_w\_val@{get\_file\_ln\_w\_val}!tools::Tools@{tools::Tools}}
+\doxysubsubsection{\texorpdfstring{get\_file\_ln\_w\_val()}{get\_file\_ln\_w\_val()}}
+{\footnotesize\ttfamily std\+::string tools\+::\+Tools\+::get\+\_\+file\+\_\+ln\+\_\+w\+\_\+val (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{const std\+::string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+It gets the first line which contains the passed value. 
+
+The whole string needs to be contained in the value and not just a fraction. \begin{DoxyNote}{Note}
+How values are saved\+: key0 key1 key2\+: val0 val1 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file} & Path to file whose content we want. \\
+\hline
+\mbox{\texttt{ in}}  & {\em val} & The value of the file line we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The file line which contains the whole value. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \char`\"{}\char`\"{}} & There is no such value in the file. \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}\label{classtools_1_1Tools_a3cda7c072d374760af29e9256f1a4902}} 

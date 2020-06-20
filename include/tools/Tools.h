@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.0 (20.06.2020)
+ * - Added functions for better reading out of files.
+ * @version
  * 1.1.44 (19.06.2020)
  * - Header updated.
  * @version
@@ -173,7 +176,7 @@ namespace tools
 		/**
 		 * @brief It gets the first line which contains the passed key.
 		 * @details The whole string needs to be contained in the file line and not just a fraction.
-		 * @note key0 key1 key2: val0 val1
+		 * @note How values are saved: key0 key1 key2: val0 val1
 		 * @param[in] file Path to file whose content we want.
 		 * @param[in] key The key of the file line we want.
 		 * @return The file line which contains the whole key.
@@ -184,7 +187,7 @@ namespace tools
 		/**
 		 * @brief It gets the first line which contains the passed value.
 		 * @details The whole string needs to be contained in the value and not just a fraction.
-		 * @note key0 key1 key2: val0 val1
+		 * @note How values are saved: key0 key1 key2: val0 val1
 		 * @param[in] file Path to file whose content we want.
 		 * @param[in] val The value of the file line we want.
 		 * @return The file line which contains the whole value.
@@ -415,20 +418,20 @@ namespace tools
 		static std::tm* get_tm(const std::time_t &time = 0) noexcept;
 
 		/**
-		 * @brief This function gets values out of settings files.
-		 * @details Key-value pairs are saved like: "key0 (key1 key2): value0 (value1 value2)".
-		 * @param[in] ln The file line whose value we want.
-		 * @return The value of the line.
-		 */
-		static std::string get_file_ln_val(const std::string &ln) noexcept;
-
-		/**
-		 * @brief This function gets keys out of settings files.
-		 * @details Key-value pairs are saved like: "key0 (key1 key2): value0 (value1 value2)".
+		 * @brief This function gets keys out of files.
+		 * @details Key-value pairs are saved like: key0 key1 key2: value0 value1 value2
 		 * @param[in] ln The file line whose key we want.
 		 * @return The key of the line without ending colon.
 		 */
 		static std::string get_file_ln_key(const std::string &ln) noexcept;
+
+		/**
+		 * @brief This function gets values out of settings files.
+		 * @details Key-value pairs are saved like: key0 key1 key2: value0 value1 value2
+		 * @param[in] ln The file line whose value we want.
+		 * @return The value of the line.
+		 */
+		static std::string get_file_ln_val(const std::string &ln) noexcept;
 
 		/**
 		 * @brief This function is thought to be used to log error messages which need treatment.
