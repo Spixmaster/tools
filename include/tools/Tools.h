@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright GNU General Public License v2.0
  * @version
+ * 1.2.4 (22.06.2020)
+ * - Code revision.
+ * @version
  * 1.2.3 (22.06.2020)
  * - Bug fix.
  * - Code revision.
@@ -178,7 +181,7 @@ namespace tools
 		 * @details The whole string needs to be contained in the file line and not just a fraction.
 		 * @param[in] file Path to file whose content we want.
 		 * @param[in] srch The string which shall be included in the file line that we search.
-		 * @return The file line which contains the whole string.
+		 * @return The file line which contains the whole string. No new line character at the end.
 		 * @retval "" The string does not appear in the file.
 		 */
 		static std::string get_file_ln_w_srch(const std::string &file, const std::string &srch) noexcept;
@@ -189,7 +192,7 @@ namespace tools
 		 * @note How values are saved: key0 key1 key2: val0 val1
 		 * @param[in] file Path to file whose content we want.
 		 * @param[in] key The key of the file line we want.
-		 * @return The file line which contains the whole key.
+		 * @return The file line which contains the whole key. No new line character at the end.
 		 * @retval "" There is no such key in the file.
 		 */
 		static std::string get_file_ln_w_key(const std::string &file, const std::string &key) noexcept;
@@ -200,7 +203,7 @@ namespace tools
 		 * @note How values are saved: key0 key1 key2: val0 val1
 		 * @param[in] file Path to file whose content we want.
 		 * @param[in] val The value of the file line we want.
-		 * @return The file line which contains the whole value.
+		 * @return The file line which contains the whole value. No new line character at the end.
 		 * @retval "" There is no such value in the file.
 		 */
 		static std::string get_file_ln_w_val(const std::string &file, const std::string &val) noexcept;

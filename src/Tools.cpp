@@ -221,7 +221,7 @@ namespace tools
 					std::string key_tmp;
 
 					if(!cur_ln.empty())
-						key_tmp =Tools::get_file_ln_key(cur_ln);
+						key_tmp = Tools::get_file_ln_key(cur_ln);
 
 					if(key_tmp == key)
 						return cur_ln;
@@ -252,7 +252,7 @@ namespace tools
 					std::string val_tmp;
 
 					if(!cur_ln.empty())
-						val_tmp =Tools::get_file_ln_val(cur_ln);
+						val_tmp = Tools::get_file_ln_val(cur_ln);
 
 					if(val_tmp == val)
 						return cur_ln;
