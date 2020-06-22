@@ -68,7 +68,7 @@ namespace tools
 
 		/**
 		 * @param[in] url Defines to which server the request shall be sent.
-		 * @param[in] http_args: The HTTP arguments to send with the request.
+		 * @param[in] http_args The HTTP arguments to send with the request.
 		 * @param[in] print_error Decides whether the error message shall be output to stderr if the server responds with an error.
 		 */
 		HttpClient(const std::string &url, const std::vector<HttpArg> &http_args, const bool &print_error = true);
@@ -76,7 +76,7 @@ namespace tools
 		/**
 		 * @param[in] url Defines to which server the request shall be sent.
 		 * @param[in] http_headers The HTTP headers to send with the request.
-		 * @param[in] http_args: The HTTP arguments to send with the request.
+		 * @param[in] http_args The HTTP arguments to send with the request.
 		 * @param[in] print_error Decides whether the error message shall be output to stderr if the server responds with an error.
 		 */
 		HttpClient(const std::string &url, const std::vector<HttpHeader> &http_headers, const std::vector<HttpArg> &http_args, const bool &print_error = true);

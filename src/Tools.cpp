@@ -218,8 +218,10 @@ namespace tools
 				while(!inf.eof())
 				{
 					std::getline(inf, cur_ln);
+					std::string key_tmp;
 
-					std::string key_tmp = Tools::get_file_ln_key(cur_ln);
+					if(!cur_ln.empty())
+						key_tmp =Tools::get_file_ln_key(cur_ln);
 
 					if(key_tmp == key)
 						return cur_ln;
@@ -247,8 +249,10 @@ namespace tools
 				while(!inf.eof())
 				{
 					std::getline(inf, cur_ln);
+					std::string val_tmp;
 
-					std::string val_tmp = Tools::get_file_ln_val(cur_ln);
+					if(!cur_ln.empty())
+						val_tmp =Tools::get_file_ln_val(cur_ln);
 
 					if(val_tmp == val)
 						return cur_ln;
@@ -590,9 +594,9 @@ namespace tools
 
 	std::string Tools::parse_url(const std::string &url, const std::string &escaped_chars) noexcept
 	{
-		std::string temp;
-		Poco::URI::encode(url, escaped_chars, temp);
-		return temp;
+		std::string tmp;
+		Poco::URI::encode(url, escaped_chars, tmp);
+		return tmp;
 	}
 
 	std::string Tools::encode_utf8(const std::wstring &wstr) noexcept
@@ -619,8 +623,8 @@ namespace tools
 				utf8 += (wstr.at(j) & 0b00000111'11000000) << 2;
 
 				//Append to the result.
-				std::string temp = Tools::to_hex(utf8);
-				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x"));
+				std::string tmp = Tools::to_hex(utf8);
+				utf8_encoded.append(tmp.insert(0, "\\x").insert(4, "\\x"));
 			}
 			else if(wstr.at(j) <= 0xFFFF)
 			{
@@ -643,8 +647,8 @@ namespace tools
 				utf8 += (wstr.at(j) & 0b11110000'00000000) << 4;
 
 				//Append to the result.
-				std::string temp = Tools::to_hex(utf8);
-				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x"));
+				std::string tmp = Tools::to_hex(utf8);
+				utf8_encoded.append(tmp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x"));
 			}
 			else if(wstr.at(j) <= 0x10FFFF)
 			{
@@ -673,8 +677,8 @@ namespace tools
 				utf8 += (wstr.at(j) & 0b00011100'00000000'00000000) << 4;
 
 				//Append to the result.
-				std::string temp = Tools::to_hex(utf8);
-				utf8_encoded.append(temp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x").insert(12, "\\x"));
+				std::string tmp = Tools::to_hex(utf8);
+				utf8_encoded.append(tmp.insert(0, "\\x").insert(4, "\\x").insert(8, "\\x").insert(12, "\\x"));
 			}
 		}
 
@@ -788,12 +792,12 @@ namespace tools
 			struct std::tm *time_info;
 			time_info = std::localtime(&raw_time);
 
-			std::string temp = std::asctime(time_info);
+			std::string tmp = std::asctime(time_info);
 
-			if(!temp.empty())
-				temp.pop_back();
+			if(!tmp.empty())
+				tmp.pop_back();
 
-			return temp;
+			return tmp;
 		}
 		else
 		{
