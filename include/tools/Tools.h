@@ -11,7 +11,7 @@
 /**
  * @mainpage tools-cpp
  * @author Matheus Gabriel Werny de Lima
- * @copyright GNU General Public License v2.0
+ * @copyright Apache-2.0 License
  * @version
  * 1.2.5 (25.06.2020)
  * - License changed.
