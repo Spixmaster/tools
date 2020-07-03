@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright Apache-2.0 License
  * @version
+ * 1.2.6 (03.07.2020)
+ * - Code update.
+ * @version
  * 1.2.5 (25.06.2020)
  * - License changed.
  * @version
@@ -128,7 +131,7 @@ namespace tools
 
 		//Member functions
 		/**
-		 * @brief All words in the passed string are listed down in a vector while one element represent a word.
+		 * @brief All words in the passed string are listed down in a vector while one element represents a word.
 		 * @details It can handle new lines and several spaces as it neglects them and only gets the pure words.
 		 * @param[in] str The string from which we want to get the arguments.
 		 * @return The vector where each element represents one argument.

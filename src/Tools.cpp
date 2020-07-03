@@ -30,7 +30,7 @@ namespace tools
 
 		for(std::size_t j = 0; j < str.length(); ++j)
 		{
-			//Deal with the last char of the last word.
+			//Deal with the last char of the last word. Check that we do not add whitespace.
 			if(j == (str.length() - 1) && str.at(j) != ' ')
 			{
 				word += str.at(j);
@@ -221,10 +221,8 @@ namespace tools
 					std::string key_tmp;
 
 					if(!cur_ln.empty())
-						key_tmp = Tools::get_file_ln_key(cur_ln);
-
-					if(key_tmp == key)
-						return cur_ln;
+						if(Tools::get_file_ln_key(cur_ln) == key)
+							return cur_ln;
 				}
 			}
 
@@ -252,10 +250,8 @@ namespace tools
 					std::string val_tmp;
 
 					if(!cur_ln.empty())
-						val_tmp = Tools::get_file_ln_val(cur_ln);
-
-					if(val_tmp == val)
-						return cur_ln;
+						if(Tools::get_file_ln_val(cur_ln) == val)
+							return cur_ln;
 				}
 			}
 
@@ -516,7 +512,6 @@ namespace tools
 			if(ln_num >= 1)
 			{
 				std::ifstream inf(file);
-				std::string str;
 				int count = 1;
 
 				if(inf.is_open())
@@ -533,7 +528,7 @@ namespace tools
 					}
 				}
 
-				return str;
+				return "";
 			}
 			else
 			{
@@ -556,7 +551,7 @@ namespace tools
 
 			if(inf.is_open())
 			{
-				int x = 0;
+				int count = 0;
 
 				while(!inf.eof())
 				{
@@ -564,10 +559,10 @@ namespace tools
 					std::getline(inf, cache);
 
 					if(!cache.empty())
-						++x;
+						++count;
 				}
 
-				return x;
+				return count;
 			}
 		}
 		else
@@ -871,7 +866,7 @@ namespace tools
 					result.append(" ");
 
 				//This condition defines when the key is over.
-				if(Tools::ends_w(args.at(j), ":") || Tools::ends_w(args.at(j), ": "))
+				if(Tools::ends_w(args.at(j), ":"))
 				{
 					//At this moment, we have: "key0 key1 key2: " or "key0 key1 key2:"
 					while(tools::Tools::ends_w(result, ":") || tools::Tools::ends_w(result, " "))
