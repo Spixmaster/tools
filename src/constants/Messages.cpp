@@ -16,7 +16,7 @@ namespace tools
 
 	void Messages::file_non_existent(const std::string &file) noexcept
 	{
-		Tools::write_err_log(boost::str(boost::format(_("The file %1% does not exist.")) % file));
+		Tools::write_err_log(boost::str(boost::format(_("The file \"%1%\" does not exist.")) % file));
 	}
 
 	std::string Messages::enter_pos_num_to_read_in_file(const std::string &file) noexcept
@@ -31,7 +31,7 @@ namespace tools
 
 	std::string Messages::file_del_err(const std::string &file) noexcept
 	{
-		return boost::str(boost::format(_("The file %1% could not be deleted: %2%")) % file % strerror(errno));
+		return boost::str(boost::format(_("The file \"%1%\" could not be deleted: %2%")) % file % strerror(errno));
 	}
 
 	std::string Messages::resp(const int &status_code) noexcept
