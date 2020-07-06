@@ -13,6 +13,9 @@
  * @author Matheus Gabriel Werny de Lima
  * @copyright Apache-2.0 License
  * @version
+ * 1.2.7 (06.07.2020)
+ * - Comment update.
+ * @version
  * 1.2.6 (03.07.2020)
  * - Code update.
  * @version
@@ -485,7 +488,7 @@ namespace tools
 		static void rmdir(const std::string &path) noexcept;
 
 		/**
-		 * @brief Calls a command and return the stdout.
+		 * @brief Calls a command and returns the stdout.
 		 * @param[in] cmd The called command.
 		 * @return The output made to stdout.
 		 */
