@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION "3.18.1")
 
 #General
-project("tools-cpp" VERSION 1.2.8 DESCRIPTION "A C++ library which contains all functions I use in general.")
+project("tools-cpp")
 set(CMAKE_CXX_STANDARD 17)
 
 #Target

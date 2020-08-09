@@ -7,7 +7,7 @@
 
 namespace tools
 {
-	const std::string Constants::version = "1.2.8";
+	const std::string Constants::version = "1.2.9";
 	const std::string Constants::release = "09.Aug.2020";
 	const std::size_t Constants::max_tmp_err_logs = 10;
 
