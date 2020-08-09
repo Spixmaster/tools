@@ -6,21 +6,21 @@ set(CMAKE_CXX_STANDARD 17)
 
 #Target
 add_library("${PROJECT_NAME}" STATIC
-    "src/constants/Constants.cpp"
-    "src/constants/Messages.cpp"
+    "./src/constants/Constants.cpp"
+    "./src/constants/Messages.cpp"
     
-    "src/http/HttpArg.cpp"
-    "src/http/HttpClient.cpp"
-    "src/http/HttpCookie.cpp"
-    "src/http/HttpHeader.cpp"
-    "src/http/HttpResponse.cpp"
-    "src/http/InputFile.cpp"
+    "./src/http/HttpArg.cpp"
+    "./src/http/HttpClient.cpp"
+    "./src/http/HttpCookie.cpp"
+    "./src/http/HttpHeader.cpp"
+    "./src/http/HttpResponse.cpp"
+    "./src/http/InputFile.cpp"
     
-    "src/Tools.cpp"
+    "./src/Tools.cpp"
     )
 
 #Headers
-target_include_directories("${PROJECT_NAME}" PRIVATE "include/")
+target_include_directories("${PROJECT_NAME}" PRIVATE "./include/")
 
 #Libraries
 target_link_libraries("${PROJECT_NAME}" PocoFoundation)

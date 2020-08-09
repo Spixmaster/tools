@@ -42,7 +42,7 @@ git submodule add *link-to-this-repo*
 ```sh
 cd to/this/project/
 cmake .
-make
+make -j
 ```
 
 ## Eclipse setup
