@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION "3.18.1")
 
 if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-  message(SEND_ERROR "In-source builds are not allowed!")
+  message(FATAL_ERROR "In-source builds are not allowed!")
 endif ()
 
 #General
@@ -9,7 +9,7 @@ project("tools-cpp")
 set(CMAKE_CXX_STANDARD "17")
 
 #Target
-add_library("${CMAKE_PROJECT_NAME}"
+add_library("tools-cpp"
     "./src/constants/Constants.cpp"
     "./src/constants/Messages.cpp"
     
@@ -24,23 +24,23 @@ add_library("${CMAKE_PROJECT_NAME}"
     )
 
     #Headers
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "./include/")
+target_include_directories("tools-cpp" PUBLIC "./include/")
 
     #Link libraries
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "PocoFoundation")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "PocoNet")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "PocoNetSSL")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "PocoCrypto")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "boost_iostreams")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "boost_filesystem")
-target_link_libraries("${CMAKE_PROJECT_NAME}" PUBLIC "boost_locale")
+target_link_libraries("tools-cpp" PUBLIC "PocoFoundation")
+target_link_libraries("tools-cpp" PUBLIC "PocoNet")
+target_link_libraries("tools-cpp" PUBLIC "PocoNetSSL")
+target_link_libraries("tools-cpp" PUBLIC "PocoCrypto")
+target_link_libraries("tools-cpp" PUBLIC "boost_iostreams")
+target_link_libraries("tools-cpp" PUBLIC "boost_filesystem")
+target_link_libraries("tools-cpp" PUBLIC "boost_locale")
 
     #Options
         #Optimization
-target_compile_options("${CMAKE_PROJECT_NAME}" PUBLIC "-O3")
+target_compile_options("tools-cpp" PUBLIC "-O3")
         #Warnings
-target_compile_options("${CMAKE_PROJECT_NAME}" PUBLIC "-Wall")
-target_compile_options("${CMAKE_PROJECT_NAME}" PUBLIC "-Wextra")
+target_compile_options("tools-cpp" PUBLIC "-Wall")
+target_compile_options("tools-cpp" PUBLIC "-Wextra")
         #Preprocessor
-target_compile_options("${CMAKE_PROJECT_NAME}" PUBLIC "-MD")
-target_compile_options("${CMAKE_PROJECT_NAME}" PUBLIC "-MP")
+target_compile_options("tools-cpp" PUBLIC "-MD")
+target_compile_options("tools-cpp" PUBLIC "-MP")
