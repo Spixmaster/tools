@@ -9,7 +9,7 @@ project("tools-cpp")
 set(CMAKE_CXX_STANDARD "17")
 
 #Target
-add_library("tools-cpp"
+add_library("${PROJECT_NAME}"
     "./src/constants/Constants.cpp"
     "./src/constants/Messages.cpp"
     
