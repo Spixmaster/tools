@@ -24,23 +24,23 @@ add_library("tools-cpp"
     )
 
     #Headers
-target_include_directories("tools-cpp" PUBLIC "./include/")
+target_include_directories("${PROJECT_NAME}" PUBLIC "./include/")
 
     #Link libraries
-target_link_libraries("tools-cpp" PUBLIC "PocoFoundation")
-target_link_libraries("tools-cpp" PUBLIC "PocoNet")
-target_link_libraries("tools-cpp" PUBLIC "PocoNetSSL")
-target_link_libraries("tools-cpp" PUBLIC "PocoCrypto")
-target_link_libraries("tools-cpp" PUBLIC "boost_iostreams")
-target_link_libraries("tools-cpp" PUBLIC "boost_filesystem")
-target_link_libraries("tools-cpp" PUBLIC "boost_locale")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoFoundation")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoNet")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoNetSSL")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "PocoCrypto")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_iostreams")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_filesystem")
+target_link_libraries("${PROJECT_NAME}" PUBLIC "boost_locale")
 
     #Options
         #Optimization
-target_compile_options("tools-cpp" PUBLIC "-O3")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-O3")
         #Warnings
-target_compile_options("tools-cpp" PUBLIC "-Wall")
-target_compile_options("tools-cpp" PUBLIC "-Wextra")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-Wall")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-Wextra")
         #Preprocessor
-target_compile_options("tools-cpp" PUBLIC "-MD")
-target_compile_options("tools-cpp" PUBLIC "-MP")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-MD")
+target_compile_options("${PROJECT_NAME}" PUBLIC "-MP")
